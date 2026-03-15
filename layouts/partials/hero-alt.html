@@ -1,0 +1,20 @@
+{{- /* HeroAlt — Interior page hero section */ -}}
+{{- $title := .title -}}
+{{- $subtitle := .subtitle -}}
+{{- $badge := .badge -}}
+<section class="relative bg-surface-50 dark:bg-surface-900 py-16 md:py-24 overflow-hidden">
+  <!-- Decorative blurred blobs -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
+  </div>
+  <div class="container-custom relative z-10 text-center">
+    {{- with $badge }}
+    <span class="badge-primary mb-4 inline-block">{{ . }}</span>
+    {{- end }}
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-surface-900 dark:text-white mb-4">{{ $title }}</h1>
+    {{- with $subtitle }}
+    <p class="text-lg text-surface-500 dark:text-surface-400 max-w-2xl mx-auto">{{ . }}</p>
+    {{- end }}
+  </div>
+</section>

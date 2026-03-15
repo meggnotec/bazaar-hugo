@@ -1,0 +1,4 @@
+{{- /* SaleBadge — Discount percentage badge */ -}}
+{{- $discount := .discount -}}
+{{- $pulse := .pulse -}}
+<span class="badge-sale{{ if $pulse }} animate-pulse-soft{{ end }}">-{{ $discount }}% OFF</span>

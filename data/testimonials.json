@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Sarah Mitchell",
+    "location": "New York, NY",
+    "rating": 5,
+    "quote": "The Cashmere Blend Sweater is hands down the softest thing I own. I bought one in Ivory and came back for Charcoal within a week. The quality at this price point is unreal.",
+    "productPurchased": "Cashmere Blend Sweater",
+    "initials": "SM",
+    "image": "/images/testimonials/sarah-mitchell.jpg"
+  },
+  {
+    "name": "James Rodriguez",
+    "location": "Los Angeles, CA",
+    "rating": 5,
+    "quote": "I have been searching for the perfect minimalist sneakers for years. These are it. The Italian leather feels incredible and they look even better in person than on the site.",
+    "productPurchased": "Minimalist Leather Sneakers",
+    "initials": "JR",
+    "image": "/images/testimonials/james-rodriguez.jpg"
+  },
+  {
+    "name": "Emily Chen",
+    "location": "San Francisco, CA",
+    "rating": 4,
+    "quote": "The Silk Midi Dress is absolutely stunning for date night. The champagne color is gorgeous and the fabric drapes beautifully. I just wish they offered more lengths for petites.",
+    "productPurchased": "Silk Midi Dress",
+    "initials": "EC",
+    "image": "/images/testimonials/emily-chen.jpg"
+  },
+  {
+    "name": "Marcus Thompson",
+    "location": "Chicago, IL",
+    "rating": 5,
+    "quote": "The Wool Blend Overcoat is the best investment I have made in my wardrobe. It looks like something from a designer brand three times the price. The camel color gets compliments every time.",
+    "productPurchased": "Wool Blend Overcoat",
+    "initials": "MT",
+    "image": "/images/testimonials/marcus-thompson.jpg"
+  },
+  {
+    "name": "Olivia Parker",
+    "location": "Austin, TX",
+    "rating": 5,
+    "quote": "I ordered the Leather Tote Bag in Cognac and I use it every single day. It fits my laptop, lunch, and everything else. The leather is already developing a beautiful patina.",
+    "productPurchased": "Leather Tote Bag",
+    "initials": "OP",
+    "image": "/images/testimonials/olivia-parker.jpg"
+  },
+  {
+    "name": "David Kim",
+    "location": "Seattle, WA",
+    "rating": 4,
+    "quote": "Really impressed with the Merino Crew Neck Tee. Wore it on a long flight and it looked just as fresh when I landed as when I left. The temperature regulation is genuinely noticeable.",
+    "productPurchased": "Merino Crew Neck Tee",
+    "initials": "DK",
+    "image": "/images/testimonials/david-kim.jpg"
+  },
+  {
+    "name": "Isabella Moreno",
+    "location": "Miami, FL",
+    "rating": 5,
+    "quote": "The Pleated Midi Skirt in Bronze is absolutely gorgeous. The way it catches the light when you walk is stunning. I have worn it to two weddings already and have a third coming up.",
+    "productPurchased": "Pleated Midi Skirt",
+    "initials": "IM",
+    "image": "/images/testimonials/isabella-moreno.jpg"
+  },
+  {
+    "name": "Alex Turner",
+    "location": "Portland, OR",
+    "rating": 5,
+    "quote": "Bought the High-Waist Straight Jeans in Indigo and they fit perfectly straight out of the box. The organic cotton denim has a great weight to it. Already planning to buy a second pair in black.",
+    "productPurchased": "High-Waist Straight Jeans",
+    "initials": "AT",
+    "image": "/images/testimonials/alex-turner.jpg"
+  }
+]

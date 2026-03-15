@@ -1,0 +1,18 @@
+{{- $config := .Site.Data.site_config -}}
+{{- if $config.announcementBar.enabled -}}
+<div id="announcement-bar" class="gradient-hero text-white text-center text-sm py-2.5 px-4 relative">
+  <div class="container-custom flex items-center justify-center gap-2">
+    <span class="font-medium" data-i18n="announcement.freeShipping">{{ $config.announcementBar.text }}</span>
+    {{- with $config.announcementBar.link }}
+    <a href="{{ . }}" class="underline underline-offset-2 hover:no-underline font-semibold">
+      <span data-i18n="announcement.shopNow">Shop Now</span> &rarr;
+    </a>
+    {{- end }}
+  </div>
+  <button id="dismiss-announcement" type="button" class="absolute end-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors cursor-pointer" aria-label="Dismiss announcement">
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+</div>
+{{- end -}}

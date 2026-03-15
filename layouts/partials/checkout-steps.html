@@ -1,0 +1,37 @@
+{{- /* CheckoutSteps — 3-step visual indicator: Shipping, Payment, Review */ -}}
+{{- $currentStep := .currentStep | default 1 -}}
+<div class="flex items-center justify-center gap-4 mb-8">
+  {{- $steps := slice
+    (dict "number" 1 "label" "Shipping")
+    (dict "number" 2 "label" "Payment")
+    (dict "number" 3 "label" "Review")
+  -}}
+  {{- range $index, $step := $steps }}
+    <div class="flex items-center gap-2">
+      {{- if lt $step.number $currentStep -}}
+      {{- /* Completed step */ -}}
+      <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-emerald-500 text-white">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+      </div>
+      {{- else if eq $step.number $currentStep -}}
+      {{- /* Active step */ -}}
+      <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold gradient-cta text-white">
+        {{ $step.number }}
+      </div>
+      {{- else -}}
+      {{- /* Future step */ -}}
+      <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold bg-surface-200 dark:bg-surface-700 text-surface-500 dark:text-surface-400">
+        {{ $step.number }}
+      </div>
+      {{- end }}
+      <span class="text-sm font-medium hidden sm:inline {{ if le $step.number $currentStep }}text-surface-900 dark:text-white{{ else }}text-surface-400 dark:text-surface-500{{ end }}">
+        {{ $step.label }}
+      </span>
+    </div>
+    {{- if lt $index 2 }}
+    <div class="w-12 h-0.5 rounded {{ if lt $step.number $currentStep }}bg-emerald-500{{ else }}bg-surface-200 dark:bg-surface-700{{ end }}"></div>
+    {{- end }}
+  {{- end }}
+</div>

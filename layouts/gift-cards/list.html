@@ -1,0 +1,106 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Gift Cards" "subtitle" "The perfect gift for any occasion" "badge" "Gifts") }}
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- SVG Preview Card -->
+        <div class="sticky top-24">
+          <div class="rounded-2xl overflow-hidden shadow-2xl" id="gift-card-preview">
+            <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" class="w-full">
+              <defs>
+                <linearGradient id="card-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0f172a" />
+                  <stop offset="40%" style="stop-color:#1e3a5f" />
+                  <stop offset="100%" style="stop-color:#0d9488" />
+                </linearGradient>
+              </defs>
+              <rect width="600" height="380" fill="url(#card-gradient)" rx="20" />
+              <!-- Decorative circles -->
+              <circle cx="500" cy="80" r="120" fill="rgba(255,255,255,0.05)" />
+              <circle cx="100" cy="320" r="80" fill="rgba(255,255,255,0.05)" />
+              <!-- Logo -->
+              <text x="40" y="60" fill="white" font-family="system-ui, sans-serif" font-size="28" font-weight="700" opacity="0.9">Bazaar Studio</text>
+              <!-- Gift Card label -->
+              <text x="40" y="90" fill="white" font-family="system-ui, sans-serif" font-size="14" opacity="0.6">GIFT CARD</text>
+              <!-- Amount -->
+              <text x="40" y="260" fill="white" font-family="system-ui, sans-serif" font-size="56" font-weight="700" id="gift-card-amount">$50</text>
+              <!-- Code -->
+              <text x="40" y="340" fill="white" font-family="system-ui, sans-serif" font-size="16" opacity="0.5" letter-spacing="3">XXXX-XXXX-XXXX-XXXX</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-2xl font-heading font-bold text-surface-900 dark:text-white mb-6">Choose Your Gift</h2>
+          <form class="space-y-6" onsubmit="event.preventDefault(); alert('Gift card added to cart (demo)');">
+            <!-- Preset amounts -->
+            <div>
+              <label class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-3">Select Amount</label>
+              <div class="grid grid-cols-4 gap-3">
+                {{- $amounts := slice 25 50 100 200 -}}
+                {{ range $i, $amt := $amounts }}
+                <button
+                  type="button"
+                  class="gift-amount-btn rounded-xl border-2 py-3 text-center font-heading font-bold transition-all duration-200 cursor-pointer {{ if eq $i 1 }}border-primary-500 bg-primary-50 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400{{ else }}border-surface-300 dark:border-surface-600 text-surface-700 dark:text-surface-300 hover:border-primary-300 dark:hover:border-primary-700{{ end }}"
+                  data-amount="{{ $amt }}"
+                >
+                  ${{ $amt }}
+                </button>
+                {{ end }}
+              </div>
+            </div>
+
+            <!-- Custom amount -->
+            <div>
+              <label for="custom-amount" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Custom Amount</label>
+              <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-surface-400 font-semibold">$</span>
+                <input type="number" id="custom-amount" class="input pl-8" placeholder="Enter amount" min="10" max="500" />
+              </div>
+              <p class="text-xs text-surface-400 dark:text-surface-500 mt-1">Min $10, Max $500</p>
+            </div>
+
+            <!-- Recipient info -->
+            <div>
+              <label for="gift-recipient-name" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Recipient Name</label>
+              <input type="text" id="gift-recipient-name" class="input" placeholder="Who is this for?" required />
+            </div>
+            <div>
+              <label for="gift-recipient-email" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Recipient Email</label>
+              <input type="email" id="gift-recipient-email" class="input" placeholder="Their email address" required />
+            </div>
+            <div>
+              <label for="gift-message" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Personal Message (optional)</label>
+              <textarea id="gift-message" rows="3" class="input resize-none" placeholder="Add a personal note..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- How Gift Cards Work -->
+      <div class="mt-16">
+        <h2 class="text-2xl md:text-3xl font-heading font-bold text-surface-900 dark:text-white text-center mb-10">How Gift Cards Work</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {{- $steps := slice
+            (dict "num" "1" "title" "Choose an Amount" "desc" "Select a preset amount or enter a custom value between $10 and $500.")
+            (dict "num" "2" "title" "Personalize It" "desc" "Add the recipient's details and include a personal message.")
+            (dict "num" "3" "title" "Send & Enjoy" "desc" "The gift card is delivered instantly via email, ready to use on any purchase.")
+          -}}
+          {{ range $steps }}
+          <div class="text-center">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center mx-auto mb-4">
+              <span class="text-xl font-heading font-bold text-white">{{ .num }}</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-surface-900 dark:text-white mb-2">{{ .title }}</h3>
+            <p class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed">{{ .desc }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

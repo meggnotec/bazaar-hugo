@@ -1,0 +1,77 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "The Edit" "badge" "Blog") }}
+
+  <section class="section">
+    <div class="container-custom">
+      {{- $posts := .Pages.ByDate.Reverse -}}
+
+      {{ if gt (len $posts) 0 }}
+      {{- /* Featured post — first post, large 2-col card */ -}}
+      {{- $featured := index $posts 0 -}}
+      <article class="card overflow-hidden mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- Image -->
+          <a href="{{ $featured.RelPermalink }}" class="block relative aspect-[16/10] lg:aspect-auto overflow-hidden group">
+            {{- if and $featured.Params.image (not (in $featured.Params.image "placeholder.svg")) }}
+            <img
+              src="{{ $featured.Params.image }}"
+              alt="{{ $featured.Title }}"
+              width="800"
+              height="500"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            {{- else }}
+            <div class="w-full h-full min-h-[300px] flex items-center justify-center bg-surface-200 dark:bg-surface-700">
+              <svg class="h-16 w-16 text-surface-400 dark:text-surface-600" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75V5.25A2.25 2.25 0 0 0 20.25 3H3.75A2.25 2.25 0 0 0 1.5 5.25v13.5A2.25 2.25 0 0 0 3.75 21Z" />
+              </svg>
+            </div>
+            {{- end }}
+            {{- if $featured.Params.category }}
+            <div class="absolute top-4 start-4">
+              <span class="badge badge-primary text-xs">{{ $featured.Params.category }}</span>
+            </div>
+            {{- end }}
+          </a>
+          <!-- Content -->
+          <div class="p-8 lg:p-10 flex flex-col justify-center">
+            <span class="badge badge-primary mb-4 self-start">Featured</span>
+            <time class="text-sm text-surface-500 dark:text-surface-400 mb-3 block" datetime="{{ $featured.Date.Format "2006-01-02T15:04:05Z07:00" }}">
+              {{ $featured.Date.Format "January 2, 2006" }}
+            </time>
+            <a href="{{ $featured.RelPermalink }}" class="group/title">
+              <h2 class="font-heading font-bold text-2xl lg:text-3xl text-surface-900 dark:text-white mb-4 group-hover/title:text-primary-500 transition-colors">
+                {{ $featured.Title }}
+              </h2>
+            </a>
+            <p class="text-surface-600 dark:text-surface-400 mb-6 line-clamp-3">
+              {{ $featured.Description | default $featured.Summary }}
+            </p>
+            <a href="{{ $featured.RelPermalink }}" class="inline-flex items-center gap-2 text-sm font-semibold text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <span data-i18n="blog.readMore">Read More</span>
+              <svg class="h-4 w-4 rtl:-scale-x-100" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+
+      {{- /* Content grid + Sidebar */ -}}
+      {{- $remainingPosts := after 1 $posts -}}
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Blog cards grid -->
+        <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {{ range $remainingPosts }}
+            {{ partial "blog-card.html" . }}
+          {{ end }}
+        </div>
+        <!-- Sidebar -->
+        <div>
+          {{ partial "blog-sidebar.html" (dict "posts" $posts) }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

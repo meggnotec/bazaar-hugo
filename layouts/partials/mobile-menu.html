@@ -1,0 +1,93 @@
+{{- $siteConfig := .Site.Data.site_config -}}
+{{- $navigation := .Site.Data.navigation -}}
+
+<!-- Backdrop -->
+<div id="mobile-backdrop" class="hidden fixed inset-0 bg-black/50 z-50 lg:hidden"></div>
+
+<!-- Slide-in panel -->
+<div id="mobile-menu" class="fixed top-0 end-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-surface-900 z-50 transform translate-x-full transition-transform duration-300 ease-out lg:hidden overflow-y-auto">
+  <div class="flex items-center justify-between p-4 border-b border-surface-200 dark:border-surface-700">
+    {{- if eq $siteConfig.logo.type "image" }}
+    <img src="{{ $siteConfig.logo.image }}" alt="{{ $siteConfig.name }}" width="{{ $siteConfig.logo.width | default 160 }}" height="{{ $siteConfig.logo.height | default 40 }}" class="h-9 w-auto dark:hidden" />
+    <img src="{{ $siteConfig.logo.imageDark | default $siteConfig.logo.image }}" alt="{{ $siteConfig.name }}" width="{{ $siteConfig.logo.width | default 160 }}" height="{{ $siteConfig.logo.height | default 40 }}" class="h-9 w-auto hidden dark:block" />
+    {{- else }}
+    <span class="text-xl font-heading font-bold gradient-text">{{ $siteConfig.logo.text | default $siteConfig.name }}</span>
+    {{- end }}
+    <button id="mobile-menu-close" type="button" class="rounded-full p-2 text-surface-500 hover:text-surface-700 dark:hover:text-surface-300 transition-colors cursor-pointer" aria-label="Close menu">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="p-4" aria-label="Mobile navigation">
+    {{- range $navigation.mainNav }}
+    <div class="border-b border-surface-100 dark:border-surface-800">
+      {{- $hasSubs := gt (len (default (slice) .subcategories)) 0 }}
+      {{- if $hasSubs }}
+      <div class="mobile-accordion">
+        <button
+          type="button"
+          class="mobile-accordion-trigger flex items-center justify-between w-full py-3 text-start text-surface-900 dark:text-surface-100 font-medium cursor-pointer"
+        >
+          <span class="flex items-center gap-2">
+            {{ .label }}
+            {{- if .badge }}
+            <span class="badge-sale text-[10px]">Sale</span>
+            {{- end }}
+          </span>
+          <svg class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+        <div class="mobile-accordion-content hidden pb-2">
+          <a href="{{ .href }}" class="block py-2 ps-4 text-sm text-surface-600 dark:text-surface-400 hover:text-primary-500 transition-colors">
+            All {{ .label }}
+          </a>
+          {{- range .subcategories }}
+          <a href="{{ .href }}" class="block py-2 ps-4 text-sm text-surface-600 dark:text-surface-400 hover:text-primary-500 transition-colors">
+            {{ .label }}
+          </a>
+          {{- end }}
+        </div>
+      </div>
+      {{- else }}
+      <a
+        href="{{ .href }}"
+        class="flex items-center gap-2 py-3 font-medium {{ if .badge }}text-primary-600 dark:text-primary-400{{ else }}text-surface-900 dark:text-surface-100{{ end }}"
+      >
+        {{ .label }}
+        {{- if .badge }}
+        <span class="badge-sale text-[10px]">Sale</span>
+        {{- end }}
+      </a>
+      {{- end }}
+    </div>
+    {{- end }}
+  </nav>
+
+  <div class="p-4 border-t border-surface-200 dark:border-surface-700 space-y-3">
+    <a href="/account" class="flex items-center gap-3 py-2 text-surface-700 dark:text-surface-300 hover:text-primary-500 transition-colors">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      </svg>
+      <span data-i18n="nav.account">Account</span>
+    </a>
+    <a href="/wishlist" class="flex items-center gap-3 py-2 text-surface-700 dark:text-surface-300 hover:text-primary-500 transition-colors">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      </svg>
+      <span data-i18n="nav.wishlist">Wishlist</span>
+    </a>
+
+    <!-- Language selector -->
+    <div class="pt-3 border-t border-surface-200 dark:border-surface-700">
+      <p class="text-xs font-semibold text-surface-400 dark:text-surface-500 uppercase tracking-wider mb-2">Language</p>
+      <div class="flex gap-2">
+        <button type="button" class="mobile-lang-btn px-3 py-1.5 rounded-full text-xs font-medium border border-surface-300 dark:border-surface-600 text-surface-700 dark:text-surface-300 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer" data-locale="en">EN</button>
+        <button type="button" class="mobile-lang-btn px-3 py-1.5 rounded-full text-xs font-medium border border-surface-300 dark:border-surface-600 text-surface-700 dark:text-surface-300 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer" data-locale="ar">&#x639;&#x631;</button>
+        <button type="button" class="mobile-lang-btn px-3 py-1.5 rounded-full text-xs font-medium border border-surface-300 dark:border-surface-600 text-surface-700 dark:text-surface-300 hover:border-primary-500 hover:text-primary-500 transition-colors cursor-pointer" data-locale="fr">FR</button>
+      </div>
+    </div>
+  </div>
+</div>

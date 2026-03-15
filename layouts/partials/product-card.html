@@ -1,0 +1,185 @@
+{{- $product := .product -}}
+{{- $hasHover := and $product.hoverPlaceholderColor (ne (printf "%v" $product.hoverPlaceholderColor) "<nil>") -}}
+{{- $effectivePrice := cond (and $product.salePrice (ne (printf "%v" $product.salePrice) "<nil>")) $product.salePrice $product.price -}}
+{{- $discount := 0 -}}
+{{- if and $product.isSale $product.salePrice (ne (printf "%v" $product.salePrice) "<nil>") -}}
+  {{- $discount = int (math.Round (mul (sub 1 (div (float $product.salePrice) (float $product.price))) 100)) -}}
+{{- end -}}
+{{- $displayColors := slice -}}
+{{- $overflowCount := 0 -}}
+{{- if $product.colors -}}
+  {{- $colorLen := len $product.colors -}}
+  {{- if gt $colorLen 4 -}}
+    {{- $displayColors = first 4 $product.colors -}}
+    {{- $overflowCount = sub $colorLen 4 -}}
+  {{- else -}}
+    {{- $displayColors = $product.colors -}}
+  {{- end -}}
+{{- end -}}
+{{- $firstColor := "" -}}
+{{- $firstSize := "" -}}
+{{- if $product.colors -}}
+  {{- $firstColor = (index $product.colors 0).name -}}
+{{- end -}}
+{{- if $product.sizes -}}
+  {{- $firstSize = index $product.sizes 0 -}}
+{{- end -}}
+{{- $saleStr := "" -}}
+{{- if and $product.salePrice (ne (printf "%v" $product.salePrice) "<nil>") -}}
+  {{- $saleStr = printf "%.2f" (float $product.salePrice) -}}
+{{- end -}}
+<div
+  class="card group overflow-hidden"
+  data-product-card
+  data-category="{{ $product.category }}"
+  data-price="{{ $effectivePrice }}"
+  data-sizes="{{ delimit $product.sizes "," }}"
+  data-colors="{{ range $i, $c := $product.colors }}{{ if $i }},{{ end }}{{ $c.name }}{{ end }}"
+  data-stock="{{ $product.inStock }}"
+  data-new="{{ $product.isNew }}"
+  data-sale="{{ $product.isSale }}"
+  data-featured="{{ cond $product.isFeatured "1" "0" }}"
+  data-rating="{{ $product.rating }}"
+  data-date="{{ $product.id }}"
+  data-id="{{ $product.id }}"
+>
+  <!-- Image area -->
+  <div class="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+    <a href="/shop/{{ $product.slug }}/" class="block w-full h-full">
+      {{- if $product.image }}
+      <img
+        src="{{ $product.image }}"
+        alt="{{ $product.title }}"
+        width="600"
+        height="800"
+        loading="lazy"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      {{- else }}
+      <div
+        class="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+        style="background-color: {{ $product.placeholderColor }}"
+      >
+        <span class="text-white/60 font-heading text-sm text-center px-4">{{ $product.title }}</span>
+      </div>
+      {{- end }}
+      {{- if $hasHover }}
+      <div
+        class="absolute inset-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style="background-color: {{ $product.hoverPlaceholderColor }}"
+      >
+        <span class="text-white/60 font-heading text-sm text-center px-4">{{ $product.title }}</span>
+      </div>
+      {{- end }}
+    </a>
+    <!-- Hover overlay -->
+    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none">
+      <!-- Action buttons -->
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300 pointer-events-auto">
+        <button
+          type="button"
+          class="compare-btn w-10 h-10 rounded-full bg-white dark:bg-surface-800 shadow-lg flex items-center justify-center text-surface-700 dark:text-surface-200 hover:bg-secondary-500 hover:text-white transition-all duration-200 cursor-pointer"
+          data-product-id="{{ $product.id }}"
+          data-product-slug="{{ $product.slug }}"
+          data-product-title="{{ $product.title }}"
+          data-product-price="{{ $product.price }}"
+          data-product-sale-price="{{ $saleStr }}"
+          data-product-image="{{ $product.image }}"
+          data-product-placeholder="{{ $product.placeholderColor }}"
+          aria-label="Add {{ $product.title }} to compare"
+          title="Compare"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="quickview-trigger w-10 h-10 rounded-full bg-white dark:bg-surface-800 shadow-lg flex items-center justify-center text-surface-700 dark:text-surface-200 hover:bg-primary-500 hover:text-white transition-all duration-200 cursor-pointer"
+          data-product-id="{{ $product.id }}"
+          aria-label="Quick view {{ $product.title }}"
+          title="Quick View"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="quick-add-btn w-10 h-10 rounded-full bg-white dark:bg-surface-800 shadow-lg flex items-center justify-center text-surface-700 dark:text-surface-200 hover:bg-primary-500 hover:text-white transition-all duration-200 cursor-pointer"
+          data-product-id="{{ $product.id }}"
+          data-product-slug="{{ $product.slug }}"
+          data-product-title="{{ $product.title }}"
+          data-product-price="{{ $product.price }}"
+          data-product-sale-price="{{ $saleStr }}"
+          data-product-image="{{ $product.image }}"
+          data-product-color-name="{{ $firstColor }}"
+          data-product-size="{{ $firstSize }}"
+          data-product-placeholder="{{ $product.placeholderColor }}"
+          data-product-instock="{{ $product.inStock }}"
+          aria-label="Add {{ $product.title }} to cart"
+          title="Quick Add"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Badges -->
+    <div class="absolute top-3 start-3 flex flex-col gap-1.5">
+      {{- if $product.isNew }}
+      <span class="badge-new text-[10px]">New</span>
+      {{- end }}
+      {{- if and $product.isSale (gt $discount 0) }}
+      <span class="badge-sale text-[10px]">-{{ $discount }}%</span>
+      {{- end }}
+    </div>
+    <!-- Wishlist -->
+    <button
+      type="button"
+      class="wishlist-btn absolute top-3 end-3 w-8 h-8 rounded-full bg-white/80 dark:bg-surface-800/80 backdrop-blur-sm flex items-center justify-center text-surface-400 hover:text-primary-500 transition-all duration-200 opacity-0 group-hover:opacity-100 cursor-pointer"
+      data-product-id="{{ $product.id }}"
+      data-product-slug="{{ $product.slug }}"
+      data-product-title="{{ $product.title }}"
+      data-product-price="{{ $product.price }}"
+      data-product-sale-price="{{ $saleStr }}"
+      data-product-image="{{ $product.image }}"
+      data-product-color="{{ $product.placeholderColor }}"
+      aria-label="Add {{ $product.title }} to wishlist"
+    >
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      </svg>
+    </button>
+  </div>
+  <!-- Info -->
+  <div class="p-4">
+    <a href="/shop/{{ $product.slug }}/" class="block">
+      <h3 class="font-heading font-semibold text-surface-900 dark:text-white mb-1 truncate hover:text-primary-500 transition-colors">{{ $product.title }}</h3>
+    </a>
+    {{ partial "star-rating.html" (dict "rating" $product.rating "reviewCount" $product.reviewCount) }}
+    <div class="mt-2 flex items-center justify-between">
+      {{ partial "price-display.html" (dict "price" $product.price "salePrice" $product.salePrice "size" "sm") }}
+      {{- if $displayColors }}
+      <div class="flex items-center gap-1">
+        {{- range $displayColors }}
+        {{- $isLight := or (eq .hex "#FFFFFF") (eq .hex "#FFFFF0") (eq .hex "#FAF9F6") -}}
+        <span
+          class="w-4 h-4 rounded-full inline-block{{ if $isLight }} border border-surface-300{{ end }}"
+          style="background-color: {{ .hex }}"
+          title="{{ .name }}"
+        ></span>
+        {{- end }}
+        {{- if gt $overflowCount 0 }}
+        <span class="text-[10px] text-surface-500 dark:text-surface-400 font-medium ms-0.5">+{{ $overflowCount }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+    {{- if not $product.inStock }}
+    <span class="mt-2 inline-block text-xs text-red-500 font-medium">Out of Stock</span>
+    {{- end }}
+  </div>
+</div>

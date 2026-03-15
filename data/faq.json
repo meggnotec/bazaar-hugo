@@ -1,0 +1,92 @@
+{
+  "groups": [
+    {
+      "title": "Shipping & Delivery",
+      "items": [
+        {
+          "question": "How long does standard shipping take?",
+          "answer": "Standard shipping within the continental United States takes 3-5 business days from the date of shipment. You will receive a tracking number via email once your order has been dispatched from our warehouse."
+        },
+        {
+          "question": "Do you offer free shipping?",
+          "answer": "Yes, we offer free standard shipping on all orders over $99 within the United States. Orders under $99 ship for a flat rate of $7.95. Expedited and overnight shipping options are available at checkout for an additional fee."
+        },
+        {
+          "question": "Do you ship internationally?",
+          "answer": "We currently ship to the United States, Canada, the United Kingdom, and the European Union. International orders typically arrive within 7-14 business days. Import duties and taxes may apply depending on your country and are the responsibility of the recipient."
+        },
+        {
+          "question": "Can I track my order?",
+          "answer": "Absolutely. Once your order ships, you will receive an email with a tracking number and a link to track your package in real time. You can also check your order status by logging into your account and visiting the Orders section."
+        },
+        {
+          "question": "What happens if my package is lost or damaged?",
+          "answer": "If your package arrives damaged or does not arrive within the expected timeframe, please contact our support team at hello@bazaar-studio.com within 14 days of your expected delivery date. We will work with the carrier to resolve the issue and either reship your order or issue a full refund."
+        }
+      ]
+    },
+    {
+      "title": "Returns & Exchanges",
+      "items": [
+        {
+          "question": "What is your return policy?",
+          "answer": "We accept returns on unworn, unwashed items with original tags attached within 30 days of delivery. To start a return, log into your account and visit the Orders section, or contact our support team. Refunds are processed within 5-7 business days after we receive the returned item."
+        },
+        {
+          "question": "Can I exchange an item for a different size or color?",
+          "answer": "Yes, exchanges are free for the first exchange. Simply initiate a return and place a new order for the correct size or color. If you prefer, our support team can help coordinate the exchange to ensure your new item is reserved while your return is in transit."
+        },
+        {
+          "question": "Who pays for return shipping?",
+          "answer": "For standard returns within the United States, we provide a prepaid return shipping label at no cost. International returns are the responsibility of the customer. If your item arrived damaged or defective, we will cover return shipping regardless of location."
+        },
+        {
+          "question": "Are sale items final sale?",
+          "answer": "Items marked as 'Final Sale' cannot be returned or exchanged. Regular sale items (those discounted but not marked Final Sale) follow our standard 30-day return policy. The product page will clearly indicate if an item is final sale before you add it to your cart."
+        }
+      ]
+    },
+    {
+      "title": "Sizing & Fit",
+      "items": [
+        {
+          "question": "How do I find my size?",
+          "answer": "Each product page includes a detailed size guide with measurements in both inches and centimeters. We recommend measuring a garment you already own that fits well and comparing those measurements to our size chart. If you are between sizes, we suggest sizing up for a more relaxed fit or sizing down for a slimmer fit."
+        },
+        {
+          "question": "Do your sizes run true to size?",
+          "answer": "Most of our garments are designed to run true to size, but each product page includes specific fit notes (Slim Fit, Relaxed Fit, Oversized, etc.) to help guide your decision. We always recommend checking the size guide for exact measurements rather than relying on your usual size alone."
+        },
+        {
+          "question": "What if the item does not fit?",
+          "answer": "No worries — we offer free exchanges on your first exchange. If the fit is not right, simply initiate a return or exchange through your account or by contacting our support team. We want you to love what you wear, so do not hesitate to try a different size."
+        },
+        {
+          "question": "Do you offer petite or plus sizes?",
+          "answer": "We are actively expanding our size range. Currently, most items are available from XS to XXL. Select styles are available in extended sizes. We are committed to inclusive sizing and are working to offer a broader range in upcoming collections. Sign up for our newsletter to be the first to know about new size launches."
+        }
+      ]
+    },
+    {
+      "title": "Payment & Security",
+      "items": [
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards (Visa, Mastercard, American Express, Discover), PayPal, Apple Pay, and Google Pay. All transactions are processed through a secure, PCI-compliant payment gateway to protect your financial information."
+        },
+        {
+          "question": "Is my payment information secure?",
+          "answer": "Your security is our top priority. All payment data is encrypted using industry-standard SSL/TLS encryption and processed through PCI DSS Level 1 compliant payment processors. We never store your full credit card number on our servers."
+        },
+        {
+          "question": "Do you offer buy now, pay later options?",
+          "answer": "Yes, we partner with Afterpay and Klarna to offer interest-free installment plans. You can split your purchase into 4 equal payments with no additional fees when you pay on time. These options are available at checkout on orders over $50."
+        },
+        {
+          "question": "Can I use multiple discount codes on one order?",
+          "answer": "Only one promotional code can be applied per order. However, promotional codes can typically be combined with existing sale prices unless otherwise stated in the promotion terms. Gift cards are not considered promotional codes and can be used alongside a discount code."
+        }
+      ]
+    }
+  ]
+}

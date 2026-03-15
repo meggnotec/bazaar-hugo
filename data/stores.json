@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "city": "New York",
+    "name": "Bazaar SoHo",
+    "address": "123 Spring Street, SoHo, New York, NY 10012",
+    "phone": "+1 (212) 555-0147",
+    "hours": "Mon–Sat: 10AM–8PM, Sun: 11AM–6PM",
+    "placeholderColor": "#fda4af",
+    "coordinates": { "lat": 40.7223, "lng": -73.9984 }
+  },
+  {
+    "id": 2,
+    "city": "Los Angeles",
+    "name": "Bazaar Melrose",
+    "address": "8400 Melrose Avenue, West Hollywood, CA 90069",
+    "phone": "+1 (323) 555-0198",
+    "hours": "Mon–Sat: 10AM–9PM, Sun: 11AM–7PM",
+    "placeholderColor": "#fdba74",
+    "coordinates": { "lat": 34.0837, "lng": -118.3695 }
+  },
+  {
+    "id": 3,
+    "city": "London",
+    "name": "Bazaar Mayfair",
+    "address": "47 Bond Street, Mayfair, London W1S 2PQ",
+    "phone": "+44 20 7946 0321",
+    "hours": "Mon–Sat: 10AM–7PM, Sun: 12PM–6PM",
+    "placeholderColor": "#c4b5fd",
+    "coordinates": { "lat": 51.5137, "lng": -0.1420 }
+  },
+  {
+    "id": 4,
+    "city": "Paris",
+    "name": "Bazaar Le Marais",
+    "address": "15 Rue des Francs Bourgeois, 75004 Paris",
+    "phone": "+33 1 42 72 0055",
+    "hours": "Mon–Sat: 10AM–7:30PM, Sun: Closed",
+    "placeholderColor": "#fde68a",
+    "coordinates": { "lat": 48.8566, "lng": 2.3600 }
+  },
+  {
+    "id": 5,
+    "city": "Tokyo",
+    "name": "Bazaar Omotesando",
+    "address": "5-8-1 Jingumae, Shibuya, Tokyo 150-0001",
+    "phone": "+81 3 6419 0088",
+    "hours": "Daily: 11AM–8PM",
+    "placeholderColor": "#7dd3fc",
+    "coordinates": { "lat": 35.6654, "lng": 139.7105 }
+  },
+  {
+    "id": 6,
+    "city": "Sydney",
+    "name": "Bazaar Paddington",
+    "address": "380 Oxford Street, Paddington, NSW 2021",
+    "phone": "+61 2 9331 0044",
+    "hours": "Mon–Sat: 10AM–6PM, Sun: 11AM–5PM",
+    "placeholderColor": "#6ee7b7",
+    "coordinates": { "lat": -33.8846, "lng": 151.2269 }
+  }
+]

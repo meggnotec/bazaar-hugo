@@ -1,0 +1,20 @@
+{{- /* PromoCodeInput — Promo code input with Apply button (validation handled in JS) */ -}}
+<div class="promo-code-section">
+  <div class="flex gap-2">
+    <input
+      type="text"
+      id="promo-input"
+      placeholder="Promo code"
+      class="input flex-1"
+      aria-label="Promo code"
+    />
+    <button
+      type="button"
+      id="promo-apply"
+      class="btn-outline text-sm whitespace-nowrap"
+    >
+      Apply
+    </button>
+  </div>
+  <p id="promo-message" class="text-sm mt-2 hidden"></p>
+</div>

@@ -1,0 +1,40 @@
+{{- /* Pagination — Page navigation with prev/next and page numbers */ -}}
+{{- /* Accepts either Hugo's built-in .Paginator or a dict with currentPage, totalPages, basePath */ -}}
+{{- $currentPage := .currentPage | default 1 -}}
+{{- $totalPages := .totalPages | default 1 -}}
+{{- $basePath := .basePath | default "/" -}}
+{{- if gt $totalPages 1 }}
+<nav aria-label="Pagination" class="flex items-center justify-center gap-2 mt-12">
+  {{- if gt $currentPage 1 }}
+  {{- $prevPage := sub $currentPage 1 -}}
+  <a
+    href="{{ if eq $prevPage 1 }}{{ $basePath }}{{ else }}{{ $basePath }}?page={{ $prevPage }}{{ end }}"
+    class="rounded-lg border border-surface-300 dark:border-surface-600 px-4 py-2 text-sm font-medium text-surface-700 dark:text-surface-300 hover:border-primary-500 hover:text-primary-500 transition-colors"
+    aria-label="Previous page"
+  >
+    &larr; Previous
+  </a>
+  {{- end }}
+
+  {{- range $page := seq $totalPages }}
+  <a
+    href="{{ if eq $page 1 }}{{ $basePath }}{{ else }}{{ $basePath }}?page={{ $page }}{{ end }}"
+    class="rounded-lg px-4 py-2 text-sm font-medium transition-colors {{ if eq $page $currentPage }}bg-primary-600 text-white shadow-md{{ else }}border border-surface-300 dark:border-surface-600 text-surface-700 dark:text-surface-300 hover:border-primary-500 hover:text-primary-500{{ end }}"
+    {{ if eq $page $currentPage }}aria-current="page"{{ end }}
+  >
+    {{ $page }}
+  </a>
+  {{- end }}
+
+  {{- if lt $currentPage $totalPages }}
+  {{- $nextPage := add $currentPage 1 -}}
+  <a
+    href="{{ $basePath }}?page={{ $nextPage }}"
+    class="rounded-lg border border-surface-300 dark:border-surface-600 px-4 py-2 text-sm font-medium text-surface-700 dark:text-surface-300 hover:border-primary-500 hover:text-primary-500 transition-colors"
+    aria-label="Next page"
+  >
+    Next &rarr;
+  </a>
+  {{- end }}
+</nav>
+{{- end }}

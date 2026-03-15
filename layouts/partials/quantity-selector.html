@@ -1,0 +1,35 @@
+{{- /* QuantitySelector — Increment/decrement quantity input */ -}}
+{{- $value := .value | default 1 -}}
+{{- $min := .min | default 1 -}}
+{{- $max := .max | default 10 -}}
+<div class="quantity-selector flex items-center gap-0 border border-surface-300 dark:border-surface-600 rounded-lg overflow-hidden">
+  <button
+    type="button"
+    class="qty-decrease w-10 h-10 flex items-center justify-center text-surface-600 dark:text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-700 transition-colors cursor-pointer"
+    aria-label="Decrease quantity"
+    data-min="{{ $min }}"
+  >
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+    </svg>
+  </button>
+  <input
+    type="number"
+    class="qty-input w-12 h-10 text-center text-sm font-medium bg-transparent border-x border-surface-300 dark:border-surface-600 text-surface-900 dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+    value="{{ $value }}"
+    min="{{ $min }}"
+    max="{{ $max }}"
+    readonly
+    aria-label="Quantity"
+  />
+  <button
+    type="button"
+    class="qty-increase w-10 h-10 flex items-center justify-center text-surface-600 dark:text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-700 transition-colors cursor-pointer"
+    aria-label="Increase quantity"
+    data-max="{{ $max }}"
+  >
+    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+  </button>
+</div>

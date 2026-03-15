@@ -1,0 +1,372 @@
+[
+  {
+    "productId": 1,
+    "author": "Sarah M.",
+    "rating": 5,
+    "date": "2026-02-15",
+    "title": "Absolutely love this sweater",
+    "body": "The quality is incredible — soft, warm, and holds its shape beautifully after washing. I sized up for an oversized look and it's perfect for layering. Worth every penny.",
+    "verified": true,
+    "helpful": 12
+  },
+  {
+    "productId": 1,
+    "author": "Emily R.",
+    "rating": 4,
+    "date": "2026-01-28",
+    "title": "Great quality, runs slightly large",
+    "body": "Beautiful sweater with a luxurious feel. I'd recommend sizing down if you prefer a more fitted look. The ivory color is gorgeous and true to the photos.",
+    "verified": true,
+    "helpful": 8
+  },
+  {
+    "productId": 1,
+    "author": "Jessica L.",
+    "rating": 5,
+    "date": "2026-02-02",
+    "title": "My new favorite winter staple",
+    "body": "I've been wearing this non-stop since it arrived. The cashmere blend is noticeably softer than other sweaters in this price range. Already planning to get the charcoal color too.",
+    "verified": true,
+    "helpful": 15
+  },
+  {
+    "productId": 1,
+    "author": "Amanda K.",
+    "rating": 4,
+    "date": "2026-01-10",
+    "title": "Lovely but pilling after a few wears",
+    "body": "The sweater is gorgeous and very comfortable. I noticed some minor pilling under the arms after about 5 wears, but a fabric shaver took care of it easily. Still a great buy overall.",
+    "verified": false,
+    "helpful": 6
+  },
+  {
+    "productId": 2,
+    "author": "Olivia T.",
+    "rating": 5,
+    "date": "2026-02-20",
+    "title": "Stunning dress for special occasions",
+    "body": "This dress is absolutely beautiful. The silk drapes perfectly and the midnight color has a gorgeous subtle sheen. I wore it to a gallery opening and got so many compliments.",
+    "verified": true,
+    "helpful": 18
+  },
+  {
+    "productId": 2,
+    "author": "Rachel B.",
+    "rating": 5,
+    "date": "2026-01-15",
+    "title": "Worth the splurge",
+    "body": "I debated for weeks before buying this, but I'm so glad I did. The quality of the silk is exceptional and the cut is incredibly flattering. It photographs beautifully too.",
+    "verified": true,
+    "helpful": 11
+  },
+  {
+    "productId": 2,
+    "author": "Hannah W.",
+    "rating": 4,
+    "date": "2026-02-05",
+    "title": "Beautiful but delicate",
+    "body": "The dress is stunning and fits like a dream. Just be careful with the fabric — it's real silk so needs proper care. The champagne color is even prettier in person than in photos.",
+    "verified": true,
+    "helpful": 9
+  },
+  {
+    "productId": 3,
+    "author": "Mia C.",
+    "rating": 5,
+    "date": "2026-03-01",
+    "title": "Perfect everyday shirt",
+    "body": "I live in this shirt. The linen gets softer with every wash and the oversized fit is incredibly flattering. I have it in white and just ordered the sand color.",
+    "verified": true,
+    "helpful": 22
+  },
+  {
+    "productId": 3,
+    "author": "Lucy G.",
+    "rating": 4,
+    "date": "2026-02-12",
+    "title": "Great for warm weather",
+    "body": "Exactly what I was looking for — a relaxed linen shirt that looks put-together without trying too hard. The only reason I didn't give 5 stars is it wrinkles easily, but that's just linen being linen.",
+    "verified": true,
+    "helpful": 7
+  },
+  {
+    "productId": 3,
+    "author": "Grace P.",
+    "rating": 3,
+    "date": "2026-01-20",
+    "title": "Nice but too oversized for me",
+    "body": "The quality is great and the fabric feels wonderful, but even sizing down it was still very oversized on my frame. If you're petite, consider going two sizes down.",
+    "verified": false,
+    "helpful": 14
+  },
+  {
+    "productId": 7,
+    "author": "Charlotte D.",
+    "rating": 5,
+    "date": "2026-02-18",
+    "title": "Best jeans I've ever owned",
+    "body": "These jeans are perfection. The high waist sits in exactly the right place and the straight leg is incredibly flattering. The rigid denim is starting to mold to my body and I love the way they're fading.",
+    "verified": true,
+    "helpful": 28
+  },
+  {
+    "productId": 7,
+    "author": "Sophie N.",
+    "rating": 5,
+    "date": "2026-01-30",
+    "title": "True to size, amazing quality",
+    "body": "Finally jeans that don't stretch out by the end of the day! The organic cotton denim is substantial and well-made. I appreciate the vintage feel and the brass hardware is a nice touch.",
+    "verified": true,
+    "helpful": 19
+  },
+  {
+    "productId": 7,
+    "author": "Natalie F.",
+    "rating": 4,
+    "date": "2026-02-08",
+    "title": "Great jeans, stiff at first",
+    "body": "These are seriously well-made jeans. They were quite stiff out of the box and took a few wears to soften up, but now they're incredibly comfortable. The indigo wash is beautiful.",
+    "verified": true,
+    "helpful": 10
+  },
+  {
+    "productId": 11,
+    "author": "Thomas H.",
+    "rating": 5,
+    "date": "2026-02-25",
+    "title": "Statement piece for winter",
+    "body": "This overcoat is absolutely stunning. The camel color is rich and warm, the wool blend is heavy without being burdensome, and the double-breasted design looks incredibly sophisticated.",
+    "verified": true,
+    "helpful": 16
+  },
+  {
+    "productId": 11,
+    "author": "James R.",
+    "rating": 5,
+    "date": "2026-01-22",
+    "title": "Exceptional quality and fit",
+    "body": "I've owned many overcoats but this one stands out. The relaxed fit is perfect over a suit, and the length is just right. The horn buttons and fully lined interior show real attention to detail.",
+    "verified": true,
+    "helpful": 13
+  },
+  {
+    "productId": 11,
+    "author": "William K.",
+    "rating": 4,
+    "date": "2026-02-10",
+    "title": "Beautiful coat, runs large",
+    "body": "The coat itself is gorgeous and incredibly well-made. I'd suggest sizing down as the relaxed fit is quite generous. The black color is very elegant for formal occasions.",
+    "verified": true,
+    "helpful": 7
+  },
+  {
+    "productId": 12,
+    "author": "Daniel S.",
+    "rating": 5,
+    "date": "2026-01-18",
+    "title": "Best puffer jacket for the price",
+    "body": "Incredibly warm for how lightweight it is. Love that it packs into its own pocket — perfect for travel. The olive color is beautiful and the water-resistant shell handled a surprise rain shower perfectly.",
+    "verified": true,
+    "helpful": 24
+  },
+  {
+    "productId": 12,
+    "author": "Michael P.",
+    "rating": 4,
+    "date": "2026-02-03",
+    "title": "Warm and stylish",
+    "body": "Great jacket that looks more premium than its sale price suggests. The only thing I'd change is adding a hood option. The ribbed cuffs do a great job sealing in warmth though.",
+    "verified": true,
+    "helpful": 11
+  },
+  {
+    "productId": 12,
+    "author": "Andrew L.",
+    "rating": 5,
+    "date": "2026-01-25",
+    "title": "Excellent down jacket",
+    "body": "At the sale price this is an absolute steal. The down fill is lofty and warm, the fit is flattering without being too slim, and I appreciate that it uses recycled materials.",
+    "verified": true,
+    "helpful": 17
+  },
+  {
+    "productId": 14,
+    "author": "Victoria J.",
+    "rating": 5,
+    "date": "2026-02-22",
+    "title": "The last tote you'll ever buy",
+    "body": "This bag is perfection. The leather is thick and substantial, and it's already developing a beautiful patina. It fits my laptop, water bottle, and everything else I need for the day.",
+    "verified": true,
+    "helpful": 31
+  },
+  {
+    "productId": 14,
+    "author": "Catherine M.",
+    "rating": 4,
+    "date": "2026-01-14",
+    "title": "Beautiful craftsmanship",
+    "body": "The quality of the leather is outstanding. It's quite structured when new and takes a few weeks to soften up. The cognac color is rich and warm. A little heavier than expected empty, but worth it for the durability.",
+    "verified": true,
+    "helpful": 14
+  },
+  {
+    "productId": 14,
+    "author": "Rebecca T.",
+    "rating": 5,
+    "date": "2026-02-08",
+    "title": "Daily carry perfection",
+    "body": "Three months in and this bag just keeps getting better. The patina on the cognac leather is gorgeous. The interior pockets are well-placed and the magnetic snap is strong enough to keep everything secure.",
+    "verified": true,
+    "helpful": 20
+  },
+  {
+    "productId": 17,
+    "author": "David W.",
+    "rating": 5,
+    "date": "2026-03-02",
+    "title": "Cleanest sneakers I've owned",
+    "body": "The Italian leather is buttery soft and the minimalist design goes with literally everything. I've worn them to the office, on dates, and just walking around. Super versatile.",
+    "verified": true,
+    "helpful": 15
+  },
+  {
+    "productId": 17,
+    "author": "Chris A.",
+    "rating": 4,
+    "date": "2026-02-14",
+    "title": "Excellent quality, needs break-in",
+    "body": "These are seriously well-made sneakers. The leather quality is noticeably better than other brands in this price range. They were a bit stiff for the first few wears but now they're incredibly comfortable.",
+    "verified": true,
+    "helpful": 9
+  },
+  {
+    "productId": 17,
+    "author": "Alex R.",
+    "rating": 5,
+    "date": "2026-01-28",
+    "title": "My go-to everyday shoes",
+    "body": "Simple, clean, well-made. What more could you want? The all-white version looks fresh and the cushioned insole means I can wear them all day without any discomfort.",
+    "verified": true,
+    "helpful": 12
+  },
+  {
+    "productId": 18,
+    "author": "Laura H.",
+    "rating": 5,
+    "date": "2026-02-17",
+    "title": "Perfect Chelsea boots",
+    "body": "The suede is beautiful and the tan color is exactly as pictured. They're comfortable right out of the box and the stacked heel adds just the right amount of height. Great with jeans or dresses.",
+    "verified": true,
+    "helpful": 16
+  },
+  {
+    "productId": 18,
+    "author": "Emma S.",
+    "rating": 4,
+    "date": "2026-01-08",
+    "title": "Love them but need waterproofing",
+    "body": "Beautiful boots with great quality suede. The water-resistant coating works for light drizzle but I'd recommend adding additional suede protector spray for heavy rain days. The elastic panels make them easy to slip on and off.",
+    "verified": true,
+    "helpful": 21
+  },
+  {
+    "productId": 18,
+    "author": "Lisa M.",
+    "rating": 5,
+    "date": "2026-02-01",
+    "title": "Stylish and comfortable",
+    "body": "At the sale price these are an incredible deal. The leather-lined interior feels premium and the stacked heel is sturdy. I've worn them almost every day for a month and they still look great.",
+    "verified": true,
+    "helpful": 13
+  },
+  {
+    "productId": 4,
+    "author": "Anna B.",
+    "rating": 5,
+    "date": "2026-02-20",
+    "title": "Essential wardrobe piece",
+    "body": "This turtleneck is a staple in my wardrobe now. The ribbed knit is stretchy and comfortable, and the organic cotton feels soft against the skin. Looks great tucked into trousers or layered under a blazer.",
+    "verified": true,
+    "helpful": 10
+  },
+  {
+    "productId": 4,
+    "author": "Nina K.",
+    "rating": 4,
+    "date": "2026-01-15",
+    "title": "Great basics turtleneck",
+    "body": "Good quality for the price. The oatmeal color is a versatile neutral that goes with everything. It's slim fitting so if you prefer a looser fit, consider sizing up. Very happy with this purchase.",
+    "verified": true,
+    "helpful": 5
+  },
+  {
+    "productId": 4,
+    "author": "Karen W.",
+    "rating": 5,
+    "date": "2026-02-10",
+    "title": "Cozy and flattering",
+    "body": "Love this turtleneck! The slim fit is really flattering without being too tight. I bought it in black and burgundy — both colors are beautiful. Holds up well after multiple washes.",
+    "verified": true,
+    "helpful": 8
+  },
+  {
+    "productId": 9,
+    "author": "Diana F.",
+    "rating": 5,
+    "date": "2026-03-05",
+    "title": "Gorgeous pleated skirt",
+    "body": "The pleats on this skirt are stunning — they catch the light beautifully and move so elegantly. The elastic waistband is a huge plus for all-day comfort. I've received countless compliments wearing this.",
+    "verified": true,
+    "helpful": 14
+  },
+  {
+    "productId": 9,
+    "author": "Paula E.",
+    "rating": 5,
+    "date": "2026-02-25",
+    "title": "Versatile and elegant",
+    "body": "This skirt goes from desk to dinner effortlessly. I paired it with a simple knit for work and switched to a silk top for a night out. The bronze color is unique and eye-catching.",
+    "verified": true,
+    "helpful": 11
+  },
+  {
+    "productId": 9,
+    "author": "Sophia R.",
+    "rating": 4,
+    "date": "2026-01-30",
+    "title": "Beautiful but wrinkle-prone",
+    "body": "The skirt is beautiful and fits perfectly. The only downside is that the fabric wrinkles easily when sitting for long periods. A quick steam fixes it, but something to be aware of. Still love it overall.",
+    "verified": true,
+    "helpful": 7
+  },
+  {
+    "productId": 15,
+    "author": "Margaret L.",
+    "rating": 5,
+    "date": "2026-02-28",
+    "title": "Pure luxury",
+    "body": "This scarf is like wrapping yourself in a cloud. The cashmere is incredibly soft and lightweight yet surprisingly warm. The heather grey is a perfect neutral. I use it as both a scarf and a shawl.",
+    "verified": true,
+    "helpful": 19
+  },
+  {
+    "productId": 15,
+    "author": "Rose A.",
+    "rating": 5,
+    "date": "2026-02-10",
+    "title": "Worth the investment",
+    "body": "I've owned cheaper cashmere scarves before and the difference is immediately noticeable. This is pure, Grade-A cashmere — no scratchiness, no pilling. The fringe detailing is a lovely touch.",
+    "verified": true,
+    "helpful": 16
+  },
+  {
+    "productId": 15,
+    "author": "June T.",
+    "rating": 5,
+    "date": "2026-01-20",
+    "title": "Perfect gift",
+    "body": "Bought this as a gift for my mother and she absolutely loves it. The blush color is beautiful and the oversized dimensions mean it can be worn so many different ways. Comes in a lovely packaging too.",
+    "verified": true,
+    "helpful": 12
+  }
+]

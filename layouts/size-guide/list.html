@@ -1,0 +1,138 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Size Guide" "subtitle" "Find your perfect fit with our comprehensive sizing charts" "badge" "Sizing") }}
+
+  <section class="section">
+    <div class="container-custom max-w-4xl">
+      {{- $sizeData := .Site.Data.size_guide -}}
+
+      <!-- Tabs -->
+      <div class="flex border-b border-surface-200 dark:border-surface-700 mb-8">
+        {{ range $i, $tab := $sizeData.tabs }}
+        <button
+          type="button"
+          class="size-tab flex-1 py-3 text-sm font-semibold text-center border-b-2 transition-colors cursor-pointer {{ if eq $i 0 }}border-primary-500 text-primary-500{{ else }}border-transparent text-surface-500 hover:text-surface-700 dark:hover:text-surface-300{{ end }}"
+          data-tab="{{ $tab.id }}"
+        >
+          {{ $tab.label }}
+        </button>
+        {{ end }}
+      </div>
+
+      <!-- Tab content -->
+      {{ range $i, $tab := $sizeData.tabs }}
+      <div class="size-panel {{ if ne $i 0 }}hidden{{ end }}" data-panel="{{ $tab.id }}">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-surface-50 dark:bg-surface-800">
+                {{ range $tab.columns }}
+                <th class="text-start p-3 font-heading font-semibold text-surface-900 dark:text-white whitespace-nowrap">{{ . }}</th>
+                {{ end }}
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-surface-200 dark:divide-surface-700">
+              {{ range $tab.measurements }}
+              <tr class="hover:bg-surface-50 dark:hover:bg-surface-800/50 transition-colors">
+                <td class="p-3 font-semibold text-surface-900 dark:text-white">{{ .size }}</td>
+                {{ with .us }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}</td>{{ end }}
+                {{ with .uk }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}</td>{{ end }}
+                {{ with .eu }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}</td>{{ end }}
+                {{ with .bust }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}"</td>{{ end }}
+                {{ with .bustCm }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}cm</td>{{ end }}
+                {{ with .waist }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}"</td>{{ end }}
+                {{ with .waistCm }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}cm</td>{{ end }}
+                {{ with .hip }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}"</td>{{ end }}
+                {{ with .hipCm }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}cm</td>{{ end }}
+                {{ with .chest }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}"</td>{{ end }}
+                {{ with .chestCm }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}cm</td>{{ end }}
+                {{ with .neck }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}"</td>{{ end }}
+                {{ with .neckCm }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}cm</td>{{ end }}
+                {{ with .usShoe }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}</td>{{ end }}
+                {{ with .ukShoe }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}</td>{{ end }}
+                {{ with .euShoe }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}</td>{{ end }}
+                {{ with .footLength }}<td class="p-3 text-surface-600 dark:text-surface-400">{{ . }}cm</td>{{ end }}
+              </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- How to Measure -->
+      <div class="mt-16">
+        <h2 class="text-2xl md:text-3xl font-heading font-bold text-surface-900 dark:text-white text-center mb-10">How to Measure</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- SVG body diagram -->
+          <div class="flex justify-center">
+            <svg viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[250px]" aria-label="Body measurement diagram">
+              <!-- Body silhouette -->
+              <g fill="none" stroke="currentColor" class="text-surface-300 dark:text-surface-600" stroke-width="2">
+                <!-- Head -->
+                <circle cx="150" cy="50" r="30" />
+                <!-- Neck -->
+                <line x1="150" y1="80" x2="150" y2="100" />
+                <!-- Shoulders -->
+                <line x1="80" y1="110" x2="220" y2="110" />
+                <!-- Torso -->
+                <path d="M 80 110 Q 75 200, 95 280 L 205 280 Q 225 200, 220 110" />
+                <!-- Arms -->
+                <path d="M 80 110 Q 50 180, 40 260" />
+                <path d="M 220 110 Q 250 180, 260 260" />
+                <!-- Legs -->
+                <line x1="120" y1="280" x2="110" y2="460" />
+                <line x1="180" y1="280" x2="190" y2="460" />
+              </g>
+              <!-- Measurement arrows -->
+              <g fill="none" stroke="#f43f5e" stroke-width="1.5">
+                <!-- Bust -->
+                <line x1="55" y1="150" x2="90" y2="150" stroke-dasharray="4 2" />
+                <circle cx="50" cy="150" r="4" fill="#f43f5e" />
+                <text x="25" y="155" fill="#f43f5e" font-size="10" font-weight="600" text-anchor="end">Bust</text>
+                <!-- Waist -->
+                <line x1="55" y1="200" x2="100" y2="200" stroke-dasharray="4 2" />
+                <circle cx="50" cy="200" r="4" fill="#f43f5e" />
+                <text x="25" y="205" fill="#f43f5e" font-size="10" font-weight="600" text-anchor="end">Waist</text>
+                <!-- Hips -->
+                <line x1="55" y1="260" x2="100" y2="260" stroke-dasharray="4 2" />
+                <circle cx="50" cy="260" r="4" fill="#f43f5e" />
+                <text x="25" y="265" fill="#f43f5e" font-size="10" font-weight="600" text-anchor="end">Hips</text>
+              </g>
+            </svg>
+          </div>
+          <!-- Instructions -->
+          <div class="space-y-4">
+            {{ range $sizeData.howToMeasure }}
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-sm font-bold text-primary-500">{{ slicestr .area 0 1 | upper }}</span>
+              </div>
+              <div>
+                <h3 class="font-heading font-semibold text-surface-900 dark:text-white mb-1">{{ .area }}</h3>
+                <p class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed">{{ .instruction }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Sizing tips -->
+      {{ if $sizeData.tips }}
+      <div class="mt-16">
+        <h2 class="text-2xl font-heading font-bold text-surface-900 dark:text-white mb-6">Sizing Tips</h2>
+        <div class="card p-6">
+          <ul class="space-y-3">
+            {{ range $sizeData.tips }}
+            <li class="flex items-start gap-3 text-sm text-surface-600 dark:text-surface-400">
+              <svg class="h-5 w-5 text-primary-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>
+              {{ . }}
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

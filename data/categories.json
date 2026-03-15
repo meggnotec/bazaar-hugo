@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "slug": "women",
+    "name": "Women",
+    "description": "Curated collections for her",
+    "productCount": 8,
+    "image": "/images/categories/women.jpg",
+    "placeholderColor": "#c4a882"
+  },
+  {
+    "id": 2,
+    "slug": "men",
+    "name": "Men",
+    "description": "Essential styles for him",
+    "productCount": 6,
+    "image": "/images/categories/men.jpg",
+    "placeholderColor": "#9a8f80"
+  },
+  {
+    "id": 3,
+    "slug": "accessories",
+    "name": "Accessories",
+    "description": "Complete your look",
+    "productCount": 3,
+    "image": "/images/categories/accessories.jpg",
+    "placeholderColor": "#a08968"
+  },
+  {
+    "id": 4,
+    "slug": "shoes",
+    "name": "Shoes",
+    "description": "Step up your style",
+    "productCount": 2,
+    "image": "/images/categories/shoes.jpg",
+    "placeholderColor": "#d4b896"
+  },
+  {
+    "id": 5,
+    "slug": "outerwear",
+    "name": "Outerwear",
+    "description": "Layer up in style",
+    "productCount": 3,
+    "image": "/images/categories/outerwear.jpg",
+    "placeholderColor": "#8b9a6d"
+  },
+  {
+    "id": 6,
+    "slug": "sale",
+    "name": "Sale",
+    "description": "Up to 60% off selected styles",
+    "productCount": 2,
+    "image": "/images/categories/sale.jpg",
+    "placeholderColor": "#c8956c"
+  }
+]

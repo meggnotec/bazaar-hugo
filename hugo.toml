@@ -1,0 +1,30 @@
+baseURL = "https://bazaar-studio.com"
+languageCode = "en-us"
+title = "Bazaar Studio"
+
+[params]
+  tagline = "Your Style, Your Story"
+  description = "Premium fashion & lifestyle ecommerce store"
+  currencySymbol = "$"
+  freeShippingThreshold = 99
+
+[build]
+  writeStats = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[minify]
+  minifyOutput = true
+
+[sitemap]
+  changeFreq = "monthly"
+  priority = 0.5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

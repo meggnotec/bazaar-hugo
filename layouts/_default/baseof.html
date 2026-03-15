@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" dir="ltr" id="html-root">
+  <head>
+    {{ partial "seo-head.html" . }}
+    {{ $css := resources.Get "css/globals.css" | css.PostCSS }}
+    {{ if hugo.IsProduction }}
+      {{ $css = $css | minify | fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('bazaar-theme') || 'light';
+          var locale = localStorage.getItem('bazaar-locale') || 'en';
+          var dir = locale === 'ar' ? 'rtl' : 'ltr';
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+          document.documentElement.lang = locale;
+          document.documentElement.dir = dir;
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col pb-16 lg:pb-0">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {{ partial "announcement-bar.html" . }}
+    {{ partial "header.html" . }}
+    <main id="main-content" class="flex-1">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    {{ partial "mobile-menu.html" . }}
+    {{ partial "cart-drawer.html" . }}
+    {{ partial "quick-view.html" . }}
+    {{ partial "back-to-top.html" . }}
+    {{ partial "newsletter-popup.html" . }}
+    {{ partial "mobile-bottom-nav.html" . }}
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "publications": [
+    { "name": "Vogue", "placeholderColor": "#1e293b" },
+    { "name": "Elle", "placeholderColor": "#e11d48" },
+    { "name": "Harper's Bazaar", "placeholderColor": "#0f172a" },
+    { "name": "GQ", "placeholderColor": "#7c3aed" },
+    { "name": "WWD", "placeholderColor": "#475569" },
+    { "name": "Refinery29", "placeholderColor": "#f59e0b" }
+  ],
+  "mentions": [
+    {
+      "id": 1,
+      "publication": "Vogue",
+      "date": "2026-02-15",
+      "headline": "Bazaar Studio Is Redefining Accessible Luxury",
+      "excerpt": "The direct-to-consumer brand has managed to strike the perfect balance between premium quality and approachable pricing, making designer-level fashion available to a broader audience.",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "publication": "Elle",
+      "date": "2026-01-28",
+      "headline": "10 Brands Leading the Sustainable Fashion Movement",
+      "excerpt": "Bazaar Studio's commitment to ethical sourcing and carbon-neutral shipping places them among the most progressive brands in the industry.",
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "publication": "Harper's Bazaar",
+      "date": "2025-12-10",
+      "headline": "The Spring 2026 Collections You Need to Know",
+      "excerpt": "Bazaar Studio's Spring/Summer lineup brings coastal elegance to everyday wardrobes with flowing silhouettes and sun-kissed palettes.",
+      "url": "#"
+    },
+    {
+      "id": 4,
+      "publication": "GQ",
+      "date": "2025-11-20",
+      "headline": "Best Menswear Brands for the Modern Wardrobe",
+      "excerpt": "Bazaar Studio's men's essentials collection offers versatile, well-constructed pieces that work from the office to weekend outings.",
+      "url": "#"
+    },
+    {
+      "id": 5,
+      "publication": "WWD",
+      "date": "2025-10-05",
+      "headline": "Bazaar Studio Expands to Tokyo and Sydney",
+      "excerpt": "The fashion label announced its expansion into Asia-Pacific markets with flagship stores in Omotesando and Paddington.",
+      "url": "#"
+    },
+    {
+      "id": 6,
+      "publication": "Refinery29",
+      "date": "2025-09-18",
+      "headline": "The Capsule Wardrobe Edit: 15 Pieces You Actually Need",
+      "excerpt": "Bazaar Studio's Minimalist Essentials collection features five of our top picks for building a wardrobe that works year-round.",
+      "url": "#"
+    },
+    {
+      "id": 7,
+      "publication": "Vogue",
+      "date": "2025-08-22",
+      "headline": "Direct-to-Consumer Brands Worth Watching in 2025",
+      "excerpt": "With their transparent pricing model and commitment to quality over quantity, Bazaar Studio continues to disrupt the traditional retail landscape.",
+      "url": "#"
+    },
+    {
+      "id": 8,
+      "publication": "Elle",
+      "date": "2025-07-14",
+      "headline": "Summer Style: The Resort Looks We're Packing",
+      "excerpt": "Bazaar Studio's Resort Collection offers vacation-ready pieces that transition seamlessly from beach to dinner without missing a beat.",
+      "url": "#"
+    }
+  ]
+}

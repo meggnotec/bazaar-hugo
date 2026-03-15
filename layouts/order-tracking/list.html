@@ -1,0 +1,108 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Track Your Order" "subtitle" "Enter your order details to check the status" "badge" "Tracking") }}
+
+  <section class="section">
+    <div class="container-custom max-w-3xl">
+      <!-- Tracking form -->
+      <div class="card p-6 md:p-8 mb-8">
+        <h2 class="text-xl font-heading font-bold text-surface-900 dark:text-white mb-6">Enter Your Order Details</h2>
+        <form id="tracking-form" class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('tracking-result').classList.remove('hidden');">
+          <div>
+            <label for="tracking-order" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Order Number</label>
+            <input type="text" id="tracking-order" class="input" placeholder="e.g., BZ-2024-001" required />
+          </div>
+          <div>
+            <label for="tracking-email" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Email Address</label>
+            <input type="email" id="tracking-email" class="input" placeholder="Email used for the order" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-full sm:w-auto">Track Order</button>
+        </form>
+      </div>
+
+      <!-- Mock tracking result (hidden by default) -->
+      <div id="tracking-result" class="hidden space-y-8">
+        <!-- Status timeline -->
+        <div class="card p-6 md:p-8">
+          <h3 class="text-lg font-heading font-bold text-surface-900 dark:text-white mb-6">Order Status</h3>
+          <div class="relative">
+            {{- $steps := slice
+              (dict "title" "Order Placed" "date" "Mar 10, 2026 - 2:30 PM" "status" "completed")
+              (dict "title" "Processing" "date" "Mar 10, 2026 - 4:15 PM" "status" "completed")
+              (dict "title" "Shipped" "date" "Mar 11, 2026 - 10:00 AM" "status" "current")
+              (dict "title" "Delivered" "date" "Expected Mar 14, 2026" "status" "upcoming")
+            -}}
+            <div class="space-y-0">
+              {{ range $i, $step := $steps }}
+              <div class="flex gap-4 {{ if lt $i (sub (len $steps) 1) }}pb-8{{ end }}">
+                <!-- Step indicator -->
+                <div class="flex flex-col items-center">
+                  {{ if eq .status "completed" }}
+                  <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                    <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  </div>
+                  {{ else if eq .status "current" }}
+                  <div class="w-10 h-10 rounded-full bg-primary-500 flex items-center justify-center flex-shrink-0 animate-pulse">
+                    <div class="w-3 h-3 rounded-full bg-white"></div>
+                  </div>
+                  {{ else }}
+                  <div class="w-10 h-10 rounded-full border-2 border-surface-300 dark:border-surface-600 flex items-center justify-center flex-shrink-0">
+                    <div class="w-3 h-3 rounded-full bg-surface-300 dark:bg-surface-600"></div>
+                  </div>
+                  {{ end }}
+                  {{ if lt $i (sub (len $steps) 1) }}
+                  <div class="w-0.5 flex-1 min-h-[32px] {{ if eq .status "completed" }}bg-emerald-500{{ else }}bg-surface-300 dark:bg-surface-600{{ end }}"></div>
+                  {{ end }}
+                </div>
+                <!-- Step content -->
+                <div class="pt-2">
+                  <h4 class="font-heading font-semibold {{ if eq .status "upcoming" }}text-surface-400 dark:text-surface-500{{ else }}text-surface-900 dark:text-white{{ end }}">{{ .title }}</h4>
+                  <p class="text-sm {{ if eq .status "upcoming" }}text-surface-400 dark:text-surface-500{{ else }}text-surface-500 dark:text-surface-400{{ end }}">{{ .date }}</p>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Order details -->
+        <div class="card p-6 md:p-8">
+          <h3 class="text-lg font-heading font-bold text-surface-900 dark:text-white mb-6">Order Details</h3>
+          <div class="space-y-4">
+            <!-- Item 1 -->
+            <div class="flex items-center gap-4 pb-4 border-b border-surface-200 dark:border-surface-700">
+              <div class="w-16 h-20 rounded-lg bg-surface-100 dark:bg-surface-800 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <span class="text-xs text-surface-400 dark:text-surface-500">Item</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-heading font-semibold text-surface-900 dark:text-white">Cashmere Blend Sweater</h4>
+                <p class="text-sm text-surface-500 dark:text-surface-400">Size: M &bull; Color: Ivory</p>
+              </div>
+              <div class="text-end">
+                <span class="font-semibold text-surface-900 dark:text-white">$129.00</span>
+                <p class="text-xs text-surface-400 dark:text-surface-500">Qty: 1</p>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-20 rounded-lg bg-surface-100 dark:bg-surface-800 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <span class="text-xs text-surface-400 dark:text-surface-500">Item</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-heading font-semibold text-surface-900 dark:text-white">Leather Crossbody Bag</h4>
+                <p class="text-sm text-surface-500 dark:text-surface-400">Color: Tan</p>
+              </div>
+              <div class="text-end">
+                <span class="font-semibold text-surface-900 dark:text-white">$118.00</span>
+                <p class="text-xs text-surface-400 dark:text-surface-500">Qty: 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-surface-200 dark:border-surface-700 flex justify-between">
+            <span class="font-heading font-bold text-surface-900 dark:text-white">Total</span>
+            <span class="font-heading font-bold text-surface-900 dark:text-white">$247.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

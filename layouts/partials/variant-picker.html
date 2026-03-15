@@ -1,0 +1,245 @@
+{{- /* VariantPicker — Size button group + color swatches with size guide modal */ -}}
+{{- $sizes := .sizes -}}
+{{- $colors := .colors -}}
+{{- /* Detect size type for the correct size guide chart */ -}}
+{{- $firstSize := index $sizes 0 -}}
+{{- $isOneSize := eq $firstSize "One Size" -}}
+{{- $isShoeSize := false -}}
+{{- $isWaistSize := false -}}
+{{- $isLetterSize := false -}}
+{{- if not $isOneSize -}}
+  {{- $numericSize := 0 -}}
+  {{- /* Check if first size is a number */ -}}
+  {{- if findRE "^\\d+$" $firstSize -}}
+    {{- $numericSize = int $firstSize -}}
+    {{- if and (ge $numericSize 4) (le $numericSize 15) -}}
+      {{- $isShoeSize = true -}}
+    {{- else if and (ge $numericSize 23) (le $numericSize 40) -}}
+      {{- $isWaistSize = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if and (not $isShoeSize) (not $isWaistSize) -}}
+    {{- $isLetterSize = true -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="variant-picker space-y-5">
+  <!-- Size picker -->
+  <div>
+    <div class="flex items-center justify-between mb-3">
+      <span class="text-sm font-semibold text-surface-900 dark:text-white font-heading">Size</span>
+      {{- if not $isOneSize }}
+      <button
+        type="button"
+        class="size-guide-trigger text-xs text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 underline underline-offset-2 cursor-pointer"
+      >
+        Size Guide
+      </button>
+      {{- end }}
+    </div>
+    <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="Select size">
+      {{- range $index, $size := $sizes }}
+      <button
+        type="button"
+        class="size-btn px-4 py-2 rounded-lg border-2 text-sm font-semibold transition-all duration-200 cursor-pointer {{ if eq $index 0 }}border-primary-500 bg-primary-500 text-white{{ else }}border-surface-300 dark:border-surface-600 text-surface-700 dark:text-surface-300 hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400{{ end }}"
+        data-size="{{ $size }}"
+        role="radio"
+        aria-checked="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
+        aria-label="Size {{ $size }}"
+      >
+        {{ $size }}
+      </button>
+      {{- end }}
+    </div>
+  </div>
+
+  <!-- Color picker -->
+  {{- if gt (len $colors) 0 }}
+  <div>
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-sm font-semibold text-surface-900 dark:text-white font-heading">Color:</span>
+      <span class="selected-color-name text-sm text-surface-500 dark:text-surface-400">{{ (index $colors 0).name }}</span>
+    </div>
+    <div class="flex flex-wrap gap-3" role="radiogroup" aria-label="Select color">
+      {{- range $index, $color := $colors }}
+      <button
+        type="button"
+        class="color-swatch w-9 h-9 rounded-full border-2 transition-all duration-200 cursor-pointer relative {{ if eq $index 0 }}border-primary-500 ring-2 ring-primary-500/30 scale-110{{ else }}border-surface-300 dark:border-surface-600 hover:scale-110{{ end }}"
+        style="background-color: {{ $color.hex }}"
+        data-color-name="{{ $color.name }}"
+        data-color-hex="{{ $color.hex }}"
+        role="radio"
+        aria-checked="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
+        aria-label="Color {{ $color.name }}"
+        title="{{ $color.name }}"
+      >
+        {{- if eq $index 0 }}
+        <svg class="check-icon absolute inset-0 m-auto h-4 w-4 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+        {{- end }}
+      </button>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+</div>
+
+<!-- Size Guide Modal -->
+{{- if not $isOneSize }}
+<div id="size-guide-backdrop" class="fixed inset-0 bg-black/60 z-60 hidden" aria-hidden="true"></div>
+<div
+  id="size-guide-modal"
+  class="fixed inset-0 z-60 hidden items-center justify-center p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Size guide"
+>
+  <div class="bg-white dark:bg-surface-900 rounded-2xl shadow-2xl w-full max-w-xl max-h-[85vh] overflow-y-auto relative">
+    <!-- Header -->
+    <div class="sticky top-0 bg-white dark:bg-surface-900 border-b border-surface-200 dark:border-surface-700 px-6 py-4 flex items-center justify-between rounded-t-2xl z-10">
+      <div>
+        <h3 class="font-heading text-lg font-bold text-surface-900 dark:text-white">Size Guide</h3>
+        <p class="text-xs text-surface-500 dark:text-surface-400 mt-0.5">All measurements in inches</p>
+      </div>
+      <button
+        id="size-guide-close"
+        type="button"
+        class="w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center text-surface-500 hover:text-surface-900 dark:hover:text-white hover:bg-surface-200 dark:hover:bg-surface-700 transition-colors cursor-pointer"
+        aria-label="Close size guide"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="p-6">
+      <!-- How to measure -->
+      <div class="mb-6 p-4 rounded-xl bg-primary-50 dark:bg-primary-950/50 border border-primary-100 dark:border-primary-900">
+        <h4 class="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-1.5">How to Measure</h4>
+        <p class="text-xs text-primary-600 dark:text-primary-400 leading-relaxed">
+          For the best fit, measure a garment you already own that fits well and compare those measurements to the chart below. When between sizes, size up for a relaxed fit or down for a slimmer fit.
+        </p>
+      </div>
+
+      {{- if $isLetterSize }}
+      <!-- Letter sizes (XS, S, M, L, XL, XXL) -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-surface-200 dark:border-surface-700">
+              <th class="text-start py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Size</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Chest</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Waist</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Hips</th>
+            </tr>
+          </thead>
+          <tbody class="text-surface-600 dark:text-surface-400">
+            {{ $letterData := slice
+              (dict "size" "XS" "chest" "30-32" "waist" "24-26" "hips" "33-35")
+              (dict "size" "S"  "chest" "33-35" "waist" "27-29" "hips" "36-38")
+              (dict "size" "M"  "chest" "36-38" "waist" "30-32" "hips" "39-41")
+              (dict "size" "L"  "chest" "39-41" "waist" "33-35" "hips" "42-44")
+              (dict "size" "XL" "chest" "42-44" "waist" "36-38" "hips" "45-47")
+              (dict "size" "XXL" "chest" "45-47" "waist" "39-41" "hips" "48-50")
+            }}
+            {{- range $i, $row := $letterData }}
+            <tr class="border-b border-surface-100 dark:border-surface-800{{ if eq (mod $i 2) 1 }} bg-surface-50 dark:bg-surface-800/50{{ end }}">
+              <td class="py-2.5 px-3 font-semibold text-surface-900 dark:text-white">{{ $row.size }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.chest }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.waist }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.hips }}</td>
+            </tr>
+            {{- end }}
+          </tbody>
+        </table>
+      </div>
+      {{- end }}
+
+      {{- if $isWaistSize }}
+      <!-- Waist sizes (23-40) -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-surface-200 dark:border-surface-700">
+              <th class="text-start py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Size</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Waist</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Hips</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Inseam</th>
+            </tr>
+          </thead>
+          <tbody class="text-surface-600 dark:text-surface-400">
+            {{ $waistData := slice
+              (dict "size" "24" "hips" "34")
+              (dict "size" "25" "hips" "35")
+              (dict "size" "26" "hips" "36")
+              (dict "size" "27" "hips" "37")
+              (dict "size" "28" "hips" "38")
+              (dict "size" "29" "hips" "39")
+              (dict "size" "30" "hips" "40")
+              (dict "size" "31" "hips" "41")
+              (dict "size" "32" "hips" "42")
+              (dict "size" "34" "hips" "44")
+              (dict "size" "36" "hips" "46")
+              (dict "size" "38" "hips" "48")
+            }}
+            {{- range $i, $row := $waistData }}
+            <tr class="border-b border-surface-100 dark:border-surface-800{{ if eq (mod $i 2) 1 }} bg-surface-50 dark:bg-surface-800/50{{ end }}">
+              <td class="py-2.5 px-3 font-semibold text-surface-900 dark:text-white">{{ $row.size }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.size }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.hips }}</td>
+              <td class="py-2.5 px-3 text-center">30</td>
+            </tr>
+            {{- end }}
+          </tbody>
+        </table>
+      </div>
+      {{- end }}
+
+      {{- if $isShoeSize }}
+      <!-- Shoe sizes -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-surface-200 dark:border-surface-700">
+              <th class="text-start py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">US</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">EU</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">UK</th>
+              <th class="text-center py-3 px-3 font-heading font-semibold text-surface-900 dark:text-white">Foot Length</th>
+            </tr>
+          </thead>
+          <tbody class="text-surface-600 dark:text-surface-400">
+            {{ $shoeData := slice
+              (dict "us" "6"  "eu" "39" "uk" "5.5"  "cm" "9.3\"")
+              (dict "us" "7"  "eu" "40" "uk" "6.5"  "cm" "9.6\"")
+              (dict "us" "8"  "eu" "41" "uk" "7.5"  "cm" "9.9\"")
+              (dict "us" "9"  "eu" "42" "uk" "8.5"  "cm" "10.2\"")
+              (dict "us" "10" "eu" "43" "uk" "9.5"  "cm" "10.6\"")
+              (dict "us" "11" "eu" "44" "uk" "10.5" "cm" "10.9\"")
+              (dict "us" "12" "eu" "45" "uk" "11.5" "cm" "11.2\"")
+            }}
+            {{- range $i, $row := $shoeData }}
+            <tr class="border-b border-surface-100 dark:border-surface-800{{ if eq (mod $i 2) 1 }} bg-surface-50 dark:bg-surface-800/50{{ end }}">
+              <td class="py-2.5 px-3 font-semibold text-surface-900 dark:text-white">{{ $row.us }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.eu }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.uk }}</td>
+              <td class="py-2.5 px-3 text-center">{{ $row.cm }}</td>
+            </tr>
+            {{- end }}
+          </tbody>
+        </table>
+      </div>
+      {{- end }}
+
+      <!-- Fit tip -->
+      <div class="mt-6 flex items-start gap-3 text-xs text-surface-500 dark:text-surface-400">
+        <svg class="w-4 h-4 mt-0.5 shrink-0 text-surface-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+        </svg>
+        <p>Model is 5'10" / 178cm, wearing size S. Need help? <a href="/contact/" class="text-primary-500 hover:underline">Contact us</a> for personalized sizing advice.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{- end }}

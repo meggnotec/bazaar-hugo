@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Checkout" "badge" "Secure") }}
+
+  <section class="section">
+    <div class="container-custom max-w-4xl">
+      {{ partial "checkout-multi-step.html" . }}
+    </div>
+  </section>
+{{ end }}

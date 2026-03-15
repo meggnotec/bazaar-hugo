@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <defs>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon: shopping bag with "B" -->
+  <rect x="0" y="4" width="40" height="40" rx="10" fill="url(#logo-grad)"/>
+  <path d="M13 17v-3a7 7 0 0 1 14 0v3" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <text x="20" y="33" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-weight="700" font-size="20">B</text>
+  <!-- Wordmark -->
+  <text x="50" y="34" font-family="system-ui, sans-serif" font-weight="700" font-size="30" fill="url(#logo-grad)">Bazaar</text>
+</svg>

@@ -1,0 +1,26 @@
+{{- /* CategoryStrip — Horizontal scrolling category pills */ -}}
+{{- $categories := .Site.Data.categories -}}
+<section class="py-6 border-b border-surface-200 dark:border-surface-700">
+  <div class="container-custom">
+    <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+      <a
+        href="/shop/"
+        class="shrink-0 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold bg-surface-900 dark:bg-white text-white dark:text-surface-900 transition-colors hover:bg-primary-600 dark:hover:bg-primary-500 dark:hover:text-white"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+        All
+      </a>
+      {{- range $categories }}
+      <a
+        href="/categories/{{ .slug }}/"
+        class="shrink-0 inline-flex items-center gap-2 rounded-full border border-surface-300 dark:border-surface-600 px-5 py-2.5 text-sm font-medium text-surface-700 dark:text-surface-300 transition-colors hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-950/30"
+      >
+        {{ .name }}
+        <span class="text-xs text-surface-400 dark:text-surface-500">({{ .productCount }})</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+{{- /* ProductAccordion — Collapsible sections, single-open, first item open by default */ -}}
+{{- $items := .items -}}
+<div class="product-accordion divide-y divide-surface-200 dark:divide-surface-700 border-y border-surface-200 dark:border-surface-700">
+  {{- range $index, $item := $items }}
+  <div class="accordion-item" data-accordion-item>
+    <button
+      type="button"
+      class="accordion-trigger w-full flex items-center justify-between py-4 text-start cursor-pointer group"
+      aria-expanded="{{ cond (eq $index 0) "true" "false" }}"
+      data-accordion-trigger
+    >
+      <span class="font-heading font-semibold text-sm text-surface-900 dark:text-white group-hover:text-primary-500 transition-colors"{{ with $item.i18nKey }} data-i18n="{{ . }}"{{ end }}>{{ $item.title }}</span>
+      <svg
+        class="accordion-chevron h-5 w-5 text-surface-400 dark:text-surface-500 transition-transform duration-200 shrink-0 ms-4{{ if eq $index 0 }} rotate-180{{ end }}"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+      </svg>
+    </button>
+    <div
+      class="accordion-content overflow-hidden transition-all duration-300 {{ if eq $index 0 }}max-h-96{{ else }}max-h-0{{ end }}"
+      data-accordion-content
+    >
+      <div class="pb-4 text-sm text-surface-600 dark:text-surface-400 leading-relaxed">
+        {{ $item.content }}
+      </div>
+    </div>
+  </div>
+  {{- end }}
+</div>

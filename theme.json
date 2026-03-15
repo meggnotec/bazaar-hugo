@@ -1,0 +1,22 @@
+{
+  "name": "Bazaar — Fashion Ecommerce Hugo Theme",
+  "slug": "bazaar-hugo-theme",
+  "platform": "hugo",
+  "type": "template",
+  "description": "A vibrant fashion ecommerce theme built with Hugo, Go templates, and Tailwind CSS v4. 34 pages, 49 partials, dark mode, vanilla JS.",
+  "features": [
+    "34 fully designed pages",
+    "49 reusable partial templates",
+    "Hugo static site generator",
+    "Go template system",
+    "Vanilla JS cart/wishlist/compare",
+    "Tailwind CSS v4 via Hugo Pipes + PostCSS",
+    "Dark mode + RTL support",
+    "Hugo content sections for blog",
+    "Self-hosted fonts",
+    "Zero JS framework dependencies"
+  ],
+  "price": "$59.00",
+  "demoUrl": "",
+  "category": "hugo-themes"
+}

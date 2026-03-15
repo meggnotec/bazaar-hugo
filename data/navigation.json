@@ -1,0 +1,164 @@
+{
+  "mainNav": [
+    {
+      "label": "Women",
+      "href": "/categories/women",
+      "badge": false,
+      "megaMenuType": "advanced",
+      "subcategories": [
+        { "label": "Dresses", "href": "/categories/women?sub=dresses" },
+        { "label": "Tops", "href": "/categories/women?sub=tops" },
+        { "label": "Bottoms", "href": "/categories/women?sub=bottoms" },
+        { "label": "Outerwear", "href": "/categories/women?sub=outerwear" }
+      ],
+      "megaMenuColumns": [
+        {
+          "title": "Clothing",
+          "links": [
+            { "label": "Dresses", "href": "/categories/women?sub=dresses" },
+            { "label": "Tops & Blouses", "href": "/categories/women?sub=tops" },
+            { "label": "Sweaters & Knits", "href": "/categories/women?sub=sweaters" },
+            { "label": "Pants & Trousers", "href": "/categories/women?sub=pants" },
+            { "label": "Skirts", "href": "/categories/women?sub=skirts" },
+            { "label": "Jeans", "href": "/categories/women?sub=jeans" }
+          ]
+        },
+        {
+          "title": "Outerwear",
+          "links": [
+            { "label": "Jackets", "href": "/categories/women?sub=jackets" },
+            { "label": "Coats", "href": "/categories/women?sub=coats" },
+            { "label": "Blazers", "href": "/categories/women?sub=blazers" },
+            { "label": "Puffers", "href": "/categories/women?sub=puffers" }
+          ]
+        },
+        {
+          "title": "Accessories",
+          "links": [
+            { "label": "Bags & Purses", "href": "/categories/accessories?sub=bags" },
+            { "label": "Jewelry", "href": "/categories/accessories?sub=jewelry" },
+            { "label": "Scarves & Wraps", "href": "/categories/accessories?sub=scarves" },
+            { "label": "Hats", "href": "/categories/accessories?sub=hats" },
+            { "label": "Belts", "href": "/categories/accessories?sub=belts" }
+          ]
+        }
+      ],
+      "trendingProducts": [
+        { "title": "Silk Midi Dress", "price": "$249", "href": "/shop/silk-midi-dress", "image": "/images/mega-menu/trending-dress.jpg" },
+        { "title": "Cashmere Sweater", "price": "$129", "href": "/shop/cashmere-blend-sweater", "image": "/images/mega-menu/trending-sweater.jpg" },
+        { "title": "Pleated Skirt", "price": "$89", "href": "/shop/pleated-midi-skirt", "image": "/images/mega-menu/trending-skirt.jpg" }
+      ],
+      "featured": {
+        "title": "Spring Collection",
+        "description": "Fresh arrivals for the new season",
+        "href": "/categories/women",
+        "image": "/images/mega-menu/women-featured.jpg"
+      },
+      "promoBanner": {
+        "text": "New Season — Up to 30% Off Spring Styles",
+        "href": "/sale",
+        "bgColor": "from-primary-500 to-secondary-500"
+      }
+    },
+    {
+      "label": "Men",
+      "href": "/categories/men",
+      "badge": false,
+      "subcategories": [
+        { "label": "Shirts", "href": "/categories/men?sub=shirts" },
+        { "label": "Pants", "href": "/categories/men?sub=pants" },
+        { "label": "Outerwear", "href": "/categories/men?sub=outerwear" },
+        { "label": "Accessories", "href": "/categories/men?sub=accessories" }
+      ],
+      "featured": {
+        "title": "Essentials Edit",
+        "description": "Timeless pieces for every wardrobe",
+        "href": "/categories/men",
+        "image": "/images/mega-menu/men-featured.jpg"
+      }
+    },
+    {
+      "label": "Accessories",
+      "href": "/categories/accessories",
+      "badge": false,
+      "subcategories": [
+        { "label": "Bags", "href": "/categories/accessories?sub=bags" },
+        { "label": "Jewelry", "href": "/categories/accessories?sub=jewelry" },
+        { "label": "Scarves", "href": "/categories/accessories?sub=scarves" },
+        { "label": "Hats", "href": "/categories/accessories?sub=hats" }
+      ],
+      "featured": null
+    },
+    {
+      "label": "Shoes",
+      "href": "/categories/shoes",
+      "badge": false,
+      "subcategories": [
+        { "label": "Women's Shoes", "href": "/categories/shoes?sub=womens" },
+        { "label": "Men's Shoes", "href": "/categories/shoes?sub=mens" },
+        { "label": "Sneakers", "href": "/categories/shoes?sub=sneakers" },
+        { "label": "Boots", "href": "/categories/shoes?sub=boots" }
+      ],
+      "featured": null
+    },
+    {
+      "label": "Features",
+      "href": "/features",
+      "badge": false,
+      "subcategories": [],
+      "featured": null
+    },
+    {
+      "label": "Sale",
+      "href": "/sale",
+      "badge": true,
+      "subcategories": [],
+      "featured": null
+    }
+  ],
+  "footerLinks": [
+    {
+      "title": "Shop",
+      "links": [
+        { "label": "All Products", "href": "/shop" },
+        { "label": "Categories", "href": "/categories" },
+        { "label": "New Arrivals", "href": "/shop?sort=newest" },
+        { "label": "Sale", "href": "/sale" },
+        { "label": "Lookbook", "href": "/lookbook" },
+        { "label": "Gift Cards", "href": "/gift-cards" },
+        { "label": "Compare", "href": "/compare" }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        { "label": "About Us", "href": "/about" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Careers", "href": "/careers" },
+        { "label": "Press", "href": "/press" },
+        { "label": "Features", "href": "/features" },
+        { "label": "Sustainability", "href": "/sustainability" },
+        { "label": "Contact", "href": "/contact" }
+      ]
+    },
+    {
+      "title": "Customer Care",
+      "links": [
+        { "label": "FAQ", "href": "/faq" },
+        { "label": "Size Guide", "href": "/size-guide" },
+        { "label": "Shipping & Delivery", "href": "/shipping" },
+        { "label": "Returns & Exchanges", "href": "/returns" },
+        { "label": "Order Tracking", "href": "/order-tracking" },
+        { "label": "Rewards Program", "href": "/rewards" }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "label": "Privacy Policy", "href": "/privacy" },
+        { "label": "Terms of Service", "href": "/terms" },
+        { "label": "Store Locator", "href": "/stores" }
+      ]
+    }
+  ]
+}

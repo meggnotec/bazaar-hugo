@@ -1,0 +1,114 @@
+{{- /* Hero — Home page hero section */ -}}
+{{- $config := .Site.Data.site_config -}}
+<section class="relative gradient-hero min-h-[80vh] flex items-center overflow-hidden">
+  <!-- Decorative floating shapes -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute top-[10%] left-[5%] w-64 h-64 rounded-full bg-white/5 blur-2xl"></div>
+    <div class="absolute top-[60%] right-[10%] w-80 h-80 rounded-full bg-white/5 blur-3xl"></div>
+    <div class="absolute top-[20%] right-[20%] w-3 h-3 rounded-full bg-white/30 animate-pulse-soft"></div>
+    <div class="absolute top-[40%] left-[15%] w-2 h-2 rounded-full bg-white/20 animate-pulse-soft" style="animation-delay: 0.5s;"></div>
+    <div class="absolute top-[70%] left-[40%] w-4 h-4 rounded-full bg-white/20 animate-pulse-soft" style="animation-delay: 1s;"></div>
+    <div class="absolute top-[15%] right-[35%] w-2.5 h-2.5 rounded-full bg-white/25 animate-pulse-soft" style="animation-delay: 1.5s;"></div>
+    <div class="absolute bottom-[20%] left-[30%] w-3 h-3 rounded-full bg-white/15 animate-pulse-soft" style="animation-delay: 0.8s;"></div>
+    <div class="absolute top-[50%] right-[5%] w-2 h-2 rounded-full bg-white/20 animate-pulse-soft" style="animation-delay: 1.2s;"></div>
+    <!-- Decorative ring shapes -->
+    <div class="absolute top-[25%] right-[15%] w-24 h-24 rounded-full border border-white/10"></div>
+    <div class="absolute bottom-[15%] left-[10%] w-32 h-32 rounded-full border border-white/10"></div>
+    <div class="absolute top-[5%] left-[50%] w-16 h-16 rounded-full border border-white/10"></div>
+  </div>
+
+  <div class="container-custom relative z-10 py-20 md:py-32">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Text content -->
+      <div class="text-center lg:text-start">
+        <span class="inline-block rounded-full bg-white/15 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-white mb-6">
+          {{ $config.tagline }}
+        </span>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6">
+          Discover Your
+          <span class="block">Signature</span>
+          <span class="block relative">
+            Style
+            <svg class="absolute -bottom-2 left-0 lg:left-0 w-full h-3 text-accent-400 opacity-60" viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+              <path d="M2 8C30 2 60 2 100 6C140 10 170 4 198 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/80 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+          Curated collections that define modern elegance. Explore our latest arrivals and find pieces that tell your story.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a
+            href="/shop/"
+            class="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 font-heading font-semibold text-sm tracking-wide text-primary-600 shadow-lg shadow-black/10 transition-all duration-200 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+          >
+            Shop New Arrivals
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a
+            href="/categories/"
+            class="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/40 bg-white/5 backdrop-blur-sm px-8 py-4 font-heading font-semibold text-sm tracking-wide text-white transition-all duration-200 hover:bg-white/15 hover:border-white/60 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+          >
+            Explore Collections
+          </a>
+        </div>
+        <!-- Trust indicators -->
+        <div class="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start text-white/60 text-sm">
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375c-.621 0-1.125-.504-1.125-1.125V14.25m17.25 0V6.375c0-.621-.504-1.125-1.125-1.125H14.25m0 0V3.375c0-.621-.504-1.125-1.125-1.125H8.25m0 0H6.375c-.621 0-1.125.504-1.125 1.125v3.75" />
+            </svg>
+            <span>Free Shipping $99+</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
+            </svg>
+            <span>30-Day Returns</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+            <span>Secure Checkout</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero image collage -->
+      <div class="relative hidden lg:block">
+        <div class="relative w-full max-w-lg mx-auto">
+          <!-- Main product image -->
+          <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-black/20 rotate-2 hover:rotate-0 transition-transform duration-500">
+            <img src="/images/hero/featured-look.jpg" alt="Featured look" width="400" height="500" class="w-full h-auto" />
+          </div>
+          <!-- Secondary product image -->
+          <div class="absolute -bottom-8 -left-12 z-20 w-48 rounded-xl overflow-hidden shadow-xl shadow-black/20 -rotate-6 hover:rotate-0 transition-transform duration-500">
+            <img src="/images/hero/trending.jpg" alt="Trending product" width="200" height="250" class="w-full h-auto" />
+          </div>
+          <!-- Accent product image -->
+          <div class="absolute -top-4 -right-8 z-20 w-36 rounded-xl overflow-hidden shadow-xl shadow-black/20 rotate-6 hover:rotate-0 transition-transform duration-500">
+            <img src="/images/hero/new-in.jpg" alt="New arrival" width="160" height="200" class="w-full h-auto" />
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute top-8 -left-4 z-30 bg-white rounded-full px-4 py-2 shadow-lg shadow-black/10 flex items-center gap-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-xs font-semibold text-surface-700">New Arrivals</span>
+          </div>
+          <!-- Rating badge -->
+          <div class="absolute -bottom-4 right-4 z-30 bg-white rounded-full px-4 py-2 shadow-lg shadow-black/10 flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span class="text-xs font-semibold text-surface-700">4.9 Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Shop by Category" "subtitle" "Find exactly what you're looking for" "badge" "Categories") }}
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range .Site.Data.categories }}
+          {{ partial "category-card.html" (dict "category" .) }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

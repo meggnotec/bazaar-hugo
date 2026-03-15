@@ -1,0 +1,55 @@
+{
+  "perks": [
+    { "title": "Remote-Friendly", "description": "Work from anywhere with flexible hours and a hybrid office model.", "icon": "globe" },
+    { "title": "Health Benefits", "description": "Comprehensive medical, dental, and vision coverage for you and your family.", "icon": "heart" },
+    { "title": "Employee Discount", "description": "40% off all Bazaar products plus early access to new collections.", "icon": "tag" },
+    { "title": "Growth Opportunities", "description": "Annual learning budget, mentorship programs, and clear career pathways.", "icon": "chart" }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "title": "Senior Frontend Engineer",
+      "department": "Engineering",
+      "location": "New York / Remote",
+      "type": "Full-time",
+      "description": "Build and optimize our ecommerce platform with modern web technologies. You'll work closely with design and product teams to create beautiful, performant shopping experiences.",
+      "posted": "2026-03-01"
+    },
+    {
+      "id": 2,
+      "title": "Fashion Buyer — Women's Ready-to-Wear",
+      "department": "Merchandising",
+      "location": "New York",
+      "type": "Full-time",
+      "description": "Source and curate our women's collection, negotiate with suppliers, and identify emerging trends. Requires 5+ years of buying experience in fashion retail.",
+      "posted": "2026-02-20"
+    },
+    {
+      "id": 3,
+      "title": "Brand Marketing Manager",
+      "department": "Marketing",
+      "location": "Los Angeles / Remote",
+      "type": "Full-time",
+      "description": "Lead brand campaigns across digital and traditional channels. Develop creative strategies that drive awareness and engagement with our target audience.",
+      "posted": "2026-02-15"
+    },
+    {
+      "id": 4,
+      "title": "UX/UI Designer",
+      "department": "Design",
+      "location": "Remote",
+      "type": "Full-time",
+      "description": "Design intuitive, visually stunning interfaces for our web and mobile platforms. Conduct user research, create prototypes, and collaborate with engineers to ship polished experiences.",
+      "posted": "2026-03-05"
+    },
+    {
+      "id": 5,
+      "title": "Retail Store Associate",
+      "department": "Retail",
+      "location": "London, Mayfair",
+      "type": "Part-time",
+      "description": "Deliver exceptional in-store experiences, assist customers with styling advice, and maintain visual merchandising standards. Fashion retail experience preferred.",
+      "posted": "2026-03-10"
+    }
+  ]
+}

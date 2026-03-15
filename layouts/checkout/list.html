@@ -1,0 +1,45 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Checkout" "badge" "Secure") }}
+
+  <section class="section">
+    <div class="container-custom">
+      {{ partial "checkout-steps.html" (dict "currentStep" 1) }}
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+        <!-- Checkout form -->
+        <div class="lg:col-span-2">
+          {{ partial "checkout-form.html" . }}
+        </div>
+
+        <!-- Order summary -->
+        <div>
+          <div class="card p-6 sticky top-24">
+            <h3 class="text-lg font-heading font-bold text-surface-900 dark:text-white mb-6">Order Summary</h3>
+            <!-- Items populated by JS -->
+            <div id="checkout-items" class="space-y-4 mb-6"></div>
+            <div class="border-t border-surface-200 dark:border-surface-700 pt-4 space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-surface-500 dark:text-surface-400">Subtotal</span>
+                <span class="font-semibold text-surface-900 dark:text-white" id="checkout-subtotal">$0.00</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-surface-500 dark:text-surface-400">Shipping</span>
+                <span class="font-semibold text-surface-900 dark:text-white" id="checkout-shipping">$0.00</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-surface-500 dark:text-surface-400">Tax (8%)</span>
+                <span class="font-semibold text-surface-900 dark:text-white" id="checkout-tax">$0.00</span>
+              </div>
+              <div class="border-t border-surface-200 dark:border-surface-700 pt-3">
+                <div class="flex justify-between">
+                  <span class="font-bold text-surface-900 dark:text-white">Total</span>
+                  <span class="text-lg font-bold text-surface-900 dark:text-white" id="checkout-total">$0.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

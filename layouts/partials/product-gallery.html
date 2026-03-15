@@ -1,0 +1,183 @@
+{{- /* ProductGallery — Main image + 4 thumbnails, hover zoom, lightbox, video support */ -}}
+{{- $product := .product -}}
+{{- $title := $product.title -}}
+{{- $image := $product.image -}}
+{{- $placeholderColor := $product.placeholderColor -}}
+{{- $colors := $product.colors -}}
+{{- $video := $product.video -}}
+
+{{- /* View labels */ -}}
+{{- $viewLabels := slice "Front" "Side" "Detail" "Back" -}}
+
+{{- /* Build 4 background colors for SVG views */ -}}
+{{- $color0 := $placeholderColor -}}
+{{- $color1 := "#c4b5fd" -}}
+{{- $color2 := "#fde68a" -}}
+{{- $color3 := "#7dd3fc" -}}
+{{- if gt (len $colors) 0 -}}
+  {{- $color1 = (index $colors 0).hex -}}
+{{- end -}}
+{{- if gt (len $colors) 1 -}}
+  {{- $color2 = (index $colors 1).hex -}}
+{{- end -}}
+{{- if gt (len $colors) 2 -}}
+  {{- $color3 = (index $colors 2).hex -}}
+{{- end -}}
+{{- $viewColors := slice $color0 $color1 $color2 $color3 -}}
+
+{{- /* Escape title for SVG */ -}}
+{{- $safeTitle := $title | htmlEscape -}}
+
+<div class="product-gallery group"
+  data-placeholder-color="{{ $placeholderColor }}"
+  data-has-image="{{ if $image }}true{{ else }}false{{ end }}"
+>
+  <!-- Main image -->
+  <div
+    class="gallery-main relative aspect-[3/4] overflow-hidden rounded-2xl mb-4 bg-surface-100 dark:bg-surface-800"
+    data-gallery-main
+  >
+    <div class="gallery-main-content w-full h-full transition-all duration-300" data-gallery-main-content>
+      {{- if $image }}
+      <img
+        src="{{ $image }}"
+        alt="{{ $title }}"
+        width="600"
+        height="800"
+        class="w-full h-full object-cover"
+        data-gallery-main-img
+      />
+      {{- else }}
+      <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <rect width="600" height="800" fill="{{ $color0 }}"/>
+        <line x1="150" y1="280" x2="450" y2="280" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+        <line x1="180" y1="520" x2="420" y2="520" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+        <path d="M280 140 Q300 115 320 140 L390 220 L210 220 Z" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+        <circle cx="300" cy="122" r="7" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+        <text x="300" y="390" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui" font-size="22" font-weight="600">{{ $safeTitle }}</text>
+        <text x="300" y="418" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="12" letter-spacing="3">FRONT VIEW</text>
+        <text x="300" y="750" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="10" letter-spacing="2">01 / 04</text>
+      </svg>
+      {{- end }}
+    </div>
+
+    <!-- Hover zoom lens (desktop) -->
+    <div
+      class="gallery-zoom-lens hidden lg:block absolute pointer-events-none opacity-0 transition-opacity duration-150 w-36 h-36 rounded-full border-2 border-white/60 shadow-lg overflow-hidden z-10"
+      data-zoom-lens
+    ></div>
+
+    <!-- Zoom result panel (desktop) -->
+    <div
+      class="gallery-zoom-result hidden lg:block absolute top-0 left-full ms-4 w-80 h-80 rounded-2xl border border-surface-200 dark:border-surface-700 shadow-2xl overflow-hidden opacity-0 transition-opacity duration-200 z-20 bg-surface-100 dark:bg-surface-800"
+      data-zoom-result
+    ></div>
+
+    <!-- Click-to-zoom hint -->
+    <div class="absolute bottom-3 end-3 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1.5 text-white/80 text-xs pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607zM10.5 7.5v6m3-3h-6" />
+      </svg>
+      Click to zoom
+    </div>
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="grid grid-cols-4 gap-3">
+    <!-- Thumbnail 0: Front (real image or SVG) -->
+    <button
+      type="button"
+      class="gallery-thumb group/thumb relative aspect-[3/4] rounded-lg overflow-hidden border-2 border-primary-500 ring-2 ring-primary-500/20 transition-all duration-200 cursor-pointer"
+      data-thumb-index="0"
+      data-thumb-type="{{ if $image }}image{{ else }}svg{{ end }}"
+      aria-label="View front of {{ $title }}"
+    >
+      {{- if $image }}
+      <img src="{{ $image }}" alt="{{ $title }} — Front view" width="150" height="200" loading="lazy" class="w-full h-full object-cover" />
+      {{- else }}
+      <div class="w-full h-full">
+        <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="600" height="800" fill="{{ $color0 }}"/>
+          <text x="300" y="400" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="28">01</text>
+        </svg>
+      </div>
+      {{- end }}
+      <span class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent py-1 text-center text-[10px] text-white/90 font-medium opacity-0 group-hover/thumb:opacity-100 transition-opacity">Front</span>
+    </button>
+
+    <!-- Thumbnails 1-3: Side / Detail / Back (SVG views) -->
+    {{- range $i := slice 1 2 3 }}
+    {{- $viewColor := index $viewColors $i -}}
+    {{- $viewLabel := index $viewLabels $i -}}
+    <button
+      type="button"
+      class="gallery-thumb group/thumb relative aspect-[3/4] rounded-lg overflow-hidden border-2 border-transparent hover:border-surface-300 dark:hover:border-surface-600 transition-all duration-200 cursor-pointer"
+      data-thumb-index="{{ $i }}"
+      data-thumb-type="svg"
+      aria-label="View {{ lower $viewLabel }} of {{ $title }}"
+    >
+      <div class="w-full h-full">
+        <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <rect width="600" height="800" fill="{{ $viewColor }}"/>
+          {{- if eq $i 1 }}
+          <line x1="600" y1="0" x2="0" y2="800" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <circle cx="490" cy="150" r="90" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <circle cx="490" cy="150" r="60" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <text x="60" y="355" fill="rgba(255,255,255,0.6)" font-family="system-ui" font-size="18" font-weight="600">{{ $safeTitle }}</text>
+          <text x="60" y="380" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="11" letter-spacing="3">SIDE VIEW</text>
+          <text x="300" y="750" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="10" letter-spacing="2">02 / 04</text>
+          {{- else if eq $i 2 }}
+          <rect x="110" y="330" width="380" height="140" rx="16" fill="{{ $viewColor }}" fill-opacity="0.88"/>
+          <text x="300" y="388" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui" font-size="28" font-weight="700" letter-spacing="5">CLOSE-UP</text>
+          <text x="300" y="420" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="13">{{ $safeTitle }}</text>
+          <text x="300" y="750" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="10" letter-spacing="2">03 / 04</text>
+          {{- else }}
+          <rect x="210" y="170" width="180" height="240" rx="10" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+          <circle cx="300" cy="212" r="14" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+          <line x1="210" y1="250" x2="390" y2="250" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <text x="300" y="302" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui" font-size="15" font-weight="600">{{ $safeTitle }}</text>
+          <text x="300" y="330" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="11">Premium Quality</text>
+          <text x="300" y="355" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="11">Ethically Made</text>
+          <text x="300" y="520" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="system-ui" font-size="12" letter-spacing="2">CARE INSTRUCTIONS</text>
+          <circle cx="230" cy="570" r="20" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <circle cx="300" cy="570" r="20" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <circle cx="370" cy="570" r="20" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <text x="300" y="690" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="12" letter-spacing="3">BACK VIEW</text>
+          <text x="300" y="750" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="system-ui" font-size="10" letter-spacing="2">04 / 04</text>
+          {{- end }}
+        </svg>
+      </div>
+    </button>
+    {{- end }}
+  </div>
+
+  <!-- Video thumbnail (if video exists) -->
+  {{- if $video }}
+  <div class="mt-3">
+    <button
+      type="button"
+      class="gallery-video-btn relative w-full rounded-lg overflow-hidden bg-surface-900 aspect-video flex items-center justify-center group/video cursor-pointer"
+      data-video-url="{{ $video }}"
+      aria-label="Play product video"
+    >
+      <div class="absolute inset-0 flex items-center justify-center" style="background-color: {{ $placeholderColor }}">
+        <div class="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover/video:scale-110 transition-transform">
+          <svg class="h-6 w-6 text-surface-900 ms-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <span class="absolute bottom-2 start-2 text-xs text-white/80 bg-black/50 rounded px-2 py-0.5">Watch Video</span>
+    </button>
+  </div>
+  {{- end }}
+
+  <!-- Store view data for JS (gallery interactions) -->
+  <script type="application/json" id="gallery-view-data">
+    {
+      "image": {{ if $image }}{{ $image | jsonify }}{{ else }}null{{ end }},
+      "colors": {{ $viewColors | jsonify }},
+      "labels": {{ $viewLabels | jsonify }},
+      "title": {{ $title | jsonify }},
+      "video": {{ if $video }}{{ $video | jsonify }}{{ else }}null{{ end }}
+    }
+  </script>
+</div>

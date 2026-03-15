@@ -1,0 +1,1095 @@
+[
+  {
+    "id": 1,
+    "slug": "cashmere-blend-sweater",
+    "title": "Cashmere Blend Sweater",
+    "shortDescription": "Luxuriously soft cashmere blend in a relaxed fit",
+    "description": "Wrap yourself in the ultimate comfort with our Cashmere Blend Sweater. Crafted from a premium mix of wool and cashmere, this sweater delivers an incredibly soft hand feel with lasting warmth. The relaxed silhouette drapes beautifully and pairs effortlessly with tailored trousers or your favorite jeans. Ribbed cuffs and hem add subtle structure to the easy-going shape.",
+    "price": 129,
+    "salePrice": null,
+    "category": "women",
+    "subcategory": "tops",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Ivory",
+        "hex": "#FFFFF0"
+      },
+      {
+        "name": "Charcoal",
+        "hex": "#36454F"
+      },
+      {
+        "name": "Rose",
+        "hex": "#E11D48"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/cashmere-blend-sweater.jpg",
+    "placeholderColor": "#c4a882",
+    "rating": 4.8,
+    "reviewCount": 124,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isSale": false,
+    "details": {
+      "material": "70% Wool, 30% Cashmere",
+      "care": "Dry clean only",
+      "fit": "Relaxed fit, true to size"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": 3,
+    "hoverPlaceholderColor": "#d4b896",
+    "frequentlyBoughtWith": [
+      4,
+      7
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 2,
+    "slug": "silk-midi-dress",
+    "title": "Silk Midi Dress",
+    "shortDescription": "Flowing silk silhouette with a flattering cinched waist",
+    "description": "An effortlessly elegant midi dress cut from pure mulberry silk. The fluid fabric moves with you while the cinched waist and subtle A-line skirt create a universally flattering shape. Perfect for evening dinners, gallery openings, or any occasion that calls for understated glamour. Features a concealed back zip and adjustable spaghetti straps.",
+    "price": 249,
+    "salePrice": null,
+    "category": "women",
+    "subcategory": "tops",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      {
+        "name": "Midnight",
+        "hex": "#191970"
+      },
+      {
+        "name": "Champagne",
+        "hex": "#F7E7CE"
+      },
+      {
+        "name": "Emerald",
+        "hex": "#50C878"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/silk-midi-dress.jpg",
+    "placeholderColor": "#a08968",
+    "rating": 4.9,
+    "reviewCount": 87,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isSale": false,
+    "details": {
+      "material": "100% Mulberry Silk",
+      "care": "Dry clean recommended. Cool iron on reverse.",
+      "fit": "Slim fit through bodice, A-line skirt"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#c9917a",
+    "frequentlyBoughtWith": [
+      9,
+      16
+    ],
+    "video": null,
+    "layout": "wide"
+  },
+  {
+    "id": 3,
+    "slug": "oversized-linen-shirt",
+    "title": "Oversized Linen Shirt",
+    "shortDescription": "Breezy linen in an effortlessly cool oversized cut",
+    "description": "Our bestselling linen shirt returns in fresh seasonal colors. The relaxed oversized fit is designed to be worn untucked with rolled sleeves for that perfectly undone look. Pre-washed for softness from the first wear, this piece gets even better with age. Drop shoulders and a curved hem keep the silhouette modern.",
+    "price": 89,
+    "salePrice": null,
+    "category": "women",
+    "subcategory": "tops",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Sand",
+        "hex": "#C2B280"
+      },
+      {
+        "name": "Powder Blue",
+        "hex": "#B0E0E6"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/oversized-linen-shirt.jpg",
+    "placeholderColor": "#b07d62",
+    "rating": 4.6,
+    "reviewCount": 203,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% European Linen",
+      "care": "Machine wash cold. Tumble dry low.",
+      "fit": "Oversized, size down for a closer fit"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#a3b18a",
+    "frequentlyBoughtWith": [
+      7,
+      15
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 4,
+    "slug": "ribbed-knit-turtleneck",
+    "title": "Ribbed Knit Turtleneck",
+    "shortDescription": "Classic ribbed turtleneck with a modern slim profile",
+    "description": "A wardrobe essential reimagined in a fine-gauge rib knit. This turtleneck hugs the body without feeling restrictive, thanks to a touch of stretch blended into the organic cotton. The elongated silhouette tucks seamlessly into high-waisted trousers or layers beautifully under blazers. A go-to piece from autumn through spring.",
+    "price": 69,
+    "salePrice": null,
+    "category": "women",
+    "subcategory": "tops",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Oatmeal",
+        "hex": "#D4C5A9"
+      },
+      {
+        "name": "Burgundy",
+        "hex": "#800020"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/ribbed-knit-turtleneck.jpg",
+    "placeholderColor": "#8b9a6d",
+    "rating": 4.7,
+    "reviewCount": 156,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": true,
+    "isSale": false,
+    "details": {
+      "material": "95% Organic Cotton, 5% Elastane",
+      "care": "Machine wash cold. Lay flat to dry.",
+      "fit": "Slim fit, true to size"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": 5,
+    "hoverPlaceholderColor": "#c4a882",
+    "frequentlyBoughtWith": [
+      8,
+      11
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 5,
+    "slug": "classic-oxford-shirt",
+    "title": "Classic Oxford Shirt",
+    "shortDescription": "Crisp cotton oxford with a tailored regular fit",
+    "description": "The shirt every wardrobe needs. Our Classic Oxford is cut from premium long-staple cotton with a subtle basket-weave texture that looks polished enough for the office and relaxed enough for weekends. Button-down collar, single chest pocket, and adjustable cuffs round out the timeless design. Pre-shrunk so it keeps its shape wash after wash.",
+    "price": 79,
+    "salePrice": null,
+    "category": "men",
+    "subcategory": "tops",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Light Blue",
+        "hex": "#ADD8E6"
+      },
+      {
+        "name": "Olive",
+        "hex": "#808000"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/classic-oxford-shirt.jpg",
+    "placeholderColor": "#9a8f80",
+    "rating": 4.5,
+    "reviewCount": 312,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% Long-Staple Cotton",
+      "care": "Machine wash warm. Iron on medium heat.",
+      "fit": "Regular fit, true to size"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#b4a28a",
+    "frequentlyBoughtWith": [
+      8,
+      10
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 6,
+    "slug": "merino-crew-neck-tee",
+    "title": "Merino Crew Neck Tee",
+    "shortDescription": "Superfine merino wool tee that regulates temperature naturally",
+    "description": "Discover the luxury of merino wool in a modern crew neck silhouette. This tee is incredibly soft against the skin and naturally temperature-regulating, keeping you cool in summer and warm in winter. The superfine 17.5-micron merino resists odor and wrinkles, making it the perfect travel companion. Minimal construction with flatlock seams for all-day comfort.",
+    "price": 95,
+    "salePrice": null,
+    "category": "men",
+    "subcategory": "tops",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      {
+        "name": "Navy",
+        "hex": "#000080"
+      },
+      {
+        "name": "Heather Grey",
+        "hex": "#9B9B9B"
+      },
+      {
+        "name": "Forest Green",
+        "hex": "#228B22"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/merino-crew-neck-tee.jpg",
+    "placeholderColor": "#b4a28a",
+    "rating": 4.8,
+    "reviewCount": 89,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% Superfine Merino Wool (17.5 micron)",
+      "care": "Machine wash cold on wool cycle. Lay flat to dry.",
+      "fit": "Regular fit, true to size"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#c8956c",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 7,
+    "slug": "high-waist-straight-jeans",
+    "title": "High-Waist Straight Jeans",
+    "shortDescription": "Vintage-inspired straight leg with a comfortable high rise",
+    "description": "Our most-requested denim silhouette, perfected. These high-waist straight jeans sit at the natural waist and fall in a clean straight line through the hip and leg. The rigid organic cotton denim has a satisfying weight and will develop beautiful fading patterns over time. Five-pocket styling with antique brass hardware completes the classic look.",
+    "price": 119,
+    "salePrice": null,
+    "category": "women",
+    "subcategory": "bottoms",
+    "sizes": [
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32"
+    ],
+    "colors": [
+      {
+        "name": "Indigo",
+        "hex": "#3F51B5"
+      },
+      {
+        "name": "Washed Black",
+        "hex": "#3C3C3C"
+      },
+      {
+        "name": "Light Wash",
+        "hex": "#87CEEB"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/high-waist-straight-jeans.jpg",
+    "placeholderColor": "#c8956c",
+    "rating": 4.7,
+    "reviewCount": 278,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": true,
+    "isSale": false,
+    "details": {
+      "material": "100% Organic Cotton Denim, 12.5oz",
+      "care": "Machine wash cold inside out. Hang dry.",
+      "fit": "High rise, straight leg, true to size"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#b07d62",
+    "frequentlyBoughtWith": [
+      3,
+      19
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 8,
+    "slug": "tailored-wool-trousers",
+    "title": "Tailored Wool Trousers",
+    "shortDescription": "Sharp tailored trousers in seasonless tropical wool",
+    "description": "Elevate your everyday with these impeccably tailored trousers. Cut from Italian tropical wool, they drape beautifully while maintaining a crisp crease. The mid-rise waist features a hidden comfort waistband, and the tapered leg creates a modern streamlined look. Hook-and-bar closure with interior button for a secure, flat front.",
+    "price": 169,
+    "salePrice": null,
+    "category": "men",
+    "subcategory": "bottoms",
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38"
+    ],
+    "colors": [
+      {
+        "name": "Charcoal",
+        "hex": "#36454F"
+      },
+      {
+        "name": "Navy",
+        "hex": "#000080"
+      },
+      {
+        "name": "Tan",
+        "hex": "#D2B48C"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/tailored-wool-trousers.jpg",
+    "placeholderColor": "#c9917a",
+    "rating": 4.6,
+    "reviewCount": 94,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% Italian Tropical Wool",
+      "care": "Dry clean recommended.",
+      "fit": "Tailored fit, mid rise, tapered leg"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#a08968",
+    "frequentlyBoughtWith": [
+      5,
+      17
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 9,
+    "slug": "pleated-midi-skirt",
+    "title": "Pleated Midi Skirt",
+    "shortDescription": "Flowing accordion pleats that move beautifully with every step",
+    "description": "A statement piece that transitions effortlessly from desk to dinner. The accordion pleats catch the light as you move, creating a stunning visual rhythm. The elastic waistband ensures all-day comfort without sacrificing the sleek silhouette. Pair with a tucked-in knit for weekend brunch or a silk blouse for evening occasions.",
+    "price": 109,
+    "salePrice": null,
+    "category": "women",
+    "subcategory": "bottoms",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Bronze",
+        "hex": "#CD7F32"
+      },
+      {
+        "name": "Dusty Rose",
+        "hex": "#DCAE96"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/pleated-midi-skirt.jpg",
+    "placeholderColor": "#d4b896",
+    "rating": 4.9,
+    "reviewCount": 67,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% Polyester Satin",
+      "care": "Machine wash cold on delicate cycle. Hang dry.",
+      "fit": "Elastic waist, midi length hits below knee"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": 2,
+    "hoverPlaceholderColor": "#c4a882",
+    "frequentlyBoughtWith": [
+      4,
+      16
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 10,
+    "slug": "slim-chino-pants",
+    "title": "Slim Chino Pants",
+    "shortDescription": "Versatile slim chinos in a soft brushed cotton",
+    "description": "The everyday pants you will reach for again and again. Our Slim Chinos are cut from a brushed stretch cotton that feels broken-in from the very first wear. The slim silhouette is modern without being tight, sitting comfortably at the hip with a slight taper to the ankle. Four-pocket styling and a zip fly with button closure.",
+    "price": 89,
+    "salePrice": null,
+    "category": "men",
+    "subcategory": "bottoms",
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "colors": [
+      {
+        "name": "Khaki",
+        "hex": "#C3B091"
+      },
+      {
+        "name": "Navy",
+        "hex": "#000080"
+      },
+      {
+        "name": "Stone",
+        "hex": "#928E85"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/slim-chino-pants.jpg",
+    "placeholderColor": "#a3b18a",
+    "rating": 4.4,
+    "reviewCount": 187,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "98% Cotton, 2% Elastane",
+      "care": "Machine wash cold. Tumble dry low.",
+      "fit": "Slim fit, sits at hip, tapered leg"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#9a8f80",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 11,
+    "slug": "wool-blend-overcoat",
+    "title": "Wool Blend Overcoat",
+    "shortDescription": "Timeless double-breasted overcoat in a rich wool blend",
+    "description": "Make an entrance in our signature overcoat. The double-breasted front with peak lapels references classic tailoring, while the relaxed shoulder and slightly oversized fit give it a contemporary edge. A generous knee-length cut provides full coverage against the elements. Fully lined with interior pockets and horn-style buttons.",
+    "price": 299,
+    "salePrice": null,
+    "category": "outerwear",
+    "subcategory": "outerwear",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Camel",
+        "hex": "#C19A6B"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Herringbone Grey",
+        "hex": "#808080"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/wool-blend-overcoat.jpg",
+    "placeholderColor": "#c4a882",
+    "rating": 4.9,
+    "reviewCount": 56,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": true,
+    "isSale": false,
+    "details": {
+      "material": "80% Wool, 20% Polyamide",
+      "care": "Dry clean only.",
+      "fit": "Relaxed fit, knee length"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": 4,
+    "hoverPlaceholderColor": "#8b9a6d",
+    "frequentlyBoughtWith": [
+      15,
+      8
+    ],
+    "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "layout": "wide"
+  },
+  {
+    "id": 12,
+    "slug": "quilted-puffer-jacket",
+    "title": "Quilted Puffer Jacket",
+    "shortDescription": "Lightweight warmth in a sleek channel-quilted design",
+    "description": "Stay warm without the bulk. Our Quilted Puffer features responsibly sourced down insulation in a slim channel-quilt pattern that prevents cold spots while keeping the silhouette streamlined. The water-resistant recycled nylon shell shrugs off light rain and snow. Packs into its own internal pocket for easy travel. Ribbed inner cuffs seal in warmth.",
+    "price": 199,
+    "salePrice": 149,
+    "category": "outerwear",
+    "subcategory": "outerwear",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Olive",
+        "hex": "#556B2F"
+      },
+      {
+        "name": "Burgundy",
+        "hex": "#800020"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/quilted-puffer-jacket.jpg",
+    "placeholderColor": "#8b9a6d",
+    "rating": 4.7,
+    "reviewCount": 143,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": true,
+    "details": {
+      "material": "Shell: 100% Recycled Nylon. Fill: 90/10 RDS Down",
+      "care": "Machine wash cold on gentle cycle. Tumble dry low with tennis balls.",
+      "fit": "Regular fit, hip length"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#c9917a",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 13,
+    "slug": "linen-blend-blazer",
+    "title": "Linen Blend Blazer",
+    "shortDescription": "Unstructured blazer in a breathable linen-cotton blend",
+    "description": "The warm-weather blazer that does not try too hard. Our Linen Blend Blazer is unlined and unstructured for a relaxed drape that works just as well with a T-shirt as it does with a button-down. The linen-cotton blend has a natural texture that adds visual interest without being overly casual. Two-button closure, patch pockets, and a notch lapel.",
+    "price": 179,
+    "salePrice": null,
+    "category": "outerwear",
+    "subcategory": "outerwear",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Sand",
+        "hex": "#C2B280"
+      },
+      {
+        "name": "Navy",
+        "hex": "#000080"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/linen-blend-blazer.jpg",
+    "placeholderColor": "#a08968",
+    "rating": 4.5,
+    "reviewCount": 42,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "55% Linen, 45% Cotton",
+      "care": "Dry clean recommended. Steam to remove wrinkles.",
+      "fit": "Relaxed unstructured fit"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#d4b896",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 14,
+    "slug": "leather-tote-bag",
+    "title": "Leather Tote Bag",
+    "shortDescription": "Spacious vegetable-tanned leather tote with interior pockets",
+    "description": "A daily companion built to last a lifetime. Our Leather Tote is crafted from full-grain vegetable-tanned leather that develops a rich patina with use. The spacious interior fits a 15-inch laptop, with two slip pockets and one zippered pocket to keep essentials organized. Reinforced handles are riveted for durability, and a magnetic snap closure secures the top.",
+    "price": 239,
+    "salePrice": null,
+    "category": "accessories",
+    "subcategory": "bags",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Cognac",
+        "hex": "#9A463D"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/leather-tote-bag.jpg",
+    "placeholderColor": "#c8956c",
+    "rating": 4.8,
+    "reviewCount": 198,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": true,
+    "isSale": false,
+    "details": {
+      "material": "Full-Grain Vegetable-Tanned Leather",
+      "care": "Condition with leather balm every 3-6 months. Avoid prolonged moisture.",
+      "fit": "Dimensions: 16\"W x 13\"H x 6\"D"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#b07d62",
+    "frequentlyBoughtWith": [
+      15,
+      16
+    ],
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 15,
+    "slug": "cashmere-wrap-scarf",
+    "title": "Cashmere Wrap Scarf",
+    "shortDescription": "Generously sized pure cashmere wrap for year-round layering",
+    "description": "Indulge in the featherlight warmth of pure Mongolian cashmere. This oversized wrap scarf doubles as a travel blanket, evening shawl, or everyday accessory. The generous dimensions allow endless styling possibilities, from a classic loop to an elegant drape over the shoulders. Each piece is hand-finished with delicate fringe detailing.",
+    "price": 159,
+    "salePrice": null,
+    "category": "accessories",
+    "subcategory": "scarves",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Heather Grey",
+        "hex": "#9B9B9B"
+      },
+      {
+        "name": "Camel",
+        "hex": "#C19A6B"
+      },
+      {
+        "name": "Blush",
+        "hex": "#FFB6C1"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/cashmere-wrap-scarf.jpg",
+    "placeholderColor": "#c9917a",
+    "rating": 5,
+    "reviewCount": 73,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% Grade-A Mongolian Cashmere",
+      "care": "Hand wash cold with cashmere shampoo. Lay flat to dry.",
+      "fit": "Dimensions: 80\" x 28\""
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#a08968",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 16,
+    "slug": "gold-chain-necklace",
+    "title": "Gold Chain Necklace",
+    "shortDescription": "Delicate 14k gold-plated chain for everyday elegance",
+    "description": "The necklace you will never take off. This delicate chain features a 14-karat gold plating over a sterling silver base, giving you the look of fine jewelry with everyday wearability. The minimalist design layers beautifully with other necklaces or makes a quiet statement on its own. Adjustable length with a lobster clasp closure and 2-inch extender chain.",
+    "price": 59,
+    "salePrice": null,
+    "category": "accessories",
+    "subcategory": "jewelry",
+    "sizes": [
+      "One Size"
+    ],
+    "colors": [
+      {
+        "name": "Gold",
+        "hex": "#FFD700"
+      },
+      {
+        "name": "Silver",
+        "hex": "#C0C0C0"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/gold-chain-necklace.jpg",
+    "placeholderColor": "#d4b896",
+    "rating": 4.6,
+    "reviewCount": 221,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "Sterling Silver with 14K Gold Plating",
+      "care": "Avoid contact with water, perfume, and chemicals. Store in provided pouch.",
+      "fit": "Length: 16\" with 2\" extender"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#c8956c",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 17,
+    "slug": "minimalist-leather-sneakers",
+    "title": "Minimalist Leather Sneakers",
+    "shortDescription": "Clean-line sneakers in premium Italian leather",
+    "description": "The sneakers that go with everything. Crafted from buttery Italian nappa leather with a clean, pared-back design that lets the quality speak for itself. The cushioned insole provides all-day comfort, while the rubber cupsole offers grip and durability. No logos, no flash — just impeccable materials and clean lines that elevate any outfit.",
+    "price": 189,
+    "salePrice": null,
+    "category": "shoes",
+    "subcategory": "sneakers",
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Off-White",
+        "hex": "#FAF9F6"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/minimalist-leather-sneakers.jpg",
+    "placeholderColor": "#b07d62",
+    "rating": 4.7,
+    "reviewCount": 165,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": true,
+    "isSale": false,
+    "details": {
+      "material": "Upper: Italian Nappa Leather. Sole: Rubber Cupsole",
+      "care": "Wipe with damp cloth. Use leather conditioner as needed.",
+      "fit": "True to size. Half sizes available."
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": 5,
+    "hoverPlaceholderColor": "#a3b18a",
+    "frequentlyBoughtWith": [
+      10,
+      14
+    ],
+    "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "layout": "wide"
+  },
+  {
+    "id": 18,
+    "slug": "suede-ankle-boots",
+    "title": "Suede Ankle Boots",
+    "shortDescription": "Classic Chelsea-style ankle boots in rich suede",
+    "description": "Step into the season with our bestselling suede ankle boots. The classic Chelsea silhouette features elastic side panels for easy on-and-off, while the stacked leather heel adds just enough height to feel polished. The suede upper is treated with a water-resistant coating to handle unexpected drizzle, and the leather-lined interior ensures breathability.",
+    "price": 219,
+    "salePrice": 159,
+    "category": "shoes",
+    "subcategory": "boots",
+    "sizes": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "colors": [
+      {
+        "name": "Tan",
+        "hex": "#D2B48C"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      },
+      {
+        "name": "Dark Brown",
+        "hex": "#654321"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/suede-ankle-boots.jpg",
+    "placeholderColor": "#c8956c",
+    "rating": 4.8,
+    "reviewCount": 112,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": true,
+    "details": {
+      "material": "Upper: Genuine Suede. Sole: Stacked Leather Heel with Rubber Grip",
+      "care": "Use suede brush and protector spray. Avoid heavy rain.",
+      "fit": "True to size. Break-in period of 2-3 wears."
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#8b9a6d",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 19,
+    "slug": "cropped-denim-jacket",
+    "title": "Cropped Denim Jacket",
+    "shortDescription": "Slightly cropped trucker jacket in premium organic denim",
+    "description": "A modern rework of the timeless denim jacket. The slightly cropped length hits at the natural waist, making it the perfect layering piece over dresses, high-waisted jeans, or jumpsuits. Washed to a perfectly lived-in softness with subtle distressing at the collar and cuffs. Brass buttons and adjustable side tabs add authentic details.",
+    "price": 139,
+    "salePrice": null,
+    "category": "women",
+    "subcategory": "tops",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      {
+        "name": "Medium Wash",
+        "hex": "#6CA6CD"
+      },
+      {
+        "name": "Black",
+        "hex": "#1A1A1A"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/cropped-denim-jacket.jpg",
+    "placeholderColor": "#b4a28a",
+    "rating": 4.5,
+    "reviewCount": 88,
+    "inStock": true,
+    "isNew": true,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% Organic Cotton Denim",
+      "care": "Machine wash cold inside out. Hang dry.",
+      "fit": "Cropped fit, hits at natural waist"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#d4b896",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  },
+  {
+    "id": 20,
+    "slug": "striped-cotton-polo",
+    "title": "Striped Cotton Polo",
+    "shortDescription": "Relaxed-fit polo with retro-inspired stripes",
+    "description": "Bring back weekend style with our Striped Cotton Polo. The retro-inspired horizontal stripes add character to a classic polo silhouette, while the relaxed fit and soft pique cotton keep things comfortable. A ribbed collar and two-button placket maintain structure, and the slightly longer back hem means it stays tucked if you prefer. A versatile piece that bridges smart and casual.",
+    "price": 65,
+    "salePrice": null,
+    "category": "men",
+    "subcategory": "tops",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      {
+        "name": "Navy/White",
+        "hex": "#000080"
+      },
+      {
+        "name": "Green/Cream",
+        "hex": "#228B22"
+      },
+      {
+        "name": "Rust/Ecru",
+        "hex": "#B7410E"
+      }
+    ],
+    "images": [
+      "placeholder-600x800"
+    ],
+    "image": "/images/products/striped-cotton-polo.jpg",
+    "placeholderColor": "#a3b18a",
+    "rating": 4.3,
+    "reviewCount": 76,
+    "inStock": true,
+    "isNew": false,
+    "isFeatured": false,
+    "isSale": false,
+    "details": {
+      "material": "100% Cotton Pique",
+      "care": "Machine wash cold. Tumble dry low.",
+      "fit": "Relaxed fit, true to size"
+    },
+    "shippingInfo": "Free shipping on orders $99+. Delivery in 3-5 business days.",
+    "stockCount": null,
+    "hoverPlaceholderColor": "#c4a882",
+    "frequentlyBoughtWith": null,
+    "video": null,
+    "layout": "default"
+  }
+]

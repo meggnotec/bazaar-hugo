@@ -1,0 +1,58 @@
+{{- /* StickyAddToCart — Fixed bottom bar that appears when main Add to Cart scrolls off-screen */ -}}
+{{- $product := .product -}}
+
+<div
+  class="sticky-add-to-cart fixed bottom-16 lg:bottom-0 inset-x-0 z-30 translate-y-full transition-transform duration-300 bg-white dark:bg-surface-900 border-t border-surface-200 dark:border-surface-700 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]"
+  data-sticky-bar
+  data-product-id="{{ $product.id }}"
+  data-product-slug="{{ $product.slug }}"
+  data-product-title="{{ $product.title }}"
+  data-product-price="{{ $product.price }}"
+  data-product-sale-price="{{ if $product.salePrice }}{{ $product.salePrice }}{{ end }}"
+  data-product-image="{{ $product.image }}"
+  data-product-color="{{ $product.placeholderColor }}"
+>
+  <div class="container-custom flex items-center gap-4 py-3">
+    <!-- Thumbnail -->
+    <div class="hidden sm:block w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-surface-100 dark:bg-surface-800">
+      {{- if $product.image }}
+      <img src="{{ $product.image }}" alt="{{ $product.title }}" width="48" height="48" class="w-full h-full object-cover" />
+      {{- else }}
+      <div class="w-full h-full" style="background-color: {{ $product.placeholderColor }}"></div>
+      {{- end }}
+    </div>
+
+    <!-- Title & Price -->
+    <div class="flex-1 min-w-0">
+      <p class="font-heading font-semibold text-sm text-surface-900 dark:text-white truncate">{{ $product.title }}</p>
+      <div class="flex items-center gap-2">
+        {{- if $product.salePrice }}
+        <span class="text-sm font-bold text-primary-500">${{ printf "%.2f" $product.salePrice }}</span>
+        <span class="text-xs text-surface-400 line-through">${{ printf "%.2f" $product.price }}</span>
+        {{- else }}
+        <span class="text-sm font-bold text-surface-900 dark:text-white">${{ printf "%.2f" $product.price }}</span>
+        {{- end }}
+      </div>
+    </div>
+
+    <!-- Size selector -->
+    <select
+      class="sticky-size-select hidden md:block rounded-lg border border-surface-200 dark:border-surface-700 bg-surface-50 dark:bg-surface-800 px-3 py-2 text-sm text-surface-700 dark:text-surface-300 focus:border-primary-500 outline-none"
+      aria-label="Select size"
+    >
+      <option value="">Size</option>
+      {{- range $product.sizes }}
+      <option value="{{ . }}">{{ . }}</option>
+      {{- end }}
+    </select>
+
+    <!-- Add to Cart -->
+    <button
+      type="button"
+      class="sticky-atc-btn btn-primary py-2.5 px-6 text-sm whitespace-nowrap{{ if not $product.inStock }} opacity-50 cursor-not-allowed pointer-events-none{{ end }}"
+      {{ if not $product.inStock }}disabled{{ end }}
+    >
+      <span class="sticky-atc-text">{{ if $product.inStock }}Add to Cart{{ else }}Sold Out{{ end }}</span>
+    </button>
+  </div>
+</div>

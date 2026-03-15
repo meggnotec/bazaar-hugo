@@ -1,0 +1,91 @@
+{{ define "main" }}
+  {{- $slug := .Params.slug | default .File.ContentBaseName -}}
+  {{- $product := false -}}
+  {{- range .Site.Data.products -}}
+    {{- if eq .slug $slug -}}
+      {{- $product = . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{ if not $product }}
+    <!-- Product not found -->
+    <section class="section">
+      <div class="container-custom text-center py-24">
+        <h1 class="text-4xl font-heading font-bold text-surface-900 dark:text-white mb-4">Product Not Found</h1>
+        <p class="text-surface-500 dark:text-surface-400 mb-8">The product you're looking for doesn't exist or has been removed.</p>
+        <a href="/shop/" class="btn btn-primary">Browse All Products</a>
+      </div>
+    </section>
+  {{ else }}
+    {{- /* Build category label */ -}}
+    {{- $catLabel := $product.category -}}
+    {{- range .Site.Data.categories -}}
+      {{- if eq .slug $product.category -}}
+        {{- $catLabel = .name -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{ partial "breadcrumbs.html" (dict "items" (slice
+      (dict "label" "Shop" "href" "/shop/")
+      (dict "label" $catLabel "href" (printf "/categories/%s/" $product.category))
+      (dict "label" $product.title)
+    )) }}
+
+    <section class="section !pt-4">
+      <div class="container-custom">
+        {{ if eq $product.layout "wide" }}
+        <!-- Wide layout: gallery full-width above, info centered below -->
+        <div class="max-w-4xl mx-auto">
+          {{ partial "product-gallery.html" (dict "product" $product) }}
+          <div class="mt-8">
+            {{ partial "product-info.html" (dict "product" $product) }}
+          </div>
+        </div>
+        {{ else }}
+        <!-- Default layout: 2-column -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div>
+            {{ partial "product-gallery.html" (dict "product" $product) }}
+          </div>
+          <div>
+            {{ partial "product-info.html" (dict "product" $product) }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+
+    {{- /* Frequently Bought Together */ -}}
+    {{- if $product.frequentlyBoughtWith -}}
+      {{- $companions := slice -}}
+      {{- range $companionId := $product.frequentlyBoughtWith -}}
+        {{- range $.Site.Data.products -}}
+          {{- if eq .id (int $companionId) -}}
+            {{- $companions = $companions | append . -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt (len $companions) 0 -}}
+        {{ partial "frequently-bought-together.html" (dict "product" $product "companions" $companions) }}
+      {{- end -}}
+    {{- end -}}
+
+    {{- /* Related Products — same category, exclude current */ -}}
+    {{- $related := slice -}}
+    {{- range .Site.Data.products -}}
+      {{- if and (eq .category $product.category) (ne .id $product.id) -}}
+        {{- $related = $related | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{ if gt (len $related) 0 }}
+      {{ partial "related-products.html" (dict "products" (first 4 $related) "title" "You May Also Like") }}
+    {{ end }}
+
+    {{- /* Product Reviews */ -}}
+    {{- $reviews := where .Site.Data.reviews "productId" $product.id -}}
+    {{ partial "product-reviews.html" (dict "productId" $product.id "rating" $product.rating "reviewCount" $product.reviewCount "reviews" $reviews) }}
+
+    {{- /* Sticky Add to Cart */ -}}
+    {{ partial "sticky-add-to-cart.html" (dict "product" $product) }}
+  {{ end }}
+{{ end }}

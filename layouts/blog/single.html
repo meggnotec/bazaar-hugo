@@ -1,0 +1,135 @@
+{{ define "main" }}
+  {{- $category := .Params.category | default "Style" -}}
+  {{- $author := .Params.author | default "Bazaar Editorial" -}}
+  {{- $formattedDate := .Date.Format "January 2, 2006" -}}
+
+  {{- /* Category color mapping */ -}}
+  {{- $bgCat := "bg-primary-100" -}}
+  {{- $txtCat := "text-primary-700" -}}
+  {{- $darkBgCat := "dark:bg-primary-950" -}}
+  {{- $darkTxtCat := "dark:text-primary-300" -}}
+  {{- if eq $category "Sustainability" -}}
+    {{- $bgCat = "bg-emerald-100" -}}
+    {{- $txtCat = "text-emerald-700" -}}
+    {{- $darkBgCat = "dark:bg-emerald-950" -}}
+    {{- $darkTxtCat = "dark:text-emerald-300" -}}
+  {{- else if eq $category "Design" -}}
+    {{- $bgCat = "bg-accent-100" -}}
+    {{- $txtCat = "text-accent-700" -}}
+    {{- $darkBgCat = "dark:bg-accent-950" -}}
+    {{- $darkTxtCat = "dark:text-accent-300" -}}
+  {{- else if eq $category "Care" -}}
+    {{- $bgCat = "bg-secondary-100" -}}
+    {{- $txtCat = "text-secondary-700" -}}
+    {{- $darkBgCat = "dark:bg-secondary-950" -}}
+    {{- $darkTxtCat = "dark:text-secondary-300" -}}
+  {{- else if eq $category "Fashion" -}}
+    {{- $bgCat = "bg-accent-100" -}}
+    {{- $txtCat = "text-accent-700" -}}
+    {{- $darkBgCat = "dark:bg-accent-950" -}}
+    {{- $darkTxtCat = "dark:text-accent-300" -}}
+  {{- end -}}
+
+  {{ partial "breadcrumbs.html" (dict "items" (slice
+    (dict "label" "Blog" "href" "/blog/")
+    (dict "label" .Title)
+  )) }}
+
+  <article class="section !pt-4">
+    <div class="container-custom">
+      <!-- Hero image -->
+      {{ if and .Params.image (not (in .Params.image "placeholder.svg")) }}
+      <div class="relative rounded-2xl overflow-hidden aspect-[21/9] mb-8">
+        <img
+          src="{{ .Params.image }}"
+          alt="{{ .Title }}"
+          width="1200"
+          height="514"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+      </div>
+      {{ end }}
+
+      <!-- Article header -->
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <span class="badge text-xs {{ $bgCat }} {{ $txtCat }} {{ $darkBgCat }} {{ $darkTxtCat }} mb-4 inline-block">{{ $category }}</span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-900 dark:text-white mb-6">{{ .Title }}</h1>
+        <div class="flex items-center justify-center gap-4 text-sm text-surface-500 dark:text-surface-400">
+          <!-- Author avatar -->
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+              <span class="text-white text-sm font-bold">{{ substr $author 0 1 }}</span>
+            </div>
+            <span class="font-medium text-surface-900 dark:text-white">{{ $author }}</span>
+          </div>
+          <span aria-hidden="true" class="text-surface-300 dark:text-surface-600">&bull;</span>
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $formattedDate }}</time>
+          <span aria-hidden="true" class="text-surface-300 dark:text-surface-600">&bull;</span>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="max-w-3xl mx-auto">
+        <div class="prose dark:prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-primary-500 hover:prose-a:text-primary-600 prose-img:rounded-xl">
+          {{ .Content }}
+        </div>
+
+        <!-- Tags -->
+        {{ if .Params.tags }}
+        <div class="mt-10 pt-8 border-t border-surface-200 dark:border-surface-700">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-sm font-medium text-surface-500 dark:text-surface-400">Tags:</span>
+            {{ range .Params.tags }}
+            <span class="rounded-full bg-surface-100 dark:bg-surface-800 px-3 py-1 text-xs font-medium text-surface-600 dark:text-surface-400">
+              {{ . }}
+            </span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- Share buttons -->
+        <div class="mt-8 pt-8 border-t border-surface-200 dark:border-surface-700">
+          {{ partial "share-buttons.html" (dict "url" .Permalink "title" .Title) }}
+        </div>
+
+        <!-- Author card -->
+        <div class="mt-10 rounded-2xl bg-surface-50 dark:bg-surface-800 p-6 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-2xl font-heading font-bold">{{ substr $author 0 1 }}</span>
+          </div>
+          <div class="text-center sm:text-start">
+            <h3 class="font-heading font-bold text-lg text-surface-900 dark:text-white mb-1">{{ $author }}</h3>
+            <p class="text-sm text-primary-500 dark:text-primary-400 mb-3">Fashion Editor</p>
+            <p class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed">
+              Covering the latest trends, style tips, and sustainable fashion insights. Passionate about helping you build a wardrobe that reflects your personal style.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  {{- /* Related Posts */ -}}
+  {{- $allBlogPages := where .Site.RegularPages "Section" "blog" -}}
+  {{- $related := slice -}}
+  {{- range $allBlogPages -}}
+    {{- if ne .File.ContentBaseName $.File.ContentBaseName -}}
+      {{- $related = $related | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{ if gt (len $related) 0 }}
+  <section class="section bg-surface-50 dark:bg-surface-900">
+    <div class="container-custom">
+      <h2 class="text-2xl md:text-3xl font-heading font-bold text-surface-900 dark:text-white mb-8 text-center">Related Posts</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {{ range first 3 $related }}
+          {{ partial "blog-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}

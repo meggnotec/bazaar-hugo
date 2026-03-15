@@ -1,0 +1,37 @@
+{
+  "name": "Bazaar Studio",
+  "tagline": "Your Style, Your Story",
+  "description": "Premium fashion & lifestyle ecommerce store",
+  "url": "https://bazaar-studio.com",
+  "author": "Bazaar Studio",
+  "email": "hello@bazaar-studio.com",
+  "phone": "+1 (555) 123-4567",
+  "address": "123 Fashion Ave, New York, NY 10001",
+  "social": {
+    "twitter": "#",
+    "instagram": "#",
+    "facebook": "#",
+    "pinterest": "#"
+  },
+  "logo": {
+    "type": "image",
+    "text": "Bazaar",
+    "image": "/images/logo.svg",
+    "imageDark": "/images/logo-dark.svg",
+    "width": 160,
+    "height": 40
+  },
+  "currency": "USD",
+  "currencySymbol": "$",
+  "defaultTheme": "light",
+  "announcementBar": {
+    "text": "Free shipping on orders over $99",
+    "link": "/shop",
+    "enabled": true
+  },
+  "freeShippingThreshold": 99,
+  "footer": {
+    "copyright": "2026 Bazaar Studio. All rights reserved.",
+    "tagline": "Curating style since 2020"
+  }
+}

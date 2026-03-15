@@ -1,0 +1,54 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" .Title "subtitle" .Description "badge" "Shop") }}
+
+  <!-- Active filter tags bar -->
+  <div class="container-custom py-4">
+    <div id="active-filters" class="flex flex-wrap gap-2"></div>
+  </div>
+
+  <section class="section !pt-0">
+    <div class="container-custom">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar -->
+        <div class="lg:w-[272px] shrink-0">
+          {{ partial "filter-sidebar.html" . }}
+        </div>
+        <!-- Main content -->
+        <div class="flex-1">
+          <!-- Toolbar -->
+          <div class="flex items-center justify-between mb-6">
+            <p class="text-sm text-surface-500 dark:text-surface-400">
+              Showing <span id="visible-count">{{ len .Site.Data.products }}</span> of {{ len .Site.Data.products }} products
+            </p>
+            <div class="flex items-center gap-3">
+              <!-- Grid/List toggle -->
+              <div class="hidden sm:flex items-center gap-1 border border-surface-300 dark:border-surface-600 rounded-lg p-0.5">
+                <button type="button" id="grid-view-btn" class="p-1.5 rounded text-surface-500 hover:text-primary-500 transition-colors bg-primary-50 dark:bg-primary-900/30 text-primary-500" aria-label="Grid view">
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                </button>
+                <button type="button" id="list-view-btn" class="p-1.5 rounded text-surface-500 hover:text-primary-500 transition-colors" aria-label="List view">
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"/></svg>
+                </button>
+              </div>
+              {{ partial "sort-dropdown.html" . }}
+            </div>
+          </div>
+          <!-- Product grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+            {{ range $i, $p := .Site.Data.products }}
+            <div {{ if ge $i 12 }}style="display:none" data-load-more{{ end }} data-product-wrapper>
+              {{ partial "product-card.html" (dict "product" $p) }}
+            </div>
+            {{ end }}
+          </div>
+          <!-- Load More -->
+          {{ if gt (len .Site.Data.products) 12 }}
+          <div class="text-center mt-10" id="load-more-container">
+            <button type="button" id="load-more-btn" class="btn btn-outline">Load More Products</button>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

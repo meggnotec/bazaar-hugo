@@ -1,0 +1,41 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Compare Products" "subtitle" "Compare up to 4 products side by side" "badge" "Compare") }}
+
+  <section class="section">
+    <div class="container-custom">
+      <!-- Empty state -->
+      <div id="compare-empty-state" class="text-center py-16">
+        <svg class="mx-auto h-20 w-20 text-surface-300 dark:text-surface-600 mb-6" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+        </svg>
+        <h2 class="text-2xl font-heading font-bold text-surface-900 dark:text-white mb-3">No products to compare</h2>
+        <p class="text-surface-500 dark:text-surface-400 mb-8 max-w-md mx-auto">Add products to your compare list from the shop page to see them side by side.</p>
+        <a href="/shop/" class="btn btn-primary">Browse Products</a>
+      </div>
+
+      <!-- Comparison table (populated by JS) -->
+      <div id="compare-filled-state" class="hidden">
+        <div class="flex justify-end mb-4">
+          <button type="button" id="clear-compare-btn" class="text-sm font-semibold text-red-500 hover:text-red-600 transition-colors cursor-pointer">
+            Clear All
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[600px]" id="compare-table">
+            <thead>
+              <tr id="compare-images" class="border-b border-surface-200 dark:border-surface-700">
+                <th class="p-4 text-start text-sm font-semibold text-surface-500 dark:text-surface-400 w-40">Product</th>
+              </tr>
+            </thead>
+            <tbody id="compare-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embed all product data for JS -->
+  <script type="application/json" id="all-products-data">
+    {{ .Site.Data.products | jsonify }}
+  </script>
+{{ end }}

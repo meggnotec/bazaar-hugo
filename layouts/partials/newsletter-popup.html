@@ -1,0 +1,61 @@
+<div
+  class="newsletter-popup fixed inset-0 z-50 hidden items-center justify-center p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Newsletter signup"
+>
+  <!-- Backdrop -->
+  <div class="newsletter-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+  <!-- Modal -->
+  <div class="newsletter-modal relative w-full max-w-md rounded-2xl bg-white dark:bg-surface-800 shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300">
+    <!-- Gradient header -->
+    <div class="gradient-hero px-6 py-8 text-center text-white">
+      <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
+        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        </svg>
+      </div>
+      <h2 class="font-heading font-bold text-2xl mb-1">Get 15% Off</h2>
+      <p class="text-white/80 text-sm">Subscribe to our newsletter for exclusive deals and style updates.</p>
+    </div>
+
+    <!-- Close button -->
+    <button
+      type="button"
+      class="newsletter-close absolute top-3 end-3 w-8 h-8 rounded-full bg-white/20 text-white hover:bg-white/30 flex items-center justify-center transition-colors cursor-pointer"
+      aria-label="Close newsletter popup"
+    >
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Form -->
+    <div class="p-6">
+      <form class="newsletter-popup-form space-y-3" onsubmit="return false;">
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          required
+          class="w-full rounded-lg border border-surface-200 dark:border-surface-700 bg-surface-50 dark:bg-surface-900 px-4 py-3 text-sm text-surface-900 dark:text-white placeholder:text-surface-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-colors"
+        />
+        <button
+          type="submit"
+          class="w-full btn-primary py-3 text-sm"
+        >
+          Subscribe &amp; Get 15% Off
+        </button>
+      </form>
+      <p class="text-xs text-center text-surface-400 dark:text-surface-500 mt-3">
+        No spam, unsubscribe anytime. By subscribing you agree to our Privacy Policy.
+      </p>
+      <button
+        type="button"
+        class="newsletter-no-thanks block mx-auto mt-3 text-xs text-surface-400 hover:text-surface-600 dark:hover:text-surface-300 transition-colors cursor-pointer"
+      >
+        No thanks, I'll pay full price
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Camille Laurent",
+    "role": "Creative Director",
+    "bio": "With over 15 years in luxury fashion, Camille brings a keen eye for trends and an unwavering commitment to quality. She leads Bazaar Studio's creative vision, ensuring every collection tells a story that resonates with our community.",
+    "initials": "CL",
+    "image": "/images/team/camille-laurent.jpg",
+    "social": {
+      "twitter": "https://twitter.com/camille",
+      "instagram": "https://instagram.com/camille",
+      "linkedin": "https://linkedin.com/in/camille"
+    }
+  },
+  {
+    "name": "Marcus Webb",
+    "role": "Head of Design",
+    "bio": "Marcus combines architectural precision with fluid textile knowledge to create garments that are both structured and effortless. A graduate of Parsons School of Design, he oversees pattern development and fabric sourcing for every piece in our line.",
+    "initials": "MW",
+    "image": "/images/team/marcus-webb.jpg",
+    "social": {
+      "twitter": "https://twitter.com/marcus",
+      "instagram": "https://instagram.com/marcus",
+      "linkedin": "https://linkedin.com/in/marcus"
+    }
+  },
+  {
+    "name": "Aria Nakamura",
+    "role": "Lead Stylist",
+    "bio": "Aria has styled editorials for Vogue, Harper's Bazaar, and Elle before joining our team. She curates the styling direction for all lookbooks, campaigns, and product photography, bringing each piece to life with her signature effortless aesthetic.",
+    "initials": "AN",
+    "image": "/images/team/aria-nakamura.jpg",
+    "social": {
+      "twitter": "https://twitter.com/aria",
+      "instagram": "https://instagram.com/aria",
+      "linkedin": "https://linkedin.com/in/aria"
+    }
+  },
+  {
+    "name": "Jordan Ellis",
+    "role": "Marketing Director",
+    "bio": "Jordan connects Bazaar Studio with fashion-forward audiences around the world. With a background in digital strategy at leading DTC brands, Jordan drives our social presence, brand partnerships, and community-building initiatives.",
+    "initials": "JE",
+    "image": "/images/team/jordan-ellis.jpg",
+    "social": {
+      "twitter": "https://twitter.com/jordan",
+      "instagram": "https://instagram.com/jordan",
+      "linkedin": "https://linkedin.com/in/jordan"
+    }
+  }
+]

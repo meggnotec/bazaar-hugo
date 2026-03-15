@@ -1,0 +1,29 @@
+{{- /* Placeholder — Inline SVG rectangle with centered label text */ -}}
+{{- $width := .width | default 600 -}}
+{{- $height := .height | default 400 -}}
+{{- $label := .label | default (printf "%dx%d" $width $height) -}}
+{{- $bgColor := .bgColor | default "#c4a882" -}}
+{{- $class := .class | default "" -}}
+<svg
+  width="{{ $width }}"
+  height="{{ $height }}"
+  viewBox="0 0 {{ $width }} {{ $height }}"
+  xmlns="http://www.w3.org/2000/svg"
+  {{ with $class }}class="{{ . }}"{{ end }}
+  role="img"
+  aria-label="{{ $label }}"
+>
+  <rect width="{{ $width }}" height="{{ $height }}" fill="{{ $bgColor }}" />
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    fill="rgba(255,255,255,0.7)"
+    font-family="system-ui, sans-serif"
+    font-size="14"
+    font-weight="500"
+  >
+    {{ $label }}
+  </text>
+</svg>

@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Terms of Service" "subtitle" "Last updated: March 1, 2026" "badge" "Legal") }}
+
+  <section class="section">
+    <div class="container-custom max-w-3xl">
+      <div class="prose dark:prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold">
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using the Bazaar Studio website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services. We reserve the right to modify these terms at any time, and your continued use of the site constitutes acceptance of any modifications.</p>
+
+        <h2>2. Products and Pricing</h2>
+        <p>All products displayed on our website are subject to availability. We reserve the right to discontinue any product at any time without notice. Prices for our products are subject to change without notice. We make every effort to display accurate pricing, but errors may occur. If a product is listed at an incorrect price, we reserve the right to refuse or cancel any orders placed for that product.</p>
+        <p>Product images are for illustration purposes and may differ slightly from the actual product in terms of color, size, or appearance due to screen display settings and manufacturing variations.</p>
+
+        <h2>3. Orders and Payment</h2>
+        <p>When you place an order, you offer to purchase the product at the price listed. All orders are subject to acceptance by Bazaar Studio. We may refuse or cancel any order for any reason, including product availability, errors in product or pricing information, or suspected fraudulent activity.</p>
+        <p>Payment must be received in full before we ship your order. We accept major credit cards (Visa, Mastercard, American Express), PayPal, and other payment methods as displayed at checkout. All transactions are processed in US dollars unless otherwise specified.</p>
+
+        <h2>4. Shipping and Delivery</h2>
+        <p>We aim to process and ship all orders within 1-2 business days. Delivery times vary depending on the shipping method selected and your location. We are not responsible for delays caused by shipping carriers, customs processing, or events beyond our control. Risk of loss and title for items purchased pass to you upon delivery of the items to the carrier.</p>
+
+        <h2>5. Returns and Refunds</h2>
+        <p>We offer a 30-day return policy for most items. Products must be returned in their original condition with all tags attached. Some items, including intimates, swimwear, and final sale items, are not eligible for return. Refunds will be processed to the original payment method within 5-7 business days of receiving the returned item. Shipping costs are non-refundable unless the return is due to our error.</p>
+
+        <h2>6. Intellectual Property</h2>
+        <p>All content on this website, including text, graphics, logos, images, audio clips, digital downloads, data compilations, and software, is the property of Bazaar Studio or its content suppliers and is protected by international copyright laws. The compilation of all content on this site is the exclusive property of Bazaar Studio. You may not reproduce, distribute, display, sell, lease, transmit, create derivative works from, translate, modify, reverse-engineer, disassemble, decompile, or otherwise exploit this site or any portion of it unless expressly permitted by us in writing.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable law, Bazaar Studio shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services; any conduct or content of any third party on the services; any content obtained from the services; or unauthorized access, use, or alteration of your transmissions or content.</p>
+
+        <h2>8. Contact Information</h2>
+        <p>If you have any questions about these Terms of Service, please contact us at:</p>
+        <ul>
+          <li>Email: <a href="mailto:{{ .Site.Data.site_config.email }}">{{ .Site.Data.site_config.email }}</a></li>
+          <li>Phone: {{ .Site.Data.site_config.phone }}</li>
+          <li>Address: {{ .Site.Data.site_config.address }}</li>
+        </ul>
+        <p>These terms are governed by and construed in accordance with the laws of the State of New York, United States, without regard to its conflict of law provisions.</p>
+
+      </div>
+    </div>
+  </section>
+{{ end }}

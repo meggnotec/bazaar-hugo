@@ -1,0 +1,70 @@
+{{ define "main" }}
+  <!-- Custom gradient-sale hero -->
+  <section class="relative overflow-hidden py-16 md:py-24" style="background: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="container-custom relative z-10 text-center">
+      <span class="inline-block badge bg-white/20 text-white backdrop-blur-sm mb-4">Limited Time</span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-4">Flash Sale</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto mb-8">Up to 60% off select styles. Don't miss out on these incredible deals.</p>
+
+      <!-- Countdown timer -->
+      <div class="flex items-center justify-center gap-4 mb-8" id="sale-countdown" data-countdown-days="3">
+        <div class="text-center">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-1">
+            <span class="text-2xl sm:text-3xl font-heading font-bold text-white" id="sale-days">03</span>
+          </div>
+          <span class="text-xs text-white/70">Days</span>
+        </div>
+        <span class="text-2xl font-bold text-white/50 -mt-5">:</span>
+        <div class="text-center">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-1">
+            <span class="text-2xl sm:text-3xl font-heading font-bold text-white" id="sale-hours">00</span>
+          </div>
+          <span class="text-xs text-white/70">Hours</span>
+        </div>
+        <span class="text-2xl font-bold text-white/50 -mt-5">:</span>
+        <div class="text-center">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-1">
+            <span class="text-2xl sm:text-3xl font-heading font-bold text-white" id="sale-minutes">00</span>
+          </div>
+          <span class="text-xs text-white/70">Minutes</span>
+        </div>
+        <span class="text-2xl font-bold text-white/50 -mt-5">:</span>
+        <div class="text-center">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-1">
+            <span class="text-2xl sm:text-3xl font-heading font-bold text-white" id="sale-seconds">00</span>
+          </div>
+          <span class="text-xs text-white/70">Seconds</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-custom">
+      {{- $saleProducts := slice -}}
+      {{- range .Site.Data.products -}}
+        {{- if .isSale -}}
+          {{- $saleProducts = $saleProducts | append . -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{ if gt (len $saleProducts) 0 }}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {{ range $saleProducts }}
+          {{ partial "product-card.html" (dict "product" .) }}
+        {{ end }}
+      </div>
+      {{ else }}
+      <div class="text-center py-16">
+        <h2 class="text-xl font-heading font-bold text-surface-900 dark:text-white mb-2">Sale coming soon!</h2>
+        <p class="text-surface-500 dark:text-surface-400 mb-6">Check back for our next flash sale event.</p>
+        <a href="/shop/" class="btn btn-primary">Browse All Products</a>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

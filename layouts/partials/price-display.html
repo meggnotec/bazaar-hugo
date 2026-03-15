@@ -1,0 +1,20 @@
+{{- /* PriceDisplay — Product price with optional sale price and discount badge */ -}}
+{{- $price := .price -}}
+{{- $salePrice := .salePrice -}}
+{{- $size := .size | default "md" -}}
+{{- $priceClass := "text-lg" -}}
+{{- if eq $size "lg" -}}
+  {{- $priceClass = "text-2xl" -}}
+{{- else if eq $size "sm" -}}
+  {{- $priceClass = "text-sm" -}}
+{{- end -}}
+<div class="flex items-center gap-2">
+  {{- if $salePrice -}}
+    <span class="{{ $priceClass }} font-bold text-primary-600 dark:text-primary-400">${{ printf "%.2f" $salePrice }}</span>
+    <span class="{{ $priceClass }} text-surface-400 line-through">${{ printf "%.2f" $price }}</span>
+    {{- $discount := int (math.Round (sub 100 (mul (div (float $salePrice) (float $price)) 100))) -}}
+    <span class="badge-sale text-[10px]">-{{ $discount }}%</span>
+  {{- else -}}
+    <span class="{{ $priceClass }} font-bold text-surface-900 dark:text-white">${{ printf "%.2f" $price }}</span>
+  {{- end -}}
+</div>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "slug": "spring-summer-2026",
+    "title": "Spring/Summer 2026",
+    "season": "Spring/Summer",
+    "year": 2026,
+    "description": "Sun-kissed palettes and flowing silhouettes inspired by coastal living. Think linen, cotton, and effortless layering.",
+    "itemCount": 12,
+    "image": "/images/lookbook/spring-summer.jpg",
+    "placeholderColor": "#fda4af",
+    "tag": "New Season"
+  },
+  {
+    "id": 2,
+    "slug": "resort-collection",
+    "title": "Resort Collection",
+    "season": "Resort",
+    "year": 2026,
+    "description": "Escape-ready pieces designed for warm getaways. Bold prints, relaxed fits, and vacation-ready accessories.",
+    "itemCount": 8,
+    "image": "/images/lookbook/resort.jpg",
+    "placeholderColor": "#7dd3fc",
+    "tag": "Bestseller"
+  },
+  {
+    "id": 3,
+    "slug": "minimalist-essentials",
+    "title": "Minimalist Essentials",
+    "season": "Year-Round",
+    "year": 2026,
+    "description": "Timeless wardrobe foundations in neutral tones. Invest in pieces that never go out of style.",
+    "itemCount": 10,
+    "image": "/images/lookbook/minimalist.jpg",
+    "placeholderColor": "#e2e8f0",
+    "tag": "Capsule"
+  },
+  {
+    "id": 4,
+    "slug": "evening-edit",
+    "title": "The Evening Edit",
+    "season": "Fall/Winter",
+    "year": 2025,
+    "description": "After-dark glamour featuring rich fabrics, statement accessories, and elegant silhouettes for every occasion.",
+    "itemCount": 9,
+    "image": "/images/lookbook/evening.jpg",
+    "placeholderColor": "#c4b5fd",
+    "tag": "Occasion"
+  },
+  {
+    "id": 5,
+    "slug": "denim-stories",
+    "title": "Denim Stories",
+    "season": "Year-Round",
+    "year": 2026,
+    "description": "From classic straight-leg to modern wide-leg — explore our curated denim collection and how to style each piece.",
+    "itemCount": 7,
+    "image": "/images/lookbook/denim.jpg",
+    "placeholderColor": "#93c5fd",
+    "tag": "Staple"
+  },
+  {
+    "id": 6,
+    "slug": "athleisure-luxe",
+    "title": "Athleisure Luxe",
+    "season": "Spring",
+    "year": 2026,
+    "description": "Where performance meets fashion. Premium activewear designed for studio sessions and street style alike.",
+    "itemCount": 11,
+    "image": "/images/lookbook/athleisure.jpg",
+    "placeholderColor": "#6ee7b7",
+    "tag": "Trending"
+  }
+]

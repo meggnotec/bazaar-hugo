@@ -1,0 +1,47 @@
+{{- /* OrderSummary — Order totals card with subtotal, shipping, tax, and total */ -}}
+{{- /* Values are populated/updated by client-side JS from localStorage cart */ -}}
+{{- $subtotal := .subtotal | default 0.0 -}}
+{{- $showCheckoutBtn := .showCheckoutBtn | default true -}}
+{{- $shipping := cond (ge (float $subtotal) 99.0) 0.0 9.95 -}}
+{{- $tax := mul (float $subtotal) 0.08 -}}
+{{- $total := add (add (float $subtotal) $shipping) $tax -}}
+<div class="order-summary rounded-2xl bg-surface-50 dark:bg-surface-800 p-6 sticky top-24">
+  <h3 class="text-lg font-heading font-bold text-surface-900 dark:text-white mb-4">Order Summary</h3>
+
+  <!-- Promo code -->
+  {{ partial "promo-code-input.html" . }}
+
+  <div class="space-y-3 text-sm mt-4">
+    <div class="flex justify-between text-surface-600 dark:text-surface-400">
+      <span>Subtotal</span>
+      <span id="summary-subtotal">${{ printf "%.2f" $subtotal }}</span>
+    </div>
+    <div class="flex justify-between text-surface-600 dark:text-surface-400">
+      <span>Shipping</span>
+      <span id="summary-shipping">{{ if ge (float $subtotal) 99.0 }}Free{{ else }}$9.95{{ end }}</span>
+    </div>
+    <div class="flex justify-between text-surface-600 dark:text-surface-400">
+      <span>Tax (estimated)</span>
+      <span id="summary-tax">${{ printf "%.2f" $tax }}</span>
+    </div>
+    <hr class="border-surface-200 dark:border-surface-700" />
+    <div class="flex justify-between text-lg font-heading font-bold text-surface-900 dark:text-white">
+      <span>Total</span>
+      <span id="summary-total">${{ printf "%.2f" $total }}</span>
+    </div>
+  </div>
+
+  {{- if $showCheckoutBtn }}
+  <a href="/checkout/" class="btn-primary w-full text-center mt-6 block">
+    Proceed to Checkout
+  </a>
+  {{- end }}
+
+  <p class="text-xs text-surface-500 dark:text-surface-400 text-center mt-3" id="summary-shipping-note">
+    {{- if lt (float $subtotal) 99.0 -}}
+    Add ${{ printf "%.2f" (sub 99.0 (float $subtotal)) }} more for free shipping
+    {{- else -}}
+    You qualify for free shipping!
+    {{- end -}}
+  </p>
+</div>

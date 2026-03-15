@@ -1,0 +1,15 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  {{ partial "category-strip.html" . }}
+  {{- $featured := where .Site.Data.products "isFeatured" true -}}
+  {{ partial "featured-collection.html" (dict "title" "Trending Now" "products" (first 4 $featured) "viewAllLink" "/shop/") }}
+  {{ partial "promo-banner.html" . }}
+  {{- $newArrivals := where .Site.Data.products "isNew" true -}}
+  {{ partial "featured-collection.html" (dict "title" "Just Dropped" "products" (first 8 $newArrivals) "viewAllLink" "/shop/" "cols" 4) }}
+  {{ partial "sale-banner.html" . }}
+  {{- $topRated := sort .Site.Data.products "rating" "desc" -}}
+  {{ partial "featured-collection.html" (dict "title" "Most Loved" "products" (first 4 $topRated) "viewAllLink" "/shop/") }}
+  {{ partial "testimonials.html" . }}
+  {{ partial "instagram-grid.html" . }}
+  {{ partial "newsletter-signup.html" . }}
+{{ end }}

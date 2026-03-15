@@ -1,0 +1,100 @@
+<!-- QuickView Modal (global, one instance) -->
+<div id="quickview-backdrop" class="fixed inset-0 bg-black/60 z-60 hidden" aria-hidden="true"></div>
+
+<div
+  id="quickview-modal"
+  class="fixed inset-0 z-60 hidden items-center justify-center p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Quick view product details"
+>
+  <div class="bg-white dark:bg-surface-900 rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative">
+    <!-- Close button -->
+    <button
+      id="quickview-close"
+      type="button"
+      class="absolute top-3 end-3 z-10 w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center text-surface-500 hover:text-surface-900 dark:hover:text-white hover:bg-surface-200 dark:hover:bg-surface-700 transition-colors cursor-pointer"
+      aria-label="Close quick view"
+    >
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <!-- Image -->
+      <div id="quickview-image-area" class="relative aspect-[3/4] md:aspect-[3/4] rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none overflow-hidden bg-surface-100 dark:bg-surface-800">
+        <!-- Badges -->
+        <div id="quickview-badges" class="absolute top-3 start-3 flex flex-col gap-1.5 z-[1]"></div>
+        <!-- Image content injected by JS -->
+      </div>
+
+      <!-- Info -->
+      <div class="p-6 flex flex-col gap-4">
+        <div>
+          <h2 id="quickview-title" class="font-heading text-xl font-bold text-surface-900 dark:text-white"></h2>
+          <div id="quickview-rating" class="flex items-center gap-2 mt-1"></div>
+        </div>
+
+        <div id="quickview-price" class="flex items-center gap-3"></div>
+
+        <div id="quickview-stock" class="text-sm font-medium"></div>
+
+        <p id="quickview-description" class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed"></p>
+
+        <!-- Size picker -->
+        <div id="quickview-sizes-wrap">
+          <label class="block text-sm font-semibold text-surface-900 dark:text-white mb-2">Size</label>
+          <div id="quickview-sizes" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Color picker -->
+        <div id="quickview-colors-wrap">
+          <label class="block text-sm font-semibold text-surface-900 dark:text-white mb-2">Color: <span id="quickview-color-name" class="font-normal text-surface-500 dark:text-surface-400"></span></label>
+          <div id="quickview-colors" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Quantity -->
+        <div>
+          <label class="block text-sm font-semibold text-surface-900 dark:text-white mb-2">Quantity</label>
+          <div class="flex items-center border border-surface-300 dark:border-surface-600 rounded-lg w-fit">
+            <button
+              id="quickview-qty-minus"
+              type="button"
+              class="w-10 h-10 flex items-center justify-center text-surface-500 hover:text-surface-900 dark:hover:text-white transition-colors cursor-pointer"
+              aria-label="Decrease quantity"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" /></svg>
+            </button>
+            <span id="quickview-qty" class="w-10 text-center text-sm font-semibold text-surface-900 dark:text-white">1</span>
+            <button
+              id="quickview-qty-plus"
+              type="button"
+              class="w-10 h-10 flex items-center justify-center text-surface-500 hover:text-surface-900 dark:hover:text-white transition-colors cursor-pointer"
+              aria-label="Increase quantity"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Add to cart -->
+        <button
+          id="quickview-add-to-cart"
+          type="button"
+          class="btn-primary w-full py-3.5 text-base mt-1 cursor-pointer"
+        >
+          Add to Cart
+        </button>
+
+        <!-- View full details -->
+        <a id="quickview-details-link" href="#" class="text-center text-sm text-primary-600 dark:text-primary-400 hover:underline font-medium">
+          View Full Details
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Products data for QuickView JS -->
+<script type="application/json" id="quickview-products-data">{{ .Site.Data.products | jsonify }}</script>

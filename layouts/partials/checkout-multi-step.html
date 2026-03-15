@@ -1,0 +1,306 @@
+{{- /* CheckoutMultiStep — 3-step wizard: Shipping → Billing → Review */ -}}
+
+{{- $countries := slice
+  (dict "code" "US" "name" "United States")
+  (dict "code" "CA" "name" "Canada")
+  (dict "code" "GB" "name" "United Kingdom")
+  (dict "code" "AU" "name" "Australia")
+  (dict "code" "AT" "name" "Austria")
+  (dict "code" "BE" "name" "Belgium")
+  (dict "code" "BR" "name" "Brazil")
+  (dict "code" "CN" "name" "China")
+  (dict "code" "DK" "name" "Denmark")
+  (dict "code" "FI" "name" "Finland")
+  (dict "code" "FR" "name" "France")
+  (dict "code" "DE" "name" "Germany")
+  (dict "code" "HK" "name" "Hong Kong")
+  (dict "code" "IN" "name" "India")
+  (dict "code" "ID" "name" "Indonesia")
+  (dict "code" "IE" "name" "Ireland")
+  (dict "code" "IL" "name" "Israel")
+  (dict "code" "IT" "name" "Italy")
+  (dict "code" "JP" "name" "Japan")
+  (dict "code" "MY" "name" "Malaysia")
+  (dict "code" "MX" "name" "Mexico")
+  (dict "code" "NL" "name" "Netherlands")
+  (dict "code" "NZ" "name" "New Zealand")
+  (dict "code" "NO" "name" "Norway")
+  (dict "code" "PH" "name" "Philippines")
+  (dict "code" "PL" "name" "Poland")
+  (dict "code" "PT" "name" "Portugal")
+  (dict "code" "QA" "name" "Qatar")
+  (dict "code" "SA" "name" "Saudi Arabia")
+  (dict "code" "SG" "name" "Singapore")
+  (dict "code" "ZA" "name" "South Africa")
+  (dict "code" "KR" "name" "South Korea")
+  (dict "code" "ES" "name" "Spain")
+  (dict "code" "SE" "name" "Sweden")
+  (dict "code" "CH" "name" "Switzerland")
+  (dict "code" "TW" "name" "Taiwan")
+  (dict "code" "TH" "name" "Thailand")
+  (dict "code" "TR" "name" "Turkey")
+  (dict "code" "AE" "name" "United Arab Emirates")
+  (dict "code" "VN" "name" "Vietnam")
+-}}
+
+<!-- Step Indicator -->
+<div class="flex items-center justify-center gap-4 mb-8" id="ms-step-indicator">
+  {{- $steps := slice (dict "number" 1 "label" "Shipping") (dict "number" 2 "label" "Billing") (dict "number" 3 "label" "Review") -}}
+  {{- range $index, $step := $steps }}
+  <button
+    type="button"
+    class="flex items-center gap-2 ms-step-btn"
+    data-step="{{ $step.number }}"
+    disabled
+  >
+    <div
+      class="ms-step-circle w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors {{ if eq $step.number 1 }}gradient-cta text-white{{ else }}bg-surface-200 dark:bg-surface-700 text-surface-500 dark:text-surface-400{{ end }}"
+      data-step="{{ $step.number }}"
+    >
+      <svg class="h-4 w-4 hidden" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+      </svg>
+      <span>{{ $step.number }}</span>
+    </div>
+    <span
+      class="ms-step-label text-sm font-medium hidden sm:inline {{ if eq $step.number 1 }}text-surface-900 dark:text-white{{ else }}text-surface-400 dark:text-surface-500{{ end }}"
+      data-step="{{ $step.number }}"
+    >
+      {{ $step.label }}
+    </span>
+  </button>
+  {{- if lt $index 2 }}
+  <div
+    class="ms-step-line w-12 h-0.5 rounded bg-surface-200 dark:bg-surface-700"
+    data-after-step="{{ $step.number }}"
+  ></div>
+  {{- end }}
+  {{- end }}
+</div>
+
+<!-- Step 1: Shipping -->
+<div id="ms-step-1">
+  <h2 class="text-xl font-heading font-bold text-surface-900 dark:text-white mb-4 flex items-center gap-2">
+    <span class="w-7 h-7 rounded-full gradient-cta text-white text-sm flex items-center justify-center font-bold">1</span>
+    Shipping Information
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div>
+      <label for="ms-ship-first" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">First Name <span class="text-red-500">*</span></label>
+      <input type="text" id="ms-ship-first" class="input" required />
+    </div>
+    <div>
+      <label for="ms-ship-last" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Last Name <span class="text-red-500">*</span></label>
+      <input type="text" id="ms-ship-last" class="input" required />
+    </div>
+    <div class="sm:col-span-2">
+      <label for="ms-ship-email" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Email <span class="text-red-500">*</span></label>
+      <input type="email" id="ms-ship-email" class="input" required />
+    </div>
+    <div class="sm:col-span-2">
+      <label for="ms-ship-phone" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Phone</label>
+      <input type="tel" id="ms-ship-phone" class="input" />
+    </div>
+    <div class="sm:col-span-2">
+      <label for="ms-ship-address" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Address <span class="text-red-500">*</span></label>
+      <input type="text" id="ms-ship-address" class="input" required />
+    </div>
+    <div class="sm:col-span-2">
+      <label for="ms-ship-address2" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Apartment, suite, etc. <span class="text-surface-400">(optional)</span></label>
+      <input type="text" id="ms-ship-address2" class="input" />
+    </div>
+    <div>
+      <label for="ms-ship-city" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">City <span class="text-red-500">*</span></label>
+      <input type="text" id="ms-ship-city" class="input" required />
+    </div>
+    <div>
+      <label for="ms-ship-state" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">State / Province <span class="text-red-500">*</span></label>
+      <input type="text" id="ms-ship-state" class="input" required />
+    </div>
+    <div>
+      <label for="ms-ship-zip" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">ZIP / Postal Code <span class="text-red-500">*</span></label>
+      <input type="text" id="ms-ship-zip" class="input" required />
+    </div>
+    <div>
+      <label for="ms-ship-country" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Country</label>
+      <select id="ms-ship-country" class="input">
+        {{- range $countries }}
+        <option value="{{ .code }}"{{ if eq .code "US" }} selected{{ end }}>{{ .name }}</option>
+        {{- end }}
+      </select>
+    </div>
+  </div>
+  <div class="flex justify-end mt-6">
+    <button type="button" id="ms-to-step-2" class="btn-primary py-3 px-8">
+      Continue to Billing
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Step 2: Billing -->
+<div id="ms-step-2" class="hidden">
+  <h2 class="text-xl font-heading font-bold text-surface-900 dark:text-white mb-4 flex items-center gap-2">
+    <span class="w-7 h-7 rounded-full gradient-cta text-white text-sm flex items-center justify-center font-bold">2</span>
+    Billing Information
+  </h2>
+  <label class="flex items-center gap-2.5 cursor-pointer mb-4">
+    <input type="checkbox" id="ms-billing-same" checked class="h-4 w-4 rounded border-surface-300 dark:border-surface-600 text-primary-500 focus:ring-primary-500 focus:ring-offset-0 cursor-pointer" />
+    <span class="text-sm text-surface-700 dark:text-surface-300">Same as shipping address</span>
+  </label>
+  <div id="ms-billing-fields" class="grid grid-cols-1 sm:grid-cols-2 gap-4 hidden">
+    <div>
+      <label for="ms-bill-first" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">First Name</label>
+      <input type="text" id="ms-bill-first" class="input" />
+    </div>
+    <div>
+      <label for="ms-bill-last" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Last Name</label>
+      <input type="text" id="ms-bill-last" class="input" />
+    </div>
+    <div class="sm:col-span-2">
+      <label for="ms-bill-address" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Address</label>
+      <input type="text" id="ms-bill-address" class="input" />
+    </div>
+    <div class="sm:col-span-2">
+      <label for="ms-bill-address2" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Apartment, suite, etc. <span class="text-surface-400">(optional)</span></label>
+      <input type="text" id="ms-bill-address2" class="input" />
+    </div>
+    <div>
+      <label for="ms-bill-city" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">City</label>
+      <input type="text" id="ms-bill-city" class="input" />
+    </div>
+    <div>
+      <label for="ms-bill-state" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">State / Province</label>
+      <input type="text" id="ms-bill-state" class="input" />
+    </div>
+    <div>
+      <label for="ms-bill-zip" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">ZIP / Postal Code</label>
+      <input type="text" id="ms-bill-zip" class="input" />
+    </div>
+    <div>
+      <label for="ms-bill-country" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Country</label>
+      <select id="ms-bill-country" class="input">
+        {{- range $countries }}
+        <option value="{{ .code }}"{{ if eq .code "US" }} selected{{ end }}>{{ .name }}</option>
+        {{- end }}
+      </select>
+    </div>
+  </div>
+  <div class="flex justify-between mt-6">
+    <button type="button" id="ms-back-to-1" class="btn-outline py-3 px-6">
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+      Back
+    </button>
+    <button type="button" id="ms-to-step-3" class="btn-primary py-3 px-8">
+      Continue to Review
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Step 3: Review & Place Order -->
+<div id="ms-step-3" class="hidden">
+  <h2 class="text-xl font-heading font-bold text-surface-900 dark:text-white mb-6 flex items-center gap-2">
+    <span class="w-7 h-7 rounded-full gradient-cta text-white text-sm flex items-center justify-center font-bold">3</span>
+    Review Your Order
+  </h2>
+
+  <!-- Shipping Summary -->
+  <div class="rounded-xl border border-surface-200 dark:border-surface-700 p-4 mb-4">
+    <div class="flex items-center justify-between mb-2">
+      <h3 class="text-sm font-heading font-semibold text-surface-900 dark:text-white">Shipping Address</h3>
+      <button type="button" class="ms-edit-link text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline" data-goto-step="1">Edit</button>
+    </div>
+    <div id="ms-review-shipping" class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed"></div>
+  </div>
+
+  <!-- Billing Summary -->
+  <div class="rounded-xl border border-surface-200 dark:border-surface-700 p-4 mb-4">
+    <div class="flex items-center justify-between mb-2">
+      <h3 class="text-sm font-heading font-semibold text-surface-900 dark:text-white">Billing Address</h3>
+      <button type="button" class="ms-edit-link text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline" data-goto-step="2">Edit</button>
+    </div>
+    <div id="ms-review-billing" class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed"></div>
+  </div>
+
+  <!-- Payment -->
+  <div class="rounded-xl border border-surface-200 dark:border-surface-700 p-4 mb-4">
+    <h3 class="text-sm font-heading font-semibold text-surface-900 dark:text-white mb-3">Payment Method</h3>
+    <div class="space-y-4">
+      <div>
+        <label for="ms-card-name" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Name on Card</label>
+        <input type="text" id="ms-card-name" class="input" placeholder="John Doe" />
+      </div>
+      <div>
+        <label for="ms-card-number" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Card Number</label>
+        <input type="text" id="ms-card-number" class="input" placeholder="1234 5678 9012 3456" maxlength="19" />
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label for="ms-card-expiry" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">Expiry Date</label>
+          <input type="text" id="ms-card-expiry" class="input" placeholder="MM / YY" maxlength="7" />
+        </div>
+        <div>
+          <label for="ms-card-cvv" class="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">CVV</label>
+          <input type="text" id="ms-card-cvv" class="input" placeholder="123" maxlength="4" />
+        </div>
+      </div>
+      <p class="text-xs text-surface-500 dark:text-surface-400 flex items-center gap-1">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+        </svg>
+        This is a demo. No real payment will be processed.
+      </p>
+    </div>
+  </div>
+
+  <!-- Order Items -->
+  <div class="rounded-xl border border-surface-200 dark:border-surface-700 p-4 mb-4">
+    <h3 class="text-sm font-heading font-semibold text-surface-900 dark:text-white mb-3">Order Items</h3>
+    <div id="ms-review-items" class="space-y-3"></div>
+  </div>
+
+  <!-- Order Totals -->
+  <div class="rounded-xl bg-surface-50 dark:bg-surface-800 p-4 mb-6">
+    <div class="space-y-2 text-sm">
+      <div class="flex justify-between text-surface-600 dark:text-surface-400">
+        <span>Subtotal</span>
+        <span id="ms-review-subtotal">$0.00</span>
+      </div>
+      <div class="flex justify-between text-surface-600 dark:text-surface-400">
+        <span>Shipping</span>
+        <span id="ms-review-shipping-cost">$0.00</span>
+      </div>
+      <div class="flex justify-between text-surface-600 dark:text-surface-400">
+        <span>Tax (estimated)</span>
+        <span id="ms-review-tax">$0.00</span>
+      </div>
+      <hr class="border-surface-200 dark:border-surface-700" />
+      <div class="flex justify-between text-lg font-heading font-bold text-surface-900 dark:text-white">
+        <span>Total</span>
+        <span id="ms-review-total">$0.00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="flex justify-between">
+    <button type="button" id="ms-back-to-2" class="btn-outline py-3 px-6">
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+      Back
+    </button>
+    <button type="button" id="ms-place-order" class="btn-primary py-3 px-8 text-lg">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+      Place Order
+    </button>
+  </div>
+</div>
+
+<!-- Country map for JS -->
+<script id="ms-country-map" type="application/json">
+  {{ $countryMap := dict }}
+  {{- range $countries -}}
+    {{- $countryMap = merge $countryMap (dict .code .name) -}}
+  {{- end -}}
+  {{ $countryMap | jsonify }}
+</script>

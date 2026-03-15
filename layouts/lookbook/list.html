@@ -1,0 +1,113 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Lookbook" "subtitle" "Explore our curated collections and get inspired" "badge" "Lookbook") }}
+
+  <section class="section">
+    <div class="container-custom">
+      {{- $items := .Site.Data.lookbook -}}
+
+      {{ if gt (len $items) 0 }}
+      <!-- Featured hero card (first item, full-width 16/7) -->
+      {{- $featured := index $items 0 -}}
+      <div class="mb-8">
+        <a href="/shop/" class="group block relative rounded-2xl overflow-hidden aspect-[16/7]">
+          {{- if $featured.image }}
+          <img
+            src="{{ $featured.image }}"
+            alt="{{ $featured.title }}"
+            width="1400"
+            height="612"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          {{- else }}
+          <div class="w-full h-full flex items-center justify-center" style="background-color: {{ $featured.placeholderColor }}">
+            <span class="text-white/40 font-heading text-2xl">{{ $featured.title }}</span>
+          </div>
+          {{- end }}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8">
+            {{ if $featured.tag }}
+            <span class="badge badge-primary mb-3 inline-block">{{ $featured.tag }}</span>
+            {{ end }}
+            <h2 class="font-heading font-bold text-3xl md:text-4xl text-white mb-2">{{ $featured.title }}</h2>
+            <p class="text-white/80 max-w-xl mb-3">{{ $featured.description }}</p>
+            <span class="text-sm font-semibold text-white/90">{{ $featured.itemCount }} pieces &bull; {{ $featured.season }} {{ $featured.year }}</span>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+
+      {{ if gt (len $items) 2 }}
+      <!-- 2-up row (items 2-3, 4/5 aspect) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+        {{ range $i, $item := (after 1 $items) }}
+        {{ if lt $i 2 }}
+        <a href="/shop/" class="group block relative rounded-2xl overflow-hidden aspect-[4/5]">
+          {{- if $item.image }}
+          <img
+            src="{{ $item.image }}"
+            alt="{{ $item.title }}"
+            width="600"
+            height="750"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          {{- else }}
+          <div class="w-full h-full flex items-center justify-center" style="background-color: {{ $item.placeholderColor }}">
+            <span class="text-white/40 font-heading text-xl">{{ $item.title }}</span>
+          </div>
+          {{- end }}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            {{ if $item.tag }}
+            <span class="badge badge-primary mb-2 inline-block text-xs">{{ $item.tag }}</span>
+            {{ end }}
+            <h3 class="font-heading font-bold text-xl text-white mb-1">{{ $item.title }}</h3>
+            <p class="text-white/70 text-sm">{{ $item.itemCount }} pieces</p>
+          </div>
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ if gt (len $items) 3 }}
+      <!-- 3-up row (items 4-6, 3/4 aspect) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {{ range $i, $item := (after 3 $items) }}
+        {{ if lt $i 3 }}
+        <a href="/shop/" class="group block relative rounded-2xl overflow-hidden aspect-[3/4]">
+          {{- if $item.image }}
+          <img
+            src="{{ $item.image }}"
+            alt="{{ $item.title }}"
+            width="600"
+            height="800"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          {{- else }}
+          <div class="w-full h-full flex items-center justify-center" style="background-color: {{ $item.placeholderColor }}">
+            <span class="text-white/40 font-heading text-xl">{{ $item.title }}</span>
+          </div>
+          {{- end }}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            {{ if $item.tag }}
+            <span class="badge badge-primary mb-2 inline-block text-xs">{{ $item.tag }}</span>
+            {{ end }}
+            <h3 class="font-heading font-bold text-lg text-white mb-1">{{ $item.title }}</h3>
+            <p class="text-white/70 text-sm">{{ $item.itemCount }} pieces</p>
+          </div>
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <!-- CTA -->
+      <div class="text-center">
+        <a href="/shop/" class="btn btn-primary">Shop All Products</a>
+      </div>
+    </div>
+  </section>
+{{ end }}

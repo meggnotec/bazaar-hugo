@@ -1,0 +1,393 @@
+[
+  {
+    "id": "storefront",
+    "title": "Storefront & Shopping",
+    "icon": "shopping-bag",
+    "color": "primary",
+    "features": [
+      {
+        "name": "Product Gallery with Zoom",
+        "description": "Thumbnail strip, hover lens zoom on desktop, immersive lightbox with pan-to-zoom on click",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Quick View Modal",
+        "description": "Product preview popup with image, variants, quantity selector, and add-to-cart — no page load needed",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Quick Add to Cart",
+        "description": "One-click add-to-cart button directly from the product grid — skip the detail page",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Variant Picker",
+        "description": "Interactive size button group (XS–XXL) and color swatches with visual selection ring",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Sticky Add to Cart",
+        "description": "Fixed bottom bar appears on scroll with product title, price, and add-to-cart button",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Frequently Bought Together",
+        "description": "Smart product bundling section with checkbox selection and combined add-to-cart",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Stock Counter",
+        "description": "Low-stock urgency indicator that shows remaining inventory below a threshold",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Trust Badges",
+        "description": "Security and satisfaction badges (free shipping, secure checkout, easy returns) below add-to-cart",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Hover Image Swap",
+        "description": "Product cards show alternate image on hover for a quick second look",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Product Video Support",
+        "description": "Embed product videos in the gallery alongside standard images",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "hint",
+        "hint": "Add a videoUrl field to any product in products.json"
+      }
+    ]
+  },
+  {
+    "id": "cart-checkout",
+    "title": "Cart & Checkout",
+    "icon": "cart",
+    "color": "secondary",
+    "features": [
+      {
+        "name": "Slide-in Cart Drawer",
+        "description": "Full-featured side panel with item list, quantity controls, subtotal, and checkout link",
+        "link": "open-cart",
+        "linkType": "action"
+      },
+      {
+        "name": "Free Shipping Progress Bar",
+        "description": "Animated progress bar showing how close you are to free shipping ($99 threshold)",
+        "link": "open-cart",
+        "linkType": "action"
+      },
+      {
+        "name": "Cart Upsells",
+        "description": "Recommended products inside the cart drawer to increase average order value",
+        "link": "open-cart",
+        "linkType": "action"
+      },
+      {
+        "name": "Promo Code Input",
+        "description": "Apply discount codes at cart level with success and error feedback states",
+        "link": "/cart",
+        "linkType": "page"
+      },
+      {
+        "name": "Order Notes",
+        "description": "Optional text area for customers to add delivery instructions or gift notes",
+        "link": "/cart",
+        "linkType": "page"
+      },
+      {
+        "name": "Multi-Step Checkout",
+        "description": "Clean 3-step flow: shipping, payment, review — all on one page with step indicator",
+        "link": "/checkout",
+        "linkType": "page"
+      }
+    ]
+  },
+  {
+    "id": "search-navigation",
+    "title": "Search & Navigation",
+    "icon": "search",
+    "color": "sky",
+    "features": [
+      {
+        "name": "Live Search with Autocomplete",
+        "description": "Instant product search results with thumbnails, prices, and keyboard navigation",
+        "link": "open-search",
+        "linkType": "action"
+      },
+      {
+        "name": "Mega-Menu Navigation",
+        "description": "Multi-column dropdown with category links, trending products, and featured promo banner",
+        "link": "/",
+        "linkType": "hint",
+        "hint": "Hover over 'Women' in the main navigation"
+      },
+      {
+        "name": "Mobile Menu",
+        "description": "Full-screen slide-in panel with accordion sections, search, account links, and language switcher",
+        "link": "/",
+        "linkType": "hint",
+        "hint": "Resize to mobile and tap the hamburger icon"
+      },
+      {
+        "name": "Breadcrumbs",
+        "description": "Full navigation trail with category hierarchy support on every interior page",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Mobile Bottom Navigation",
+        "description": "Fixed bottom bar with home, categories, search, wishlist, and cart — mobile-only",
+        "link": "/",
+        "linkType": "hint",
+        "hint": "Resize to mobile to see the bottom nav bar"
+      },
+      {
+        "name": "Back to Top Button",
+        "description": "Smooth-scroll floating button that appears after scrolling down the page",
+        "link": "/shop",
+        "linkType": "hint",
+        "hint": "Scroll down on any page to see it appear"
+      }
+    ]
+  },
+  {
+    "id": "product-discovery",
+    "title": "Product Discovery",
+    "icon": "filter",
+    "color": "emerald",
+    "features": [
+      {
+        "name": "Filter Sidebar",
+        "description": "Category checkboxes, price range inputs, size buttons, color swatches, and in-stock toggle",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Sort Dropdown",
+        "description": "Sort by featured, price (low/high), newest, or best rated with instant results",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Grid / List Toggle",
+        "description": "Switch between grid view and list view with persistent preference",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Load More Pagination",
+        "description": "Progressive loading with animated load-more button and page number navigation",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Category Pages",
+        "description": "Dedicated browse pages for each category with hero banner and filtered product grid",
+        "link": "/categories",
+        "linkType": "page"
+      },
+      {
+        "name": "Recently Viewed",
+        "description": "localStorage-powered horizontal scroll strip of previously viewed products",
+        "link": "/recently-viewed",
+        "linkType": "page"
+      },
+      {
+        "name": "Product Compare",
+        "description": "Side-by-side comparison table for up to 4 products with specs, pricing, and ratings",
+        "link": "/compare",
+        "linkType": "page"
+      }
+    ]
+  },
+  {
+    "id": "reviews-social",
+    "title": "Reviews & Social Proof",
+    "icon": "star",
+    "color": "accent",
+    "features": [
+      {
+        "name": "Product Reviews",
+        "description": "Star rating, written reviews, rating distribution chart, and helpful vote buttons",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Review Submission Form",
+        "description": "Full review form with star picker, title, body, pros/cons, and recommendation toggle",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Star Ratings",
+        "description": "SVG star display with filled, half, and empty states — used on cards and detail pages",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Social Sharing",
+        "description": "Share product and blog pages via Twitter, Facebook, Pinterest, and email",
+        "link": "/shop/cashmere-blend-sweater",
+        "linkType": "page"
+      },
+      {
+        "name": "Customer Testimonials",
+        "description": "Review cards with star ratings, customer names, and purchased product references",
+        "link": "/",
+        "linkType": "hint",
+        "hint": "Scroll to the testimonials section on the homepage"
+      }
+    ]
+  },
+  {
+    "id": "blog-content",
+    "title": "Blog & Content",
+    "icon": "pencil",
+    "color": "indigo",
+    "features": [
+      {
+        "name": "Blog with MDX Support",
+        "description": "Content Collections powered blog with markdown and MDX for rich interactive posts",
+        "link": "/blog",
+        "linkType": "page"
+      },
+      {
+        "name": "Blog Sidebar",
+        "description": "Categories, recent posts, tags cloud, and newsletter signup in the blog listing",
+        "link": "/blog",
+        "linkType": "page"
+      },
+      {
+        "name": "Blog Categories",
+        "description": "Filter posts by category with dedicated category listing views",
+        "link": "/blog",
+        "linkType": "page"
+      },
+      {
+        "name": "Tags Cloud",
+        "description": "Visual tag cloud with sized tags based on frequency for topic discovery",
+        "link": "/blog",
+        "linkType": "page"
+      },
+      {
+        "name": "6 Sample Blog Posts",
+        "description": "Realistic fashion content covering capsule wardrobes, layering, sustainability, and more",
+        "link": "/blog",
+        "linkType": "page"
+      },
+      {
+        "name": "Lookbook Gallery",
+        "description": "Visual storytelling page with styled outfits and shop-the-look product links",
+        "link": "/lookbook",
+        "linkType": "page"
+      }
+    ]
+  },
+  {
+    "id": "internationalization",
+    "title": "Internationalization",
+    "icon": "globe",
+    "color": "teal",
+    "features": [
+      {
+        "name": "RTL Layout Support",
+        "description": "Full right-to-left layout with logical CSS properties — every component mirrors correctly",
+        "link": "switch-rtl",
+        "linkType": "action"
+      },
+      {
+        "name": "3-Language i18n",
+        "description": "Built-in translations for English, Spanish, and Arabic with easy extensibility",
+        "link": "switch-language",
+        "linkType": "action"
+      },
+      {
+        "name": "Language Switcher",
+        "description": "Globe icon dropdown in the header to switch languages and text direction instantly",
+        "link": "switch-language",
+        "linkType": "action"
+      },
+      {
+        "name": "Logical CSS Properties",
+        "description": "Uses start/end instead of left/right throughout — ensures correct RTL rendering",
+        "link": "switch-rtl",
+        "linkType": "action"
+      }
+    ]
+  },
+  {
+    "id": "design-ux",
+    "title": "Design & UX",
+    "icon": "palette",
+    "color": "pink",
+    "features": [
+      {
+        "name": "Dark Mode",
+        "description": "Toggle between light and dark themes — every element intentionally designed for both",
+        "link": "toggle-dark-mode",
+        "linkType": "action"
+      },
+      {
+        "name": "Newsletter Popup",
+        "description": "Timed popup with email capture, 15% off incentive, and dismissable state",
+        "link": "open-newsletter",
+        "linkType": "action"
+      },
+      {
+        "name": "Sale Countdown Timer",
+        "description": "Animated countdown with days, hours, minutes, seconds on a vibrant gradient banner",
+        "link": "/sale",
+        "linkType": "page"
+      },
+      {
+        "name": "Fully Responsive",
+        "description": "Pixel-perfect at 320px, 768px, 1024px, and 1440px — mobile-first approach",
+        "link": "/",
+        "linkType": "hint",
+        "hint": "Resize the browser to see responsive breakpoints"
+      },
+      {
+        "name": "SEO Optimized",
+        "description": "Meta tags, Open Graph, Twitter cards, JSON-LD structured data, sitemap, and robots.txt",
+        "link": "/",
+        "linkType": "hint",
+        "hint": "View page source to see meta tags and JSON-LD"
+      },
+      {
+        "name": "View Transitions",
+        "description": "Smooth page-to-page transitions powered by Astro's ClientRouter",
+        "link": "/shop",
+        "linkType": "page"
+      },
+      {
+        "name": "Self-Hosted Fonts",
+        "description": "Outfit and Inter variable fonts loaded locally — no external CDN requests",
+        "link": "/",
+        "linkType": "hint",
+        "hint": "Zero external font requests for maximum performance"
+      },
+      {
+        "name": "Announcement Bar",
+        "description": "Dismissible gradient top bar with promotional message and link",
+        "link": "/",
+        "linkType": "page"
+      },
+      {
+        "name": "Micro-Interactions",
+        "description": "Hover scales, gradient shifts, shadow lifts, and smooth transitions throughout",
+        "link": "/shop",
+        "linkType": "page"
+      }
+    ]
+  }
+]

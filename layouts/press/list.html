@@ -1,0 +1,73 @@
+{{ define "main" }}
+  {{ partial "hero-alt.html" (dict "title" "Press & Media" "subtitle" "Bazaar Studio in the news" "badge" "Press") }}
+
+  <section class="section">
+    <div class="container-custom">
+      <!-- As Seen In -->
+      <div class="mb-16">
+        <h2 class="text-center text-sm font-semibold text-surface-400 dark:text-surface-500 uppercase tracking-widest mb-8">As Seen In</h2>
+        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          {{ range .Site.Data.press.publications }}
+          <div
+            class="rounded-xl px-6 py-3 flex items-center justify-center"
+            style="background-color: {{ .placeholderColor }}10;"
+          >
+            <span class="font-heading font-bold text-xl" style="color: {{ .placeholderColor }}">{{ .name }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Press mentions -->
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-heading font-bold text-surface-900 dark:text-white mb-8">Recent Press</h2>
+        <div class="space-y-6">
+          {{ range .Site.Data.press.mentions }}
+          <div class="card p-6 hover:border-primary-300 dark:hover:border-primary-700 transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div class="flex-1">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="text-sm font-semibold text-primary-500 dark:text-primary-400">{{ .publication }}</span>
+                  <span class="text-surface-300 dark:text-surface-600">&bull;</span>
+                  <time class="text-sm text-surface-400 dark:text-surface-500" datetime="{{ .date }}">
+                    {{ dateFormat "January 2, 2006" .date }}
+                  </time>
+                </div>
+                <h3 class="font-heading font-bold text-lg text-surface-900 dark:text-white mb-2">{{ .headline }}</h3>
+                <p class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed">{{ .excerpt }}</p>
+              </div>
+              <a href="{{ .url }}" class="btn btn-outline shrink-0 self-start text-sm" target="_blank" rel="noopener noreferrer">
+                Read Article
+              </a>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Media Kit & Press Inquiries -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 max-w-4xl mx-auto">
+        <div class="card p-6 text-center">
+          <div class="w-14 h-14 rounded-full bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center mx-auto mb-4">
+            <svg class="h-7 w-7 text-primary-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-surface-900 dark:text-white mb-2">Media Kit</h3>
+          <p class="text-sm text-surface-600 dark:text-surface-400 mb-4">Download our brand assets, logos, and press materials.</p>
+          <button type="button" class="btn btn-outline text-sm cursor-pointer" onclick="alert('Media kit download (demo)')">Download Media Kit</button>
+        </div>
+        <div class="card p-6 text-center">
+          <div class="w-14 h-14 rounded-full bg-secondary-100 dark:bg-secondary-900/30 flex items-center justify-center mx-auto mb-4">
+            <svg class="h-7 w-7 text-secondary-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-surface-900 dark:text-white mb-2">Press Inquiries</h3>
+          <p class="text-sm text-surface-600 dark:text-surface-400 mb-4">For press inquiries, please contact our communications team.</p>
+          <a href="mailto:press@bazaar-studio.com" class="btn btn-outline text-sm">press@bazaar-studio.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

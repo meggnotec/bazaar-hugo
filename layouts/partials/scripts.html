@@ -1,0 +1,20 @@
+<!-- i18n translation data -->
+{{- $en := .Site.Data.translations.en | jsonify -}}
+{{- $ar := .Site.Data.translations.ar | jsonify -}}
+{{- $fr := .Site.Data.translations.fr | jsonify -}}
+<script id="i18n-data" type="application/json">{"en":{{ $en }},"ar":{{ $ar }},"fr":{{ $fr }}}</script>
+
+<!-- Bundled JavaScript -->
+{{- $cart := resources.Get "js/cart.js" -}}
+{{- $wishlist := resources.Get "js/wishlist.js" -}}
+{{- $compare := resources.Get "js/compare.js" -}}
+{{- $theme := resources.Get "js/theme.js" -}}
+{{- $rv := resources.Get "js/recently-viewed.js" -}}
+{{- $filters := resources.Get "js/filters.js" -}}
+{{- $i18n := resources.Get "js/i18n.js" -}}
+{{- $main := resources.Get "js/main.js" -}}
+{{- $bundle := slice $cart $wishlist $compare $theme $rv $filters $i18n $main | resources.Concat "js/bundle.js" -}}
+{{- if hugo.IsProduction -}}
+  {{- $bundle = $bundle | minify | fingerprint -}}
+{{- end -}}
+<script src="{{ $bundle.RelPermalink }}" defer></script>
