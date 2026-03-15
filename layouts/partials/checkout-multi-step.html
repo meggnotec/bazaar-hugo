@@ -302,5 +302,5 @@
   {{- range $countries -}}
     {{- $countryMap = merge $countryMap (dict .code .name) -}}
   {{- end -}}
-  {{ $countryMap | jsonify }}
+  {{ $countryMap | jsonify | safeJS }}
 </script>

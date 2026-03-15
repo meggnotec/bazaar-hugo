@@ -173,11 +173,11 @@
   <!-- Store view data for JS (gallery interactions) -->
   <script type="application/json" id="gallery-view-data">
     {
-      "image": {{ if $image }}{{ $image | jsonify }}{{ else }}null{{ end }},
-      "colors": {{ $viewColors | jsonify }},
-      "labels": {{ $viewLabels | jsonify }},
-      "title": {{ $title | jsonify }},
-      "video": {{ if $video }}{{ $video | jsonify }}{{ else }}null{{ end }}
+      "image": {{ if $image }}{{ $image | jsonify | safeJS }}{{ else }}null{{ end }},
+      "colors": {{ $viewColors | jsonify | safeJS }},
+      "labels": {{ $viewLabels | jsonify | safeJS }},
+      "title": {{ $title | jsonify | safeJS }},
+      "video": {{ if $video }}{{ $video | jsonify | safeJS }}{{ else }}null{{ end }}
     }
   </script>
 </div>

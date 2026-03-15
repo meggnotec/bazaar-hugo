@@ -36,6 +36,6 @@
 
   <!-- Embed all product data for JS -->
   <script type="application/json" id="all-products-data">
-    {{ .Site.Data.products | jsonify }}
+    {{ .Site.Data.products | jsonify | safeJS }}
   </script>
 {{ end }}

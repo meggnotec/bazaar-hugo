@@ -63,4 +63,4 @@
 </aside>
 
 <!-- Products data for cart upsells -->
-<script type="application/json" id="cart-products-data">{{ .Site.Data.products | jsonify }}</script>
+<script type="application/json" id="cart-products-data">{{ .Site.Data.products | jsonify | safeJS }}</script>

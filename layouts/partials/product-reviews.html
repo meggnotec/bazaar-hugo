@@ -186,5 +186,5 @@
 
 <!-- Reviews data for JS sorting/loading -->
 <script type="application/json" id="reviews-data">
-  {{ $reviews | jsonify }}
+  {{ $reviews | jsonify | safeJS }}
 </script>

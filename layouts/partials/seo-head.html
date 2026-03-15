@@ -39,10 +39,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": {{ .Title | jsonify }},
-  "description": {{ $description | jsonify }},
-  "image": {{ ($image | absURL) | jsonify }},
-  "url": {{ .Permalink | jsonify }}{{ if $product.price }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ $description | jsonify | safeJS }},
+  "image": {{ ($image | absURL) | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }}{{ if $product.price }},
   "offers": {
     "@type": "Offer",
     "price": {{ $product.price }},
@@ -61,18 +61,18 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ $description | jsonify }},
-  "image": {{ ($image | absURL) | jsonify }},
-  "url": {{ .Permalink | jsonify }},
+  "headline": {{ .Title | jsonify | safeJS }},
+  "description": {{ $description | jsonify | safeJS }},
+  "image": {{ ($image | absURL) | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
   "datePublished": {{ with .Params.pubDate }}{{ . }}{{ end }},
   "author": {
     "@type": "Person",
-    "name": {{ .Params.author | default $siteConfig.author | jsonify }}
+    "name": {{ .Params.author | default $siteConfig.author | jsonify | safeJS }}
   },
   "publisher": {
     "@type": "Organization",
-    "name": {{ $siteConfig.name | jsonify }}
+    "name": {{ $siteConfig.name | jsonify | safeJS }}
   }
 }
 </script>
@@ -81,9 +81,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": {{ $siteConfig.name | jsonify }},
-  "description": {{ $siteConfig.description | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }}
+  "name": {{ $siteConfig.name | jsonify | safeJS }},
+  "description": {{ $siteConfig.description | jsonify | safeJS }},
+  "url": {{ .Site.BaseURL | jsonify | safeJS }}
 }
 </script>
 {{- end }}

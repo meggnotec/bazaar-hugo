@@ -97,4 +97,4 @@
 </div>
 
 <!-- Products data for QuickView JS -->
-<script type="application/json" id="quickview-products-data">{{ .Site.Data.products | jsonify }}</script>
+<script type="application/json" id="quickview-products-data">{{ .Site.Data.products | jsonify | safeJS }}</script>

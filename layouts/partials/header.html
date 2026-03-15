@@ -315,4 +315,4 @@
 </header>
 
 <!-- Product data for search -->
-<script type="application/json" id="search-products-data">{{ .Site.Data.products | jsonify }}</script>
+<script type="application/json" id="search-products-data">{{ .Site.Data.products | jsonify | safeJS }}</script>

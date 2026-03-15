@@ -2,7 +2,7 @@
 {{- $en := .Site.Data.translations.en | jsonify -}}
 {{- $ar := .Site.Data.translations.ar | jsonify -}}
 {{- $fr := .Site.Data.translations.fr | jsonify -}}
-<script id="i18n-data" type="application/json">{"en":{{ $en }},"ar":{{ $ar }},"fr":{{ $fr }}}</script>
+<script id="i18n-data" type="application/json">{"en":{{ $en | safeJS }},"ar":{{ $ar | safeJS }},"fr":{{ $fr | safeJS }}}</script>
 
 <!-- Bundled JavaScript -->
 {{- $cart := resources.Get "js/cart.js" -}}
