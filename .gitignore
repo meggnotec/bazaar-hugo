@@ -4,3 +4,14 @@ resources/
 .hugo_build.lock
 .DS_Store
 Thumbs.db
+
+.vercel
+
+# Development artifacts (not for clients)
+CLAUDE.md
+.marketplace/
+QC-REPORT*.md
+QC-VERIFIED.md
+FIX-LOG.md
+.qc-log/
+.qc-screenshots/
